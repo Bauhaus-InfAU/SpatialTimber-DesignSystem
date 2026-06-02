@@ -20,7 +20,7 @@ design-system/        # ★ THE design system — START HERE. Canonical, consoli
                       #   slides, and the design-conversation transcripts. (Claude Design handoff.)
 assets/               # SECONDARY — example applications of the system + project media.
                       #   Not the source of truth; design-system/ is. See assets/README.md.
-assets/presentation/  # reusable Zukunft Bau 2026 deck media library (axo renders, schemes, video)
+assets/presentation/  # Projekttage 2026 deck: latest standalone HTML at top + media in assets/
 assets/scheme-styleguide/  # illustration-register reference (how the presentation/ artwork is made)
 assets/logos/         # third-party funder logos (Zukunft Bau, BMWSB) — svg + png
 src/                  # reusable helper code shared across repos
@@ -39,8 +39,12 @@ system. (The earlier `brand/` and `templates/` explorations were removed once `d
 became the source of truth.) **If the two ever disagree, `design-system/` is authoritative.** The
 `assets/` contents:
 
-- `assets/presentation/` — the Zukunft Bau 2026 deck's reusable **media library** (axonometric
-  renders, scheme SVGs/GIFs, pictograms, video). Large binaries live here on purpose.
+- `assets/presentation/` — the **Zukunft Bau Projekttage 2026 deck**: the latest deck compiled to a
+  single standalone HTML at the top, with its media (axonometric renders, scheme SVGs/GIFs,
+  pictograms, video) in `assets/presentation/assets/`. Rebuild by asking Claude to *"update the
+  presentation"* → the **`update-presentation`** skill fetches the latest from Claude Design (deck
+  project `e699544b`) and recompiles. Needs a handoff export link (`api.anthropic.com/v1/design/h/…`);
+  the `claude.ai/design/p/…` link is auth-gated. Large binaries live here on purpose.
 - `assets/scheme-styleguide/` — the **illustration-register** reference (axonometric / flat-contour
   pictogram / scheme), each with a monet style block, plus `palette.html`, pictogram sets, Anthropic
   engineering-header references, and the PNG→SVG scheme workflow. Read its

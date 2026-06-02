@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Edit(/.claude/skills/spatialtimber-design/**)"
+      "Edit(/.claude/skills/spatialtimber-design/**)",
+      "Edit(/.claude/skills/update-presentation/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\MartinBielik\\.claude\\projects\\c--Users-MartinBielik-Dev-SpatialTimber-SpatialTimber-Utils\\memory"
     ]
   }
 }

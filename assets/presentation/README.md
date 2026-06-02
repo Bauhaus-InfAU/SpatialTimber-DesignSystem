@@ -1,19 +1,36 @@
-# Presentation assets
+# Presentation — Zukunft Bau Projekttage 2026
 
-Drop folder for assets from the **Zukunft Bau Projekttage 2026** presentation that are worth
-sharing across the project — restyled axonometrics, pictograms, scheme SVGs, sample plans, etc.
+The project's **end-of-project slide deck** for the Zukunft Bau Projekttage 2026, plus its media.
 
-> **Copy these in manually.** The full asset pool lives in the presentation repo at
-> `SpatialTimber - Documents/04_Publications and Presentations/03_ZukunftBau Projektetage 2026/_assets/_shared/`.
-> Bring over only the pieces that are genuinely reusable elsewhere (not deck-specific one-offs).
+```
+presentation/
+├── README.md              ← this file
+├── <deck-name>.html       ← the latest deck, compiled to a single standalone HTML  (pending)
+└── assets/                ← the deck's media (axo renders, scheme SVGs/GIFs, pictograms, video)
+```
 
-## Conventions
+- **Last compiled:** _not yet — see "Updating the deck" below._
 
-- Prefer **vector** (`.svg`) and transparent **PNG** over opaque/raster-only formats.
-- Use descriptive filenames (the source pool already does, e.g. `scheme_lora_annotated.svg`).
-- Keep the visual language consistent with [`../scheme-styleguide/`](../scheme-styleguide/) — same palette,
-  one-terracotta-accent rule, warm backgrounds.
-- **Large binaries are fine here** — this folder intentionally holds the deck's finished media
-  (videos, animated GIFs, multi-MB inline SVGs) so the assets stay together in one place. Keep
-  individual files under GitHub's 100 MB hard limit (ideally < 50 MB to avoid its warning); for
-  anything larger, link out instead.
+## Updating the deck
+
+The deck is authored in **Claude Design** (project `SpatialTimber Deck v6`,
+`claude.ai/design/p/e699544b-8985-4a6c-96fb-d2d86a7bbd9c`). To refresh it, just ask Claude Code to
+**"update the presentation"** — the [`update-presentation`](../../.claude/skills/update-presentation/SKILL.md)
+skill fetches the latest version and compiles it into a single standalone `.html` here, with the
+source media kept in [`assets/`](assets/).
+
+> **Fetching needs a handoff export link** (`api.anthropic.com/v1/design/h/<hash>`), not the
+> `claude.ai/design/p/...` project link (that one is auth-gated → 403). Generate the handoff/export
+> link in Claude Design (Share / export-to-coding-agent) and hand it over when you ask for an update.
+
+"Standalone" = one self-contained HTML (media inlined as data URIs) that opens from disk with no
+server. The `assets/` subfolder keeps the source media so the deck can be re-compiled or edited.
+
+## Conventions for `assets/`
+
+- Prefer **vector** (`.svg`) and transparent **PNG**; use descriptive filenames.
+- Keep the visual language consistent with the design system ([`../../design-system/`](../../design-system/))
+  and the illustration rules in [`../scheme-styleguide/`](../scheme-styleguide/) — one-terracotta-accent,
+  warm backgrounds.
+- **Large binaries are fine here** — videos, animated GIFs, multi-MB inline SVGs live together. Keep
+  individual files under GitHub's 100 MB hard limit (ideally < 50 MB); for anything larger, link out.
