@@ -1,7 +1,24 @@
 # SpatialTimber-Utils
 
-Shared utilities and assets for the **SpatialTimber** research project — logos, design
-templates, brand tokens, and reusable helper code used across the project's repositories.
+Shared utilities and assets for the **SpatialTimber** research project — the design system,
+funder logos, presentation media, and reusable helper code used across the project's repositories.
+
+## See the design system
+
+New here? The visual design system lives in **[`design-system/`](design-system/)**. The quickest way
+to understand it is to *look at it* — serve the folder and open these pages in a browser:
+
+```bash
+cd design-system/project && python -m http.server 8000
+```
+
+- **★ [Brand identity](design-system/project/ui_kits/brand-identity/index.html)** — the whole brand on one page (logo, wordmark, sub-project lockups, glyphs, colour, type). **Start here.**
+- **[Aufstockung Assistent](design-system/project/ui_kits/aufstockung-assistent/index.html)** — the product UI (inputs rail → 3D viewer → performance rail).
+- **[Component library](design-system/project/ui_kits/component-library/index.html)** — reusable component patterns.
+- **[Sample slides](design-system/project/slides/index.html)** — the deck style.
+
+See **[design-system/README.md](design-system/README.md)** for what each page shows and how to open
+them (the brand page also opens directly; the React kits need the local server + internet).
 
 ## What lives here
 

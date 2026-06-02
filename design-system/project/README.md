@@ -13,9 +13,29 @@ research-grade** — confident but not corporate. The identity lives in an
 Anthropic-style register: warm paper, ink near-black, a single clay accent.
 
 This folder is a **design reference**, a runnable **asset generator**, a set of
-**UI-kit recreations** of the real product, **sample slides** from the project
-deck, and ships as an **Agent Skill** (`SKILL.md`) so Claude Code can use it as the
+**UI-kit recreations** of the real product, and **sample slides** from the project
+deck. It is wired as the repo's **`spatialtimber-design` Claude Code skill**
+(`.claude/skills/spatialtimber-design/`), so any clone can ask Claude to use it as the
 design system when building SpatialTimber sites, apps, decks, or assets.
+
+---
+
+## See it — open in a browser
+
+The fastest way in is to *look at the system*. Serve this folder, then open the pages:
+
+```bash
+python -m http.server 8000
+```
+
+- `ui_kits/brand-identity/index.html` — **★ the whole brand on one page** (logo, wordmark, sub-project lockups, glyphs, colour, type). **Start here.**
+- `ui_kits/aufstockung-assistent/index.html` — the **product UI** (inputs rail → 3D viewer → performance rail).
+- `ui_kits/component-library/index.html` — reusable **component patterns**.
+- `slides/index.html` — a **sample deck** in the project style.
+- `preview/*.html` — small **reference cards**, one aspect each (colours, type, spacing, logos, glyphs).
+
+`brand-identity/index.html` is self-contained (also opens via `file://`); the React kits
+(`aufstockung-assistent`, `component-library`) need the `http://` server **and** internet (CDN).
 
 ---
 
@@ -27,7 +47,7 @@ you do have access.
 
 | Source | What it is | Link |
 |---|---|---|
-| **Brand identity proposal** | Logo system, tokens, glyphs, generator | `claude.ai/design/p/ad8dcf2c-5670-4cd0-b2fd-0c9b45125a54` (`docs/handover/brand-identity-proposal.html`) |
+| **Brand identity proposal** | Logo system, tokens, glyphs, generator | `claude.ai/design/p/ad8dcf2c-5670-4cd0-b2fd-0c9b45125a54` (now the brand-identity reference page → `ui_kits/brand-identity/index.html`) |
 | **Website / app template** | "Spatial Timber Solver v1.0 · Aufstockung Assistent" single-screen app | `claude.ai/design/p/e17b68eb-472a-4ad8-bcd3-0baa868e7074` (`Spatial Timber Solver.html`) |
 | **Slide deck** | 29-slide Zukunft Bau Projekttage 2026 presentation | `claude.ai/design/p/e699544b-8985-4a6c-96fb-d2d86a7bbd9c` (`SpatialTimber Deck v6.html`) |
 
@@ -210,22 +230,27 @@ the fallback. SVG never needs a dependency.
 | Path | What it is |
 |---|---|
 | `README.md` | This file — context, sources, content + visual foundations, iconography |
-| `SKILL.md` | Agent Skill manifest — makes this usable as a Claude Code design system |
 | `colors_and_type.css` | All design tokens as CSS variables + semantic helpers |
 | `assets/spatialtimber-assets.mjs` | Logo / lockup / glyph / favicon generator (library + CLI) |
 | `assets/logo-*.svg`, `lockup-*.svg`, `glyph-*.svg`, `favicon-*.svg` | Pre-rendered brand assets |
 | `assets/{bmwsb,zukunftbau}_logo.{svg,png}` | Funder logos |
 | `preview/*.html` | Design System tab cards (colours, type, spacing, logos, glyphs) |
+| `ui_kits/brand-identity/` | Brand-identity reference page — logo, wordmark, lockups, glyphs, colour, type on one page (`index.html`) |
 | `ui_kits/aufstockung-assistent/` | UI kit — the Aufstockung Assistent app (index.html + JSX components) |
+| `ui_kits/component-library/` | Reusable component patterns (`index.html`) |
 | `slides/` | Sample deck slides (deck-stage.js + index.html) and per-type slide files |
-| `docs/handover/*.html` | Original brand proposal + glyph exploration (reference) |
+| `docs/handover/glyph-plan-options.html` | Glyph exploration (reference) |
 
 ### UI kits
+- `ui_kits/brand-identity/` — the **brand-identity reference page** (`index.html`): the logomark
+  and its variants, the `SpatialTimber` wordmark, the sub-project lockups, the module glyphs, the
+  colour system, and the type stacks, all on one page. Open it to *see* the brand.
 - `ui_kits/aufstockung-assistent/` — high-fidelity recreation of the
   single-screen layout-generation app: header lockup, inputs rail (site, steps,
   storeys stepper, apartment-mix target), axonometric viewer with floating
   control bar, and performance rail with selectable metrics + distribution
   histogram. See its own `README.md`.
+- `ui_kits/component-library/` — reusable component patterns (`index.html`).
 
 ### Slides
 - `slides/index.html` — a sample deck (deck-stage.js) demonstrating the title,

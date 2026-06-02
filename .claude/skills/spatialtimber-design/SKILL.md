@@ -19,6 +19,7 @@ reinvent the brand; use these files.
 
 | Request | Read |
 |---|---|
+| **See the whole brand on one page** (logo, wordmark, lockups, glyphs, colour, type) | `design-system/project/ui_kits/brand-identity/index.html` (open in a browser) |
 | Logo, wordmark, glyphs, favicons, brand colours/type, export marks | `design-system/project/README.md` + `colors_and_type.css` |
 | Build a website / web app in the project style | `design-system/project/ui_kits/aufstockung-assistent/` (the UI kit) |
 | Reusable component patterns | `design-system/project/ui_kits/component-library/` |
