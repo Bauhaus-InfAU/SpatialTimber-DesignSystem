@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 896" width="1200" height="896" role="img" aria-labelledby="title desc">
+
+  <title id="title">LoRA mechanism — annotated scheme</title>
+  <desc id="desc">Animated watercolor pictogram of a head with brain. The scheme reveals the BASE MODEL annotation (arrow then card) pointing at the brain, then the pictogram progressively grows three stacked LoRA adapter plates above the head (green, then blue, then terracotta), and finally the ADAPTERS annotation reveals (arrow then card) pointing at the plate stack. The cycle then resets.</desc>
+
+  <defs>
+    
+  </defs>
+
+  
+
+  
+  <g id="pictogram-stack">
+    <image id="pic-1" x="60" y="30" width="500" height="820" preserveAspectRatio="xMidYMid meet"></image>
+    <image id="pic-2" x="60" y="30" width="500" height="820" preserveAspectRatio="xMidYMid meet"></image>
+    <image id="pic-3" x="60" y="30" width="500" height="820" preserveAspectRatio="xMidYMid meet"></image>
+    <image id="pic-4" x="60" y="30" width="500" height="820" preserveAspectRatio="xMidYMid meet"></image>
+  </g>
+
+  
+  <g id="annotation-adapters" class="annotation">
+
+    <g class="card-content">
+      <rect class="card" x="658" y="122" width="440" height="257" rx="32" ry="32"></rect>
+      <text class="label-title" x="878" y="200" text-anchor="middle" font-size="30">ADAPTERS</text>
+      <text class="label-body" x="878" y="240" text-anchor="middle" font-size="30">SpatialTimber project</text>
+      <text class="label-body" x="878" y="280" text-anchor="middle" font-size="30">specific Adapters</text>
+      <text class="label-body" x="878" y="320" text-anchor="middle" font-size="30">small Neural Networks</text>
+    </g>
+
+    <path class="arrow-shaft" d="M 470 190 L 638 190"></path>
+    <path class="arrow-head" d="M 620 175 L 638 190 L 620 205"></path>
+
+  </g>
+
+  
+  <g id="annotation-base-model" class="annotation">
+
+    <g class="card-content">
+      <rect class="card" x="658" y="516" width="440" height="256" rx="32" ry="32"></rect>
+      <text class="label-title" x="878" y="594" text-anchor="middle" font-size="30">BASE MODEL</text>
+      <text class="label-body" x="878" y="634" text-anchor="middle" font-size="30">general purpose</text>
+      <text class="label-body" x="878" y="674" text-anchor="middle" font-size="30">pre-trained large</text>
+      <text class="label-body" x="878" y="714" text-anchor="middle" font-size="30">Neural Network</text>
+    </g>
+
+    <path class="arrow-shaft" d="M 470 644 L 638 644"></path>
+    <path class="arrow-head" d="M 620 629 L 638 644 L 620 659"></path>
+
+  </g>
+
+</svg>

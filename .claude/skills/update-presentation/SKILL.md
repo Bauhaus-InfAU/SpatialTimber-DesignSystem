@@ -20,15 +20,18 @@ compile it into a **single standalone HTML** living at the top of `assets/presen
   gzipped tar bundle (the same mechanism the `design-system/` bundle came from).
 - **Always ask the user for the current handoff link** unless one is recorded below. In Claude
   Design, the user generates it via Share / Export-to-coding-agent on the deck project.
-  - **Latest handoff link:** _(none recorded yet — ask the user)_
+  - **Latest handoff link (2026-06-03, v7):**
+    `https://api.anthropic.com/v1/design/h/tHUhB1hsOHjC6oPFR9Fr-Q?open_file=SpatialTimber+Deck+v7.html`
+    — try this first; if it 404s/expires, ask the user for a fresh export link.
 
 ## Procedure
 
 1. **Get the handoff URL** (`api.anthropic.com/v1/design/h/<hash>`) from the user if not recorded.
-2. **Fetch it** with WebFetch. The response is binary (`application/gzip`); WebFetch saves it to a
-   `.bin` file and prints the path. (Ask the prompt to report the saved path.)
-3. **Extract** the bundle: `gzip -dc <bin> | tar -xf - -C <tmp>` and locate the **primary deck
-   HTML** (e.g. `SpatialTimber Deck v6.html`, or the main file the chat/README points to).
+2. **Download it.** The bundle is large (~135 MB for v7) — **WebFetch fails** (10 MB cap), so use
+   curl: `curl -sSL -o <tmp>/deck.tar.gz "<handoff-url>"`. It's a gzipped tar.
+3. **Extract** the bundle: `gzip -dc <tmp>/deck.tar.gz | tar -xf - -C <tmp>` and locate the
+   **primary deck HTML** under `…/project/` (the one named in the `open_file=` query, e.g.
+   `SpatialTimber Deck v7.html`). The bundle keeps older versions too — use the latest / requested.
 4. **Compile to one standalone HTML** — inline everything so it runs from `file://` with no server
    and no external files:
    - Inline `<link rel=stylesheet>` and `<script src>` (local ones) into the document.

@@ -4,12 +4,17 @@ The project's **end-of-project slide deck** for the Zukunft Bau Projekttage 2026
 
 ```
 presentation/
-├── README.md              ← this file
-├── <deck-name>.html       ← the latest deck, compiled to a single standalone HTML  (pending)
-└── assets/                ← the deck's media (axo renders, scheme SVGs/GIFs, pictograms, video)
+├── README.md                    ← this file
+├── SpatialTimber Deck v7.html   ← the latest deck — a single standalone HTML (media inlined)
+└── assets/                      ← the deck's source media (axo renders, schemes, pictograms, video)
 ```
 
-- **Last compiled:** _not yet — see "Updating the deck" below._
+- **Latest deck:** `SpatialTimber Deck v7.html` — single standalone HTML (~41 MB; all media inlined
+  as base64 data URIs, so it opens straight from disk with no server). **Last compiled: 2026-06-03**
+  from Claude Design project `e699544b` (v7).
+- **Known gap:** slide 19's two Furnisher clips (`19_furnisher_standalone.mp4`,
+  `19_furnisher_rhino_plugin.mp4`) are referenced by the deck but were not in the export, so those
+  videos are blank until they're produced.
 
 ## Updating the deck
 
