@@ -12,7 +12,8 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 |------|----------|
 | `assets/logos/` | Project, partner, and funder logos (SpatialTimber, Bauhaus-Universität Weimar, TU Dresden, Zukunft Bau / BMWSB) in vector and raster form |
 | `assets/templates/` | Design and document templates (slide decks, posters, figure layouts) |
-| `assets/brand/` | Brand tokens — color palette, type stacks, spacing — shared with the presentation deck and the Demonstrator app |
+| `assets/styleguide/` | The project's visual-language reference — color palette, type stacks, illustration registers (axonometric / contour pictogram / scheme), pictograms, and the monet re-rendering workflow. Shared with the presentation deck and the Demonstrator app |
+| `assets/presentation/` | Reusable assets brought over from the Zukunft Bau 2026 presentation (drop folder — populated manually) |
 | `src/` | Reusable helper code shared across project repositories |
 
 > Folders are created as content is added; see the layout below for the intended structure.
@@ -22,12 +23,13 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 ```
 SpatialTimber-Utils/
 ├── assets/
-│   ├── logos/        # project / partner / funder logos (svg + png)
-│   ├── templates/    # slide, poster, and figure templates
-│   └── brand/        # palette, type, spacing tokens
-├── src/              # shared helper code
-├── CLAUDE.md         # AI-assistant context for this repo
-└── README.md         # this file
+│   ├── logos/         # project / partner / funder logos (svg + png)
+│   ├── templates/     # slide, poster, and figure templates
+│   ├── styleguide/    # visual language: palette, type, illustration registers, pictograms
+│   └── presentation/  # reusable assets from the Zukunft Bau 2026 deck (drop folder)
+├── src/               # shared helper code
+├── CLAUDE.md          # AI-assistant context for this repo
+└── README.md          # this file
 ```
 
 ## About SpatialTimber

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SpatialTimber — Zukunft Bau 2026 deck palette preview</title>
+<style>
+  :root {
+    --brick: #D97757;     /* clay — also highlight */
+    --ochre: #D97757;     /* clay (alias) */
+    --rose:  #EBC9B7;     /* peach */
+    --sage:  #788C5D;     /* olive */
+    --blue:  #6A9BCC;     /* sky */
+    --ink:   #141413;     /* gray-950 */
+    --cream: #E3DACC;     /* oat */
+    --grey:  #C2C0B6;     /* gray-350 */
+    --paper: #F0EEE6;     /* gray-150 — lighter card surface */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--cream); font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 48px 32px 96px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.5px; margin: 0 0 4px; color: var(--ink); }
+  h1 .accent { color: var(--brick); }
+  .subtitle { font-size: 14px; color: #5e6470; margin: 0 0 40px; }
+  h2 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); margin: 0 0 16px; }
+  section { margin-bottom: 56px; }
+
+  /* Swatch grid */
+  .swatch-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .swatch { background: var(--paper); border-radius: 4px; overflow: hidden; box-shadow: 0 1px 0 rgba(0,0,0,0.04); }
+  .swatch .chip { height: 120px; }
+  .swatch .meta { padding: 12px 12px 14px; }
+  .swatch .name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: var(--ink); }
+  .swatch .hex { font-family: "SF Mono", Consolas, monospace; font-size: 11px; color: #5e6470; margin-top: 2px; }
+  .swatch .role { font-size: 11px; color: #7a8088; margin-top: 6px; line-height: 1.4; }
+
+  .neutrals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 360px; }
+  .neutrals .chip { height: 60px; }
+
+  /* Mock slide */
+  .slide {
+    background: var(--paper);
+    aspect-ratio: 16 / 9;
+    padding: 36px 48px 30px;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+  }
+  .slide-chrome-top { position: absolute; top: 18px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 1.5px; color: var(--ink); font-weight: 700; }
+  .slide-chrome-top .right { text-align: right; line-height: 1.6; color: #4a505c; font-weight: 500; }
+  .slide-chrome-bottom { position: absolute; bottom: 18px; left: 48px; right: 48px; display: flex; justify-content: space-between; font-size: 10px; color: #4a505c; }
+
+  .slide h3 { font-size: 22px; font-weight: 700; line-height: 1.25; margin: 80px 0 18px; color: var(--ink); }
+  .slide h3 .accent { color: var(--brick); }
+  .slide ul { font-size: 13px; line-height: 1.7; color: var(--ink); padding-left: 18px; margin: 0 0 16px; }
+  .slide ul li b { color: var(--brick); font-weight: 700; }
+
+  /* Mock apartment-mix bar */
+  .mix-bar { background: var(--cream); padding: 14px 16px; border-radius: 2px; margin-top: 12px; }
+  .mix-bar .label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #5e6470; margin-bottom: 8px; }
+  .mix-row { display: flex; height: 28px; border-radius: 2px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+  .mix-row > div { display: flex; align-items: center; justify-content: center; color: var(--ink); font-size: 11px; font-weight: 600; }
+  .mix-legend { display: flex; gap: 14px; margin-top: 8px; font-size: 10px; color: #4a505c; }
+  .mix-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 1px; margin-right: 4px; vertical-align: -1px; }
+
+  /* Mock axo legend */
+  .axo-card { background: var(--cream); padding: 18px; border-radius: 2px; }
+  .axo-card h4 { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #5e6470; margin: 0 0 12px; font-weight: 700; }
+  .axo-legend { display: grid; grid-template-columns: 14px 1fr; gap: 6px 10px; font-size: 11px; color: var(--ink); line-height: 1.5; }
+  .axo-legend .sq { width: 14px; height: 14px; border-radius: 1px; }
+
+  /* Status board */
+  .status { background: var(--cream); padding: 14px 16px; border-radius: 2px; margin-top: 14px; }
+  .status .label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #5e6470; margin-bottom: 10px; }
+  .status-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .pill { padding: 6px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-align: center; color: var(--ink); }
+  .pill.done { background: var(--sage); }
+  .pill.partial { background: var(--ochre); }
+  .pill.todo { background: var(--rose); }
+
+  /* KPI numbers row */
+  .kpis { display: flex; gap: 28px; margin-top: 16px; }
+  .kpi { font-size: 11px; color: #5e6470; }
+  .kpi .num { display: block; font-size: 24px; font-weight: 700; color: var(--brick); line-height: 1.1; }
+
+  /* Chart sequence demo */
+  .seq { display: flex; gap: 6px; align-items: flex-end; height: 140px; margin-top: 8px; }
+  .seq .bar { flex: 1; border-radius: 2px 2px 0 0; position: relative; }
+  .seq .bar span { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font-size: 10px; color: #5e6470; }
+
+  /* Type comparison */
+  .type-demo { background: var(--paper); padding: 28px 32px; border-radius: 2px; }
+  .type-demo .big { font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+  .type-demo .big .accent { color: var(--brick); }
+  .type-demo .body { font-size: 13px; line-height: 1.7; color: var(--ink); margin-top: 12px; }
+  .type-demo .body b { color: var(--brick); }
+  .type-demo .small { font-size: 11px; color: #5e6470; margin-top: 8px; letter-spacing: 0.5px; }
+
+  /* Pairing rules cards */
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .rule { background: var(--paper); padding: 18px 20px; border-radius: 2px; border-left: 3px solid var(--brick); }
+  .rule h4 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); }
+  .rule p { margin: 0; font-size: 12px; line-height: 1.55; color: #4a505c; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>SpatialTimber — Zukunft Bau 2026 <span class="accent">palette preview</span></h1>
+  <p class="subtitle">5-swatch palette adopted from Anthropic's claude.com design tokens — watercolor, earthy, desaturated. Anchored on clay #D97757, which serves as both the text highlight and a chart category. Rendered on oat paper so swatches read in their intended context.</p>
+
+  <!-- ============== SWATCHES ============== -->
+  <section>
+    <h2>Core palette · 5 swatches</h2>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="chip" style="background:var(--brick)"></div>
+        <div class="meta">
+          <div class="name">CLAY</div>
+          <div class="hex">#D97757</div>
+          <div class="role">Highlight + wall-beam + apt-mix 2-Raum. KPI numbers, callouts, force arrows, mid utilization.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:var(--rose)"></div>
+        <div class="meta">
+          <div class="name">PEACH</div>
+          <div class="hex">#EBC9B7</div>
+          <div class="role">Apt-mix 1-Raum · soft fills · sub-axo planes.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:var(--sage)"></div>
+        <div class="meta">
+          <div class="name">OLIVE</div>
+          <div class="hex">#788C5D</div>
+          <div class="role">Apt-mix 3-Raum · "done" state · low utilization.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:var(--blue)"></div>
+        <div class="meta">
+          <div class="name">SKY</div>
+          <div class="hex">#6A9BCC</div>
+          <div class="role">Apt-mix 4-Raum · IL/RL distinction · context.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:var(--ink)"></div>
+        <div class="meta">
+          <div class="name">INK (gray-950)</div>
+          <div class="hex">#141413</div>
+          <div class="role">Body text · axo edges · axis ticks. Replaces pure black.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== NEUTRALS ============== -->
+  <section>
+    <h2>Supporting neutrals</h2>
+    <div class="neutrals">
+      <div class="swatch">
+        <div class="chip" style="background:var(--cream)"></div>
+        <div class="meta">
+          <div class="name">OAT (paper)</div>
+          <div class="hex">#E3DACC</div>
+          <div class="role">Slide background — warm kraft-paper tone.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:var(--grey)"></div>
+        <div class="meta">
+          <div class="name">GRAY-350</div>
+          <div class="hex">#C2C0B6</div>
+          <div class="role">Gridlines · secondary text · dashed annotations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== MOCK SLIDE ============== -->
+  <section>
+    <h2>Mock slide · palette in context</h2>
+    <div class="slide">
+      <div class="slide-chrome-top">
+        <div class="left">SPATIAL TIMBER</div>
+        <div class="right">
+          CHAIR FOR INFORMATICS IN ARCHITECTURE AND URBANISM &nbsp;/&nbsp; BAUHAUS UNIVERSITÄT WEIMAR<br/>
+          CHAIR OF STRUCTURAL DESIGN &nbsp;/&nbsp; TECHNISCHE UNIVERSITÄT DRESDEN
+        </div>
+      </div>
+
+      <div>
+        <h3>Generative Design Assistant for <span class="accent">efficient and flexible</span> vertical building extension</h3>
+        <ul>
+          <li><b>Input:</b> target apartment mix, roof outline, floor number</li>
+          <li><b>Output:</b> optimized layouts for all floors, maximizing quality and efficiency</li>
+          <li>Performance indicators for mix, layout quality, structural efficiency</li>
+        </ul>
+        <div class="kpis">
+          <div class="kpi"><span class="num">95%</span>max utilization</div>
+          <div class="kpi"><span class="num">600 t</span>material</div>
+          <div class="kpi"><span class="num">127</span>quality score</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="axo-card">
+          <h4>Axo element legend</h4>
+          <div class="axo-legend">
+            <div class="sq" style="background:var(--brick)"></div><div>Wall-beam structural element</div>
+            <div class="sq" style="background:var(--rose)"></div><div>Floor plate</div>
+            <div class="sq" style="background:var(--cream); box-shadow: inset 0 0 0 1px var(--grey);"></div><div>Existing building</div>
+            <div class="sq" style="background:var(--ink)"></div><div>Edge / contour</div>
+          </div>
+        </div>
+
+        <div class="mix-bar">
+          <div class="label">Apartment mix · target vs achieved</div>
+          <div class="mix-row">
+            <div style="background:var(--rose); flex:20">20%</div>
+            <div style="background:var(--ochre); flex:35">35%</div>
+            <div style="background:var(--sage); flex:25">25%</div>
+            <div style="background:var(--blue); flex:20">20%</div>
+          </div>
+          <div class="mix-legend">
+            <span><span class="dot" style="background:var(--rose)"></span>1-Raum</span>
+            <span><span class="dot" style="background:var(--ochre)"></span>2-Raum</span>
+            <span><span class="dot" style="background:var(--sage)"></span>3-Raum</span>
+            <span><span class="dot" style="background:var(--blue)"></span>4-Raum</span>
+          </div>
+        </div>
+
+        <div class="status">
+          <div class="label">Status board · work packages</div>
+          <div class="status-row">
+            <div class="pill done">AP01–04 done</div>
+            <div class="pill partial">AP05 partial</div>
+            <div class="pill todo">AP06–08 todo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-chrome-bottom">
+        <div>Zukunft Bau Projekttage · 2026 · 26</div>
+        <div>ZUKUNFT BAU · BMWSB</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TYPE DEMO ============== -->
+  <section>
+    <h2>Text highlight · brick on cream</h2>
+    <div class="type-demo">
+      <div class="big">We can densify <span class="accent">without distribution layers</span> — the wall-beam carries load directly.</div>
+      <div class="body">The brick red is the only color used for emphasis in running text. It marks <b>load-bearing terms</b> (the wall-beam idea, the design-coupling gap, the surrogate) and KPI figures. Every other color stays inside graphics.</div>
+      <div class="small">Body text on oat · ink #141413 · WCAG AAA at all body sizes</div>
+    </div>
+  </section>
+
+  <!-- ============== CHART SEQUENCE ============== -->
+  <section>
+    <h2>Chart category sequence · ordered for distinguishability</h2>
+    <div class="type-demo">
+      <div class="seq">
+        <div class="bar" style="background:var(--rose); height:60%"><span>peach</span></div>
+        <div class="bar" style="background:var(--ochre); height:78%"><span>clay</span></div>
+        <div class="bar" style="background:var(--sage); height:52%"><span>olive</span></div>
+        <div class="bar" style="background:var(--blue); height:70%"><span>sky</span></div>
+      </div>
+      <div class="small" style="margin-top: 28px;">For multi-category charts, draw in the order <b>peach → clay → olive → sky</b>. Clay-interactive is reserved for highlights and the wall-beam, and should not appear as a chart category.</div>
+    </div>
+  </section>
+
+  <!-- ============== PAIRING RULES ============== -->
+  <section>
+    <h2>Pairing rules</h2>
+    <div class="rules">
+      <div class="rule">
+        <h4>1 · Clay does double duty</h4>
+        <p>Use #D97757 on text highlights, KPI numbers, force-arrow indicators, the wall-beam structural elements in axos, and as the warm-mid chart category. The single warm-orange anchors the visual identity across both text and graphics.</p>
+      </div>
+      <div class="rule">
+        <h4>2 · Ink is gray-950, not pure black</h4>
+        <p>Body text, axo outlines, and axis ticks use #141413. It's near-black but warm-toned, keeping coherence with the oat paper.</p>
+      </div>
+      <div class="rule">
+        <h4>3 · Stay inside the Anthropic palette</h4>
+        <p>Olive and sky are deliberately desaturated to share temperature with the warm tones. Don't substitute with vivid greens or cyans — they will read as imports.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

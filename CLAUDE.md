@@ -14,11 +14,19 @@ it belongs here; if it's specific to one repo, it belongs there.
 ## Where things live
 
 ```
-assets/logos/      # project / partner / funder logos (svg + png)
-assets/templates/  # slide, poster, and figure design templates
-assets/brand/      # palette, type stacks, spacing tokens
-src/               # reusable helper code shared across repos
+assets/logos/         # project / partner / funder logos (svg + png)
+assets/templates/     # slide, poster, and figure design templates
+assets/styleguide/    # the project's visual-language reference (see below)
+assets/presentation/  # reusable assets from the Zukunft Bau 2026 deck (manual drop folder)
+src/                  # reusable helper code shared across repos
 ```
+
+`assets/styleguide/` is the developed visual-language reference, copied from the Zukunft Bau 2026
+presentation repo. It documents **three illustration registers** (axonometric / flat-contour
+pictogram / scheme), each with a monet style block, plus the palette (`palette.html`), pictogram
+sets, Anthropic engineering-header references, and the PNG→SVG scheme workflow. Read its
+[`README.md`](assets/styleguide/README.md) before producing or restyling any project artwork. Note
+its internal `../monet/`, `../_assets/` links point at the **source** presentation repo, not here.
 
 Folders are created as content lands — don't expect them all to exist yet. Match the existing
 structure when adding files; create a new top-level folder only when no existing one fits.
@@ -40,7 +48,8 @@ Full project context: `SpatialTimber - Documents/README.md` and the
 
 ## Brand tokens (Anthropic palette, from the presentation deck)
 
-When working on `assets/brand/`, the project's locked palette (also used by the Demonstrator):
+When working on visual assets, the project's locked palette (see `assets/styleguide/palette.html`;
+also used by the Demonstrator):
 
 - clay `#D97757`, peach `#EBC9B7`, olive `#788C5D`, sky `#6A9BCC`, ink `#141413`,
   oat paper `#E3DACC`, gray-350 `#C2C0B6`.
