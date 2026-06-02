@@ -12,7 +12,7 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 |------|----------|
 | **`design-system/`** | **★ The SpatialTimber design system — start here.** The canonical, consolidated brand spec: content + visual foundations, colour/type tokens, a runnable asset generator, the *Aufstockung Assistent* UI kit, and sample deck slides. The go-to reference for any style or design question. |
 | `assets/presentation/` | Reusable Zukunft Bau 2026 deck **media library** — axonometric renders, scheme SVGs/GIFs, pictograms, video |
-| `assets/styleguide/` | **Illustration-register reference** — how the `presentation/` artwork is made (axonometric / contour pictogram / scheme), plus palette and the PNG→SVG scheme workflow |
+| `assets/scheme-styleguide/` | **Illustration-register reference** — how the `presentation/` artwork is made (axonometric / contour pictogram / scheme), plus palette and the PNG→SVG scheme workflow |
 | `assets/logos/` | Third-party **funder logos** (Zukunft Bau, BMWSB) in vector and raster form |
 | `src/` | Reusable helper code shared across project repositories |
 
@@ -24,13 +24,13 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 SpatialTimber-Utils/
 ├── design-system/     # ★ THE design system (start here) — brand spec, tokens, asset
 │   └── project/       #   generator, the Aufstockung Assistent UI kit, sample slides
-├── assets/            # secondary: project media (everything brand/web/slides → design-system/)
-│   ├── presentation/  #   reusable Zukunft Bau 2026 deck media (renders, schemes, video)
-│   ├── styleguide/    #   illustration-register reference (axo / pictogram / scheme)
-│   └── logos/         #   third-party funder logos (Zukunft Bau, BMWSB)
-├── src/               # shared helper code
-├── CLAUDE.md          # AI-assistant context for this repo
-└── README.md          # this file
+├── assets/                # secondary: project media (brand/web/slides → design-system/)
+│   ├── presentation/      #   reusable Zukunft Bau 2026 deck media (renders, schemes, video)
+│   ├── scheme-styleguide/ #   illustration-register reference (axo / pictogram / scheme)
+│   └── logos/             #   third-party funder logos (Zukunft Bau, BMWSB)
+├── src/                   # shared helper code
+├── CLAUDE.md              # AI-assistant context for this repo
+└── README.md              # this file
 ```
 
 ## About SpatialTimber

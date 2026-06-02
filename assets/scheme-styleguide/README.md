@@ -12,7 +12,7 @@ Visual-language reference for the Zukunft Bau 2026 deck. Two registers of editor
 ## Folder layout
 
 ```
-styleguide/
+scheme-styleguide/
 ├── README.md                                 ← this index
 ├── palette.html                              ← interactive colour palette (open in browser)
 │

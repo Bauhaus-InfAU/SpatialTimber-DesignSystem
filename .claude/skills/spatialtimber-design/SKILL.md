@@ -12,7 +12,7 @@ context, content fundamentals, visual foundations, iconography rules), then rout
 reinvent the brand; use these files.
 
 > **Source of truth: `design-system/`.** The `assets/` tree holds only project media
-> (`presentation/`, `styleguide/`, `logos/`) — routed below. (Older `brand/` + `templates/`
+> (`presentation/`, `scheme-styleguide/`, `logos/`) — routed below. (Older `brand/` + `templates/`
 > explorations were removed once `design-system/` became canonical.)
 
 ## Route by purpose
@@ -24,7 +24,7 @@ reinvent the brand; use these files.
 | Reusable component patterns | `design-system/project/ui_kits/component-library/` |
 | Build a slide deck / presentation | `design-system/project/slides/` |
 | Presentation media (axo renders, schemes, pictograms, video) | `assets/presentation/` |
-| Make / restyle illustrations (axo, pictogram, scheme) | `assets/styleguide/README.md` |
+| Make / restyle illustrations (axo, pictogram, scheme) | `assets/scheme-styleguide/README.md` |
 | Funder logos (Zukunft Bau, BMWSB) | `assets/logos/` (mirrored in `design-system/project/assets/`) |
 
 ## Identity — exporting marks

@@ -11,7 +11,7 @@ sharing across the project — restyled axonometrics, pictograms, scheme SVGs, s
 
 - Prefer **vector** (`.svg`) and transparent **PNG** over opaque/raster-only formats.
 - Use descriptive filenames (the source pool already does, e.g. `scheme_lora_annotated.svg`).
-- Keep the visual language consistent with [`../styleguide/`](../styleguide/) — same palette,
+- Keep the visual language consistent with [`../scheme-styleguide/`](../scheme-styleguide/) — same palette,
   one-terracotta-accent rule, warm backgrounds.
 - **Large binaries are fine here** — this folder intentionally holds the deck's finished media
   (videos, animated GIFs, multi-MB inline SVGs) so the assets stay together in one place. Keep

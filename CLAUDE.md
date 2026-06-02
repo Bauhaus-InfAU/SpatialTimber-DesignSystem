@@ -21,7 +21,7 @@ design-system/        # ★ THE design system — START HERE. Canonical, consoli
 assets/               # SECONDARY — example applications of the system + project media.
                       #   Not the source of truth; design-system/ is. See assets/README.md.
 assets/presentation/  # reusable Zukunft Bau 2026 deck media library (axo renders, schemes, video)
-assets/styleguide/    # illustration-register reference (how the presentation/ artwork is made)
+assets/scheme-styleguide/  # illustration-register reference (how the presentation/ artwork is made)
 assets/logos/         # third-party funder logos (Zukunft Bau, BMWSB) — svg + png
 src/                  # reusable helper code shared across repos
 ```
@@ -41,10 +41,10 @@ became the source of truth.) **If the two ever disagree, `design-system/` is aut
 
 - `assets/presentation/` — the Zukunft Bau 2026 deck's reusable **media library** (axonometric
   renders, scheme SVGs/GIFs, pictograms, video). Large binaries live here on purpose.
-- `assets/styleguide/` — the **illustration-register** reference (axonometric / flat-contour
+- `assets/scheme-styleguide/` — the **illustration-register** reference (axonometric / flat-contour
   pictogram / scheme), each with a monet style block, plus `palette.html`, pictogram sets, Anthropic
   engineering-header references, and the PNG→SVG scheme workflow. Read its
-  [`README.md`](assets/styleguide/README.md) before producing or restyling project artwork; note its
+  [`README.md`](assets/scheme-styleguide/README.md) before producing or restyling project artwork; note its
   internal `../monet/`, `../_assets/` links point at the **source** presentation repo, not here.
 - `assets/logos/` — third-party **funder logos** (Zukunft Bau, BMWSB).
 
