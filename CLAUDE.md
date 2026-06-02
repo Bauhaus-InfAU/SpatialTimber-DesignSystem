@@ -34,10 +34,10 @@ marks/glyphs is the generator `design-system/project/assets/spatialtimber-assets
 UI kit is `design-system/project/ui_kits/aufstockung-assistent/`. It ships as the
 `spatialtimber-design` Claude Code skill, which is wired to this folder.
 
-The **`assets/`** tree is **secondary**: example applications of the system (the earlier `brand/`
-and `templates/` explorations) plus project-specific media that doesn't live in the design system.
-**If the two ever disagree, `design-system/` is authoritative.** Its genuinely unique, still-current
-parts are:
+The **`assets/`** tree is **secondary**: project-specific media that doesn't live in the design
+system. (The earlier `brand/` and `templates/` explorations were removed once `design-system/`
+became the source of truth.) **If the two ever disagree, `design-system/` is authoritative.** The
+`assets/` contents:
 
 - `assets/presentation/` — the Zukunft Bau 2026 deck's reusable **media library** (axonometric
   renders, scheme SVGs/GIFs, pictograms, video). Large binaries live here on purpose.

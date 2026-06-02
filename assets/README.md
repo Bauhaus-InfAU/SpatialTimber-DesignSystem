@@ -5,22 +5,21 @@
 > Assistent* UI kit, and sample slides. **If anything here disagrees with `design-system/`, that
 > folder wins.**
 
-This `assets/` tree is **secondary**: project-specific **media** plus earlier example applications
-of the design system. The genuinely-unique, still-current parts are `presentation/` (deck media),
-`styleguide/` (illustration rules), and `logos/` (funder marks). The `brand/` and `templates/`
-sub-systems are earlier explorations now superseded by `design-system/` as the source of truth.
+This `assets/` tree is **secondary**: project-specific **media** that doesn't live in the design
+system. Everything about identity, tokens, web, and slides now lives in
+[`../design-system/`](../design-system/) — go there for brand/web/deck work. (The earlier `brand/`
+and `templates/` explorations that used to live here were removed once `design-system/` became the
+source of truth.)
 
 > **Working in Claude Code?** Just ask — the `spatialtimber-design` skill routes you to
-> `design-system/` for design/brand work and here for media/illustration/funder logos.
+> `design-system/` for design/brand work and here for media / illustration / funder logos.
 
 ## Pick the right sub-system for the job
 
 | I want to… | Go to | What's there |
 |---|---|---|
-| Use the **logo / wordmark / glyphs**, get **brand colours & type**, or export marks | [`brand/`](brand/) | Identity + design tokens + a runnable asset generator |
-| Build a **website or web app** in the project style | [`templates/website/`](templates/website/) | The *Aufstockung Assistent* / Solver UI — self-contained HTML template |
-| Build a **slide deck / presentation** | [`templates/deck/`](templates/deck/) | The Zukunft Bau 2026 deck template (layout + components) |
-| Find **presentation media** (axo renders, schemes, pictograms, videos) | [`presentation/`](presentation/) | Reusable Zukunft Bau 2026 deck assets (the deck template's media source) |
+| **Logo, glyphs, brand colours/type, web app, slides** | [`../design-system/`](../design-system/) | The canonical design system (start at `project/README.md`) |
+| Find **presentation media** (axo renders, schemes, pictograms, videos) | [`presentation/`](presentation/) | Reusable Zukunft Bau 2026 deck assets — the deck's media library |
 | Produce or restyle **illustrations** (axonometric / pictogram / scheme) | [`styleguide/`](styleguide/) | The visual-language reference — the three illustration registers + palette |
 | Use **funder logos** (Zukunft Bau, BMWSB) | [`logos/`](logos/) | Third-party institutional marks, all formats |
 
@@ -28,26 +27,17 @@ sub-systems are earlier explorations now superseded by `design-system/` as the s
 
 ```
 assets/
-├── brand/            ← single source of truth for IDENTITY (marks, tokens, glyphs)
-│                       every other sub-system draws colour + type from here
-├── templates/
-│   ├── website/      ← WEB pillar  — uses brand tokens; logos from ../../logos
-│   └── deck/         ← SLIDES pillar — uses brand tokens; media from ../../presentation
-├── presentation/     ← the deck's MEDIA library (large; lives here, not in templates/deck)
+├── presentation/     ← the deck's MEDIA library (axo renders, schemes, pictograms, video)
 ├── styleguide/       ← ILLUSTRATION rules (how the artwork in presentation/ is made)
 └── logos/            ← FUNDER marks (third-party; not the SpatialTimber logo)
 ```
 
-- **Brand is the root.** Colours, type stacks, and the logo come from [`brand/`](brand/).
-  Templates and the deck reference those tokens rather than hard-coding hex values, so the
-  whole system stays in sync.
-- **Templates are lean; media lives once.** The deck template
-  ([`templates/deck/`](templates/deck/)) is layout + CSS only; its heavy media is sourced
-  from [`presentation/`](presentation/) (kept in one place, never duplicated). The website
-  template is self-contained except the funder logos.
 - **Styleguide explains the artwork.** [`styleguide/`](styleguide/) documents *how* the
   axonometric renders, schemes, and pictograms in [`presentation/`](presentation/) are
   produced — read it before making new artwork.
+- **Media lives once.** [`presentation/`](presentation/) is the single home for the deck's heavy
+  media; the deck template in `design-system/project/slides/` sources from here rather than
+  duplicating it.
 
 ## Conventions (project-wide)
 

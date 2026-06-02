@@ -11,9 +11,9 @@ SpatialTimber style or design task. Read **`design-system/project/README.md`** f
 context, content fundamentals, visual foundations, iconography rules), then route below. Don't
 reinvent the brand; use these files.
 
-> **Source of truth: `design-system/`.** The `assets/` tree holds secondary example applications
-> (earlier `brand/` + `templates/` explorations) plus project media. If they ever disagree,
-> `design-system/` wins. The media that genuinely lives only under `assets/` is routed below.
+> **Source of truth: `design-system/`.** The `assets/` tree holds only project media
+> (`presentation/`, `styleguide/`, `logos/`) — routed below. (Older `brand/` + `templates/`
+> explorations were removed once `design-system/` became canonical.)
 
 ## Route by purpose
 

@@ -14,7 +14,6 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 | `assets/presentation/` | Reusable Zukunft Bau 2026 deck **media library** — axonometric renders, scheme SVGs/GIFs, pictograms, video |
 | `assets/styleguide/` | **Illustration-register reference** — how the `presentation/` artwork is made (axonometric / contour pictogram / scheme), plus palette and the PNG→SVG scheme workflow |
 | `assets/logos/` | Third-party **funder logos** (Zukunft Bau, BMWSB) in vector and raster form |
-| `assets/` *(brand/, templates/)* | Secondary — earlier example applications of the design system. `design-system/` is authoritative if they disagree. |
 | `src/` | Reusable helper code shared across project repositories |
 
 > Folders are created as content is added; see the layout below for the intended structure.
@@ -25,12 +24,10 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 SpatialTimber-Utils/
 ├── design-system/     # ★ THE design system (start here) — brand spec, tokens, asset
 │   └── project/       #   generator, the Aufstockung Assistent UI kit, sample slides
-├── assets/            # secondary: example applications + project media
+├── assets/            # secondary: project media (everything brand/web/slides → design-system/)
 │   ├── presentation/  #   reusable Zukunft Bau 2026 deck media (renders, schemes, video)
 │   ├── styleguide/    #   illustration-register reference (axo / pictogram / scheme)
-│   ├── logos/         #   third-party funder logos (Zukunft Bau, BMWSB)
-│   ├── brand/         #   earlier brand exploration (superseded by design-system/)
-│   └── templates/     #   earlier web/deck template exploration
+│   └── logos/         #   third-party funder logos (Zukunft Bau, BMWSB)
 ├── src/               # shared helper code
 ├── CLAUDE.md          # AI-assistant context for this repo
 └── README.md          # this file
