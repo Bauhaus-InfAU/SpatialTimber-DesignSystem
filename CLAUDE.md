@@ -14,39 +14,43 @@ it belongs here; if it's specific to one repo, it belongs there.
 ## Where things live
 
 ```
-assets/README.md          # the overarching design-system index — START HERE (routes the below)
-assets/brand/             # SpatialTimber's OWN brand identity: marks, tokens, glyphs, generator
-assets/templates/website/ # web/app template — the Aufstockung Assistent / Solver UI
-assets/templates/deck/    # slide-deck template (Zukunft Bau 2026); media lives in presentation/
-assets/presentation/      # reusable Zukunft Bau 2026 deck media (the deck template's asset source)
-assets/styleguide/        # the project's visual-language reference (illustration registers)
-assets/logos/             # third-party funder logos (Zukunft Bau, BMWSB) — svg + png
-src/                      # reusable helper code shared across repos
+design-system/        # ★ THE design system — START HERE. Canonical, consolidated brand spec:
+                      #   content + visual foundations, colour/type tokens (colors_and_type.css),
+                      #   a runnable asset generator, the Aufstockung Assistent UI kit, sample
+                      #   slides, and the design-conversation transcripts. (Claude Design handoff.)
+assets/               # SECONDARY — example applications of the system + project media.
+                      #   Not the source of truth; design-system/ is. See assets/README.md.
+assets/presentation/  # reusable Zukunft Bau 2026 deck media library (axo renders, schemes, video)
+assets/styleguide/    # illustration-register reference (how the presentation/ artwork is made)
+assets/logos/         # third-party funder logos (Zukunft Bau, BMWSB) — svg + png
+src/                  # reusable helper code shared across repos
 ```
 
-The `assets/` tree is an **overarching design system** — a federation of sub-systems, each owning
-a purpose (identity / web / slides / media / illustration / funder logos). The router is
-[`assets/README.md`](assets/README.md): read it to pick the right sub-system for a task.
+**[`design-system/`](design-system/) is the centerpiece — the go-to for any style or design
+question.** Start at [`design-system/project/README.md`](design-system/project/README.md): it holds
+the brand context, content fundamentals, visual foundations, and iconography rules. The canonical
+token set is `design-system/project/colors_and_type.css`; the single source of truth for
+marks/glyphs is the generator `design-system/project/assets/spatialtimber-assets.mjs`; the product
+UI kit is `design-system/project/ui_kits/aufstockung-assistent/`. It ships as the
+`spatialtimber-design` Claude Code skill, which is wired to this folder.
 
-`assets/brand/` is the **root of the system** — logomark, wordmark, sub-project lockups, module
-glyphs, colour + type tokens, and a zero-dependency asset generator
-(`assets/brand/assets/spatialtimber-assets.mjs`). Open
-[`assets/brand/brand-guide.html`](assets/brand/brand-guide.html) to *see* it. The web and deck
-templates draw their tokens from here. The whole system is wired as the `spatialtimber-design`
-Claude Code skill, so any clone of this repo can ask Claude to export the logo, fetch tokens, or
-build a branded web page or slide. The brand tokens below are the authoritative subset;
-`assets/brand/colors_and_type.css` is the full token set.
+The **`assets/`** tree is **secondary**: example applications of the system (the earlier `brand/`
+and `templates/` explorations) plus project-specific media that doesn't live in the design system.
+**If the two ever disagree, `design-system/` is authoritative.** Its genuinely unique, still-current
+parts are:
+
+- `assets/presentation/` — the Zukunft Bau 2026 deck's reusable **media library** (axonometric
+  renders, scheme SVGs/GIFs, pictograms, video). Large binaries live here on purpose.
+- `assets/styleguide/` — the **illustration-register** reference (axonometric / flat-contour
+  pictogram / scheme), each with a monet style block, plus `palette.html`, pictogram sets, Anthropic
+  engineering-header references, and the PNG→SVG scheme workflow. Read its
+  [`README.md`](assets/styleguide/README.md) before producing or restyling project artwork; note its
+  internal `../monet/`, `../_assets/` links point at the **source** presentation repo, not here.
+- `assets/logos/` — third-party **funder logos** (Zukunft Bau, BMWSB).
 
 **Locked decisions (2026-06-02):** typeface is **Inter** (Söhne optional future swap if licensed);
-the **wider palette stays** (supporting peach/olive/sky for data colour-coding). A UI-kit
-(buttons/fields/app-shell) is a planned future addition on top of the web template.
-
-`assets/styleguide/` is the developed visual-language reference, copied from the Zukunft Bau 2026
-presentation repo. It documents **three illustration registers** (axonometric / flat-contour
-pictogram / scheme), each with a monet style block, plus the palette (`palette.html`), pictogram
-sets, Anthropic engineering-header references, and the PNG→SVG scheme workflow. Read its
-[`README.md`](assets/styleguide/README.md) before producing or restyling any project artwork. Note
-its internal `../monet/`, `../_assets/` links point at the **source** presentation repo, not here.
+the **wider palette stays** (supporting peach/olive/sky for data colour-coding). The Aufstockung
+Assistent **UI kit now ships** in `design-system/project/ui_kits/` (no longer a future to-do).
 
 Folders are created as content lands — don't expect them all to exist yet. Match the existing
 structure when adding files; create a new top-level folder only when no existing one fits.
@@ -68,8 +72,8 @@ Full project context: `SpatialTimber - Documents/README.md` and the
 
 ## Brand tokens (Anthropic palette, from the presentation deck)
 
-When working on visual assets, the project's locked palette (see `assets/styleguide/palette.html`;
-also used by the Demonstrator):
+When working on visual assets, the project's locked palette (canonical token set:
+`design-system/project/colors_and_type.css`; also used by the Demonstrator):
 
 - clay `#D97757`, peach `#EBC9B7`, olive `#788C5D`, sky `#6A9BCC`, ink `#141413`,
   oat paper `#E3DACC`, gray-350 `#C2C0B6`.

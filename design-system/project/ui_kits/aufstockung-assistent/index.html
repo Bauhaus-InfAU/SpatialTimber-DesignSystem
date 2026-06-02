@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spatial Timber Solver v1.0 · Aufstockung Assistent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="kit.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="stage"></div>
+
+<script type="text/babel" src="brand.jsx"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="InputsRail.jsx"></script>
+<script type="text/babel" src="Viewer.jsx"></script>
+<script type="text/babel" src="PerformanceRail.jsx"></script>
+<script type="text/babel">
+function App(){
+  const [leftC, setLeftC] = React.useState(false);
+  const [rightC, setRightC] = React.useState(false);
+  const [view, setView] = React.useState('3d');
+  const [floor, setFloor] = React.useState(1);
+  const [display, setDisplay] = React.useState('layout');
+  const [selected, setSelected] = React.useState('Utilization');
+  const [proc, setProc] = React.useState({on:false, label:'Generating layout'});
+  const procTimer = React.useRef(null);
+
+  function showProc(label, ms){
+    clearTimeout(procTimer.current);
+    setProc({on:true, label});
+    procTimer.current = setTimeout(()=>setProc(p=>({...p, on:false})), ms);
+  }
+  function onView(v){ if(v!==view){ setView(v); showProc('Rotating view', 1000); } }
+  function onFloor(v){ if(v!==floor){ showProc('Switching floor', 900); setTimeout(()=>setFloor(v), 250); } }
+  function onDisplay(v){ if(v!==display){ setDisplay(v); showProc('Recomputing scene', 1000); } }
+
+  const bodyClass = "body" + (leftC?' cl':'') + (rightC?' cr':'');
+  return (
+    <div id="app" data-screen-label="SpatialTimber · Aufstockung Assistent">
+      <Header />
+      <div className={bodyClass}>
+        <InputsRail collapsed={leftC} onToggle={()=>setLeftC(c=>!c)} onGenerate={()=>showProc('Generating layout', 2200)} />
+        <Viewer view={view} onView={onView} floor={floor} onFloor={onFloor} display={display} onDisplay={onDisplay} proc={proc} />
+        <PerformanceRail collapsed={rightC} onToggle={()=>setRightC(c=>!c)} selected={selected} onSelect={setSelected} />
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('stage')).render(<App />);
+
+/* scale to fit — runs after mount */
+(function(){
+  function fit(){
+    const app=document.getElementById('app');
+    if(!app) return;
+    const s=Math.min(window.innerWidth/1600, window.innerHeight/900);
+    app.style.transform='translate(-50%, -50%) scale('+s+')';
+  }
+  window.addEventListener('resize',fit);
+  const iv=setInterval(()=>{ if(document.getElementById('app')){ fit(); clearInterval(iv);} }, 50);
+})();
+</script>
+</body>
+</html>

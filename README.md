@@ -10,10 +10,11 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 
 | Area | Contents |
 |------|----------|
-| `assets/logos/` | Project, partner, and funder logos (SpatialTimber, Bauhaus-Universität Weimar, TU Dresden, Zukunft Bau / BMWSB) in vector and raster form |
-| `assets/templates/` | Design and document templates (slide decks, posters, figure layouts) |
-| `assets/styleguide/` | The project's visual-language reference — color palette, type stacks, illustration registers (axonometric / contour pictogram / scheme), pictograms, and the monet re-rendering workflow. Shared with the presentation deck and the Demonstrator app |
-| `assets/presentation/` | Reusable assets brought over from the Zukunft Bau 2026 presentation (drop folder — populated manually) |
+| **`design-system/`** | **★ The SpatialTimber design system — start here.** The canonical, consolidated brand spec: content + visual foundations, colour/type tokens, a runnable asset generator, the *Aufstockung Assistent* UI kit, and sample deck slides. The go-to reference for any style or design question. |
+| `assets/presentation/` | Reusable Zukunft Bau 2026 deck **media library** — axonometric renders, scheme SVGs/GIFs, pictograms, video |
+| `assets/styleguide/` | **Illustration-register reference** — how the `presentation/` artwork is made (axonometric / contour pictogram / scheme), plus palette and the PNG→SVG scheme workflow |
+| `assets/logos/` | Third-party **funder logos** (Zukunft Bau, BMWSB) in vector and raster form |
+| `assets/` *(brand/, templates/)* | Secondary — earlier example applications of the design system. `design-system/` is authoritative if they disagree. |
 | `src/` | Reusable helper code shared across project repositories |
 
 > Folders are created as content is added; see the layout below for the intended structure.
@@ -22,11 +23,14 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 
 ```
 SpatialTimber-Utils/
-├── assets/
-│   ├── logos/         # project / partner / funder logos (svg + png)
-│   ├── templates/     # slide, poster, and figure templates
-│   ├── styleguide/    # visual language: palette, type, illustration registers, pictograms
-│   └── presentation/  # reusable assets from the Zukunft Bau 2026 deck (drop folder)
+├── design-system/     # ★ THE design system (start here) — brand spec, tokens, asset
+│   └── project/       #   generator, the Aufstockung Assistent UI kit, sample slides
+├── assets/            # secondary: example applications + project media
+│   ├── presentation/  #   reusable Zukunft Bau 2026 deck media (renders, schemes, video)
+│   ├── styleguide/    #   illustration-register reference (axo / pictogram / scheme)
+│   ├── logos/         #   third-party funder logos (Zukunft Bau, BMWSB)
+│   ├── brand/         #   earlier brand exploration (superseded by design-system/)
+│   └── templates/     #   earlier web/deck template exploration
 ├── src/               # shared helper code
 ├── CLAUDE.md          # AI-assistant context for this repo
 └── README.md          # this file

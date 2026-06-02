@@ -1,11 +1,17 @@
-# SpatialTimber — Design System
+# SpatialTimber — assets (secondary to `design-system/`)
 
-This `assets/` tree is the project's **overarching design system**. It is not one thing but
-a small federation of sub-systems, each owning a different *purpose*. Use this page to find
-the right one, then read that sub-system's own README.
+> **⭐ The canonical design system is [`../design-system/`](../design-system/) — start there.**
+> It holds the consolidated brand spec, colour/type tokens, the asset generator, the *Aufstockung
+> Assistent* UI kit, and sample slides. **If anything here disagrees with `design-system/`, that
+> folder wins.**
 
-> **Working in Claude Code?** Just ask — the `spatialtimber-design` skill knows this map and
-> will route you (e.g. *"export the logo"*, *"build a project web page"*, *"make a slide"*).
+This `assets/` tree is **secondary**: project-specific **media** plus earlier example applications
+of the design system. The genuinely-unique, still-current parts are `presentation/` (deck media),
+`styleguide/` (illustration rules), and `logos/` (funder marks). The `brand/` and `templates/`
+sub-systems are earlier explorations now superseded by `design-system/` as the source of truth.
+
+> **Working in Claude Code?** Just ask — the `spatialtimber-design` skill routes you to
+> `design-system/` for design/brand work and here for media/illustration/funder logos.
 
 ## Pick the right sub-system for the job
 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SpatialTimber — sample slides</title>
+<script src="deck-stage.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141413; --ink-2:#2b2a28; --paper:#FFFFFF; --paper-2:#F0EEE6;
+    --card-bg:#F0EEE6; --card-bg-2:#E3DACC; --mute:#6f6c63; --mute-2:#C2C0B6;
+    --accent:#D97757; --peach:#EBC9B7; --sage:#788C5D; --sky:#6A9BCC;
+    --radius-card:22px; --radius-pill:999px; --radius-small:12px;
+    --pad-x:110px;
+    --sans:"Söhne","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  html,body{margin:0;padding:0;background:#141413;}
+  deck-stage{background:#141413;}
+  section{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;letter-spacing:-0.005em;-webkit-font-smoothing:antialiased;}
+
+  .frame{position:absolute;inset:0;padding:118px var(--pad-x) 96px;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden;}
+  .secbreak{display:flex;flex-direction:column;justify-content:center;padding:118px var(--pad-x) 96px;height:100%;box-sizing:border-box;overflow:hidden;}
+
+  .eyebrow{font-size:24px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);font-weight:500;}
+  .eyebrow.mute{color:var(--mute);}
+  .eyebrow .acc{color:var(--accent);}
+  .rule{height:1px;background:var(--ink);width:100%;}
+  .rule.thin{background:var(--mute-2);}
+  h1.title{font-size:76px;line-height:1.02;margin:0;font-weight:500;letter-spacing:-0.02em;max-width:1500px;}
+  p.body{font-size:32px;line-height:1.35;margin:0;font-weight:400;max-width:1100px;}
+  p.body.lg{font-size:38px;}
+  .small{font-size:26px;line-height:1.4;color:var(--ink);}
+  .mute{color:var(--mute);}
+  .mono{font-family:var(--mono);font-feature-settings:"tnum";}
+  .acc{color:var(--accent);} em{font-style:italic;}
+
+  /* unified header + footer */
+  .deck-header{position:absolute;top:28px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;gap:40px;z-index:60;pointer-events:none;}
+  .dh-logos{display:flex;align-items:center;gap:18px;height:62px;}
+  .dh-logos img{height:62px;width:auto;display:block;}
+  .dh-mark{display:flex;align-items:center;gap:12px;}
+  .dh-mark .m{width:42px;height:42px;display:block;}
+  .dh-mark .wm{font-size:24px;letter-spacing:-0.022em;}
+  .dh-mark .wm .s{font-weight:700;} .dh-mark .wm .t{font-weight:500;}
+  .deck-footer{position:absolute;bottom:28px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:baseline;font-family:var(--sans);font-size:20px;color:var(--ink);z-index:60;letter-spacing:0.02em;}
+  .deck-footer .pg{font-family:var(--mono);font-feature-settings:"tnum";color:var(--mute);}
+  .deck-footer .wm{letter-spacing:0.14em;text-transform:uppercase;font-size:18px;}
+
+  /* title */
+  .title-grid{display:grid;grid-template-rows:auto 1fr auto;height:100%;}
+  .title-eyebrow{font-size:24px;letter-spacing:0.32em;text-transform:uppercase;}
+  .title-eyebrow .dot{display:inline-block;width:14px;height:14px;background:var(--accent);border-radius:50%;vertical-align:middle;margin-right:18px;transform:translateY(-3px);}
+  .title-headline{font-family:var(--sans);font-weight:500;font-size:88px;line-height:1.02;letter-spacing:-0.025em;max-width:1520px;font-style:italic;}
+  .title-subtitle{font-size:34px;letter-spacing:-0.005em;color:var(--ink);margin-top:36px;}
+  .title-funding{font-size:24px;line-height:1.45;color:var(--mute);max-width:900px;font-style:italic;}
+  .title-footer{font-family:var(--mono);font-size:24px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);}
+
+  /* section break */
+  .secbreak .num{font-size:360px;line-height:0.85;font-weight:500;letter-spacing:-0.04em;color:var(--ink);margin:0;font-feature-settings:"tnum";}
+  .secbreak h1{font-size:132px;line-height:1;margin:12px 0 24px;font-weight:500;letter-spacing:-0.025em;}
+  .secbreak .sub{font-size:40px;line-height:1.25;max-width:1200px;color:var(--ink);font-style:italic;font-weight:400;}
+  .secbreak .acc-bar{width:220px;height:6px;background:var(--accent);margin-top:64px;}
+
+  /* kpi */
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:70px;align-items:start;width:100%;}
+  .kpi{border-top:2px solid var(--ink);padding-top:28px;}
+  .kpi-tag{font-size:24px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;}
+  .kpi-num{font-size:170px;line-height:0.9;font-weight:500;letter-spacing:-0.03em;font-feature-settings:"tnum";padding-bottom:16px;}
+  .kpi-caption{font-size:26px;line-height:1.4;margin-top:18px;max-width:460px;min-height:96px;}
+
+  /* agenda */
+  .agenda-item{display:grid;grid-template-columns:120px 1fr;align-items:baseline;border-top:1px solid var(--ink);padding-top:24px;}
+  .agenda-item .ai-n{font-family:var(--mono);font-size:44px;}
+  .agenda-item .ai-n.acc{color:var(--accent);}
+  .agenda-item .ai-t{font-size:42px;font-weight:500;line-height:1.1;}
+  .agenda-item .ai-s{color:var(--mute);font-size:24px;margin-top:8px;}
+
+  /* cards */
+  .card{background:var(--card-bg);border:1px solid transparent;border-radius:var(--radius-card);padding:36px 40px;box-sizing:border-box;}
+  .pill{display:inline-flex;align-items:center;padding:10px 22px;border:1.5px solid var(--ink);border-radius:var(--radius-pill);font-size:24px;font-weight:500;background:var(--paper-2);}
+  .pill.acc{border-color:var(--accent);color:var(--accent);}
+
+  .imgfit{width:100%;height:100%;object-fit:contain;background:var(--paper);}
+  .figbox{border:1px solid var(--ink);border-radius:var(--radius-card);display:grid;grid-template-columns:1.3fr 1fr;align-items:stretch;overflow:hidden;}
+  .figbox > div{padding:24px 32px;display:flex;flex-direction:column;gap:12px;align-items:stretch;justify-content:center;}
+  .figbox > div:first-child{border-right:1px solid var(--ink);}
+  .figcap{font-family:var(--mono);font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mute);}
+
+  /* gentle entrance on the title mark only */
+  @keyframes plateFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+  .dh-mark .m .st-topplate{transform-box:view-box;transform-origin:center;animation:plateFloat 2.8s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){.dh-mark .m .st-topplate{animation:none;}}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 01 · TITLE -->
+  <section data-screen-label="01 Title">
+    <div class="frame title-grid">
+      <div class="title-eyebrow"><span class="dot"></span>SPATIAL TIMBER</div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:44px;">
+        <h1 class="title-headline">Optimized Layout Solutions for Sustainable Timber Spatial Structures for Residential Densification</h1>
+        <div class="title-subtitle">Bauhaus-Universität Weimar · Technische Universität Dresden</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:80px;">
+        <p class="title-funding"><em>Gefördert vom Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR) im Auftrag des BMWSB aus Mitteln der Forschungsinitiative Zukunft Bau.</em></p>
+        <div class="title-footer" style="text-align:right;line-height:1.5;">Zukunft Bau Projekttage<br /><span class="mute">16.06.2026</span></div>
+      </div>
+    </div>
+    <div class="deck-header"><div class="dh-mark"><span class="m" data-mark></span><span class="wm"><span class="s">Spatial</span><span class="t">Timber</span></span></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div></div><div class="pg">01 / 06</div></div>
+  </section>
+
+  <!-- 02 · SECTION DIVIDER -->
+  <section data-screen-label="02 Section divider">
+    <div class="secbreak">
+      <div class="eyebrow" style="font-size:28px;letter-spacing:0.32em;"><span class="acc">●</span>&nbsp;&nbsp;Section 01</div>
+      <div class="num" style="margin-top:24px;">01</div>
+      <h1>Problem.</h1>
+      <div class="sub" style="margin-top:8px;">Vertical extensions in timber — promise, friction, and why we can't just keep stacking.</div>
+      <div class="acc-bar"></div>
+    </div>
+    <div class="deck-header"><div></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div class="wm">01 Problem</div><div class="pg">02 / 06</div></div>
+  </section>
+
+  <!-- 03 · KPI ROW -->
+  <section data-screen-label="03 KPI row">
+    <div class="frame" style="padding-top:150px;">
+      <div class="eyebrow mute">Why densify?</div>
+      <h1 class="title" style="margin-top:18px;">The land we keep losing.</h1>
+      <div style="flex:1;display:flex;align-items:center;">
+        <div class="kpi-row">
+          <div class="kpi">
+            <div class="kpi-tag">Settlement area · per capita</div>
+            <div class="kpi-num"><span class="mono">143</span><span style="font-size:64px;vertical-align:14px;"> m²</span></div>
+            <div class="kpi-caption">Up from 109 m² in 1985. <span class="acc">+31 %</span> in 35 years.</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-tag">Sprawl vs. densification</div>
+            <div class="kpi-num"><span class="mono">3.7</span><span style="font-size:64px;vertical-align:14px;"> ×</span></div>
+            <div class="kpi-caption">Cities sprawled outward 3.7× faster than they densified inward (2000–2020).</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-tag">Land converted, daily</div>
+            <div class="kpi-num"><span class="mono">52</span><span style="font-size:64px;vertical-align:14px;"> ha</span></div>
+            <div class="kpi-caption">Settlement &amp; transport, Germany (avg. 2019–2022) — roughly <span class="acc">70 football pitches</span>.</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--ink);padding-top:28px;display:flex;justify-content:space-between;align-items:baseline;gap:60px;">
+        <p class="body lg" style="max-width:1300px;">Vertical densification [Aufstockung]&nbsp;is a major sustainable lever. Timber makes it lighter. Modular construction makes it affordable.</p>
+        <span class="mono mute" style="font-size:16px;white-space:nowrap;">Statistisches Bundesamt · BBSR</span>
+      </div>
+    </div>
+    <div class="deck-header"><div></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div class="wm">01 Problem</div><div class="pg">03 / 06</div></div>
+  </section>
+
+  <!-- 04 · IMAGE + ARGUMENT (comparison) -->
+  <section data-screen-label="04 Figure + argument">
+    <div class="frame" style="padding-top:140px;">
+      <div class="eyebrow mute">A different idea</div>
+      <h1 class="title" style="margin-top:14px;">Let the walls do the work.</h1>
+      <div style="flex:1;display:grid;grid-template-columns:1.55fr 1fr;gap:60px;align-items:center;margin-top:36px;">
+        <div class="figbox" style="height:100%;">
+          <div>
+            <div class="figcap">Axonometric · coordinated</div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+              <img src="assets/07_state2_coordinated.png" alt="Coordinated wall-beams — openings feasible" style="width:100%;max-height:520px;object-fit:contain;" />
+            </div>
+          </div>
+          <div>
+            <div class="figcap">Load-path</div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+              <img src="assets/07_loadpath_stage2.png" alt="Load-path — coordinated wall-beam flow" style="width:100%;max-height:520px;object-fit:contain;" />
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:40px;">
+          <div>
+            <div class="eyebrow"><span class="acc">●</span>&nbsp;&nbsp;No distribution layer</div>
+            <p class="body" style="margin-top:10px;">Walls act as wall-beams and carry load directly — the material-heavy transfer floor is gone.</p>
+          </div>
+          <div class="rule thin"></div>
+          <div>
+            <div class="eyebrow"><span class="acc">●</span>&nbsp;&nbsp;Openings stay feasible</div>
+            <p class="body" style="margin-top:10px;">Coordinating wall positions across storeys keeps large openings possible.</p>
+          </div>
+          <div class="rule thin"></div>
+          <div>
+            <div class="eyebrow"><span class="acc">●</span>&nbsp;&nbsp;Free apartment mix</div>
+            <p class="body" style="margin-top:10px;">New floors no longer have to repeat the existing layout.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deck-header"><div></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div class="wm">02 Approach</div><div class="pg">04 / 06</div></div>
+  </section>
+
+  <!-- 05 · AGENDA / LIST -->
+  <section data-screen-label="05 Agenda">
+    <div class="frame" style="padding-top:150px;">
+      <h1 class="title" style="font-size:88px;margin-bottom:64px;">Today.</h1>
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:100px;flex:1;">
+        <div style="display:flex;flex-direction:column;gap:36px;padding-top:8px;">
+          <div class="agenda-item"><div class="ai-n acc">01</div><div><div class="ai-t">Problem</div><div class="ai-s">Why current vertical extensions fail at scale.</div></div></div>
+          <div class="agenda-item"><div class="ai-n">02</div><div><div class="ai-t">Approach</div><div class="ai-s">Couple structural logic, layout quality, and AI.</div></div></div>
+          <div class="agenda-item"><div class="ai-n">03</div><div><div class="ai-t">Outcome</div><div class="ai-s">What the design assistant can do today.</div></div></div>
+          <div class="agenda-item"><div class="ai-n">04</div><div><div class="ai-t">Demonstration &amp; Outlook</div><div class="ai-s">Münchner Wohnen validation · dissemination · what's next.</div></div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <video src="assets/03_hero_axo.mp4" autoplay loop muted playsinline preload="auto" poster="assets/03_hero_axo.png" style="width:100%;max-width:760px;height:auto;display:block;background:transparent;object-fit:contain;"></video>
+        </div>
+      </div>
+    </div>
+    <div class="deck-header"><div></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div class="wm">Agenda</div><div class="pg">05 / 06</div></div>
+  </section>
+
+  <!-- 06 · CLOSING -->
+  <section data-screen-label="06 Closing">
+    <div class="frame" style="justify-content:center;align-items:flex-start;gap:48px;">
+      <div class="dh-mark" style="gap:18px;"><span class="m" data-mark style="width:72px;height:72px;"></span><span class="wm" style="font-size:46px;"><span class="s">Spatial</span><span class="t">Timber</span></span></div>
+      <h1 class="title" style="font-size:96px;font-style:italic;">Thank you.</h1>
+      <p class="body lg" style="max-width:1200px;">One idea, executed precisely: let timber walls carry the load, and let the assistant explore the layouts that follow.</p>
+      <div style="display:flex;gap:18px;margin-top:8px;">
+        <span class="pill acc">spatialtimber.de</span>
+        <span class="pill">Aufstockung Assistent</span>
+      </div>
+    </div>
+    <div class="deck-header"><div></div><div class="dh-logos"><img src="../assets/zukunftbau_logo.png" alt="Zukunft Bau" /><img src="../assets/bmwsb_logo.svg" alt="BMWSB" /></div></div>
+    <div class="deck-footer"><div class="wm">SpatialTimber · 2026</div><div class="pg">06 / 06</div></div>
+  </section>
+
+</deck-stage>
+
+<script>
+/* SpatialTimber logomark — axonometric stacked slabs, clay top plate */
+(function(){
+  function markSVG(){
+    const outerW=3.8,innerW=1.0,stroke='#141413';
+    const ink={t:'#FBFAF6',l:'#D9D4C8',r:'#ECE8DD'};
+    const clay={t:'#D97757',l:'#B85A3C',r:'#CC6A49'};
+    function slab(cy,f,cls){
+      const a=25,b=12,t=6,cx=50;
+      const T=[cx,cy-b],R=[cx+a,cy],B=[cx,cy+b],L=[cx-a,cy];
+      const R2=[cx+a,cy+t],B2=[cx,cy+b+t],L2=[cx-a,cy+t];
+      const j=p=>p[0]+' '+p[1];
+      const pts=arr=>arr.map(p=>p[0]+','+p[1]).join(' ');
+      const innerY=`M ${j(L)} L ${j(B)} M ${j(R)} L ${j(B)} M ${j(B)} L ${j(B2)}`;
+      const hex=`M ${j(T)} L ${j(R)} L ${j(R2)} L ${j(B2)} L ${j(L2)} L ${j(L)} Z`;
+      const inner=`<polygon points="${pts([T,R,B,L])}" fill="${f.t}"/><polygon points="${pts([L,B,B2,L2])}" fill="${f.l}"/><polygon points="${pts([B,R,R2,B2])}" fill="${f.r}"/>`
+        +`<path d="${innerY}" fill="none" stroke="${stroke}" stroke-width="${innerW}" stroke-linecap="round" stroke-linejoin="round"/>`
+        +`<path d="${hex}" fill="none" stroke="${stroke}" stroke-width="${outerW}" stroke-linejoin="round" stroke-linecap="round"/>`;
+      return cls?`<g class="${cls}">${inner}</g>`:inner;
+    }
+    const cys=[61,47,33];let body='';
+    cys.forEach((cy,i)=>body+=slab(cy,i===2?clay:ink,i===2?'st-topplate':''));
+    return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block" role="img" aria-label="SpatialTimber"><title>SpatialTimber</title>${body}</svg>`;
+  }
+  document.querySelectorAll('[data-mark]').forEach(el=>el.innerHTML=markSVG());
+})();
+</script>
+</body>
+</html>
