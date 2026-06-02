@@ -13,4 +13,7 @@ sharing across the project — restyled axonometrics, pictograms, scheme SVGs, s
 - Use descriptive filenames (the source pool already does, e.g. `scheme_lora_annotated.svg`).
 - Keep the visual language consistent with [`../styleguide/`](../styleguide/) — same palette,
   one-terracotta-accent rule, warm backgrounds.
-- Don't commit huge binaries (video, multi-MB exports) here; link to them instead.
+- **Large binaries are fine here** — this folder intentionally holds the deck's finished media
+  (videos, animated GIFs, multi-MB inline SVGs) so the assets stay together in one place. Keep
+  individual files under GitHub's 100 MB hard limit (ideally < 50 MB to avoid its warning); for
+  anything larger, link out instead.
