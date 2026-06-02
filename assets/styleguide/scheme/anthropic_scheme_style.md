@@ -1,5 +1,14 @@
 # Monet style block — Anthropic editorial scheme
 
+> **Context & provenance.** Part of the **SVG-scheme authoring styleguide** (not a general project
+> styleguide). Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`). Paths to `monet/prompts/…`,
+> `status_quo_axo_anthropic.md`, `references/styles/…`, and the `*_anthropic.md` prompt files refer
+> to that **source** repo and are **not present here** — they're kept verbatim as reference. For
+> authoring SVGs in this repo, the parts that apply are the palette, geometry, and typography tokens
+> below and in [`svg-from-png-workflow.md`](svg-from-png-workflow.md); the Gemini/Nano-Banana
+> generation pipeline does not exist in this repo.
+
 > **For SVG schemes (not Monet/Gemini renders)** — the canonical palette is in [`svg-from-png-workflow.md` § 4](svg-from-png-workflow.md#4--style-tokens-v7-lora-calibrated-may-2026). This monet style block targets the Gemini Nano-Banana image-generation pipeline; the palette below is observed from Anthropic reference renders and is what Gemini should reproduce. For hand-authored SVGs, use the refreshed palette: page `#FAF9F5`, card fill `#F0EEE6`, chrome (outlines + arrows) `#9C9A92` at stroke-width 6, text `#5E5D59`.
 
 Paste the JSON below into any monet prompt that re-renders a hand-drafted SpatialTimber scheme in the **Anthropic engineering-blog** scheme aesthetic. It is the **scheme** counterpart to the existing `*_anthropic.md` axonometric / pictogram prompts in `monet/prompts/`. Designed to slot into the same template structure as the `style_to_apply` block in `status_quo_axo_anthropic.md`.

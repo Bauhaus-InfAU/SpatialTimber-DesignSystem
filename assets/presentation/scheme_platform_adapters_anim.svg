@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 2077 1094" width="2077" height="1094" role="img" aria-labelledby="title desc">
+  <title id="title">Platform of adapters — pick your skills, get your model</title>
+  <desc id="desc">An adapter library structured into four categories; five selected adapters are compiled into a tailored generator.</desc>
+  <defs><style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap');
+    .t   { font-family:'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; }
+    .light { font-weight:300; }
+    .name  { font-weight:600; }
+    .cap   { font-weight:400; }
+    .big   { font-weight:600; }
+    .frame-dash  { fill:#F0EEE6; stroke:#D6D4CB; stroke-width:6; stroke-dasharray:12 8; stroke-linecap:butt; stroke-linejoin:round; }
+    .frame-solid { fill:#F0EEE6; stroke:#D97757; stroke-width:6; stroke-linejoin:round; }
+    .tile    { fill:#DEDCD1; stroke:#87867F; stroke-width:6; }
+    .tile-on { fill:#C2C0B6; stroke:#9C9A92; stroke-width:6; }
+    .rule    { stroke:#C2C0B6; stroke-width:2; }
+    .arrow-shaft,.arrow-head { stroke:url(#arrowGrad); stroke-width:6; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .arrow-shaft { stroke-dasharray:12 8; stroke-linecap:butt; }
+    @keyframes labelFade { 0%,46.250%{opacity:0} 50.000%{opacity:1} 91.250%{opacity:1} 95.000%{opacity:0} 100%{opacity:0} }
+    @keyframes arrowReveal { 0%{width:0} 47.500%{width:0} 53.125%{width:216px} 54.375%{width:0} 55.625%{width:0} 60.000%{width:216px} 91.250%{width:216px} 95.000%{width:0} 100%{width:0} }
+    @keyframes genFrame { 0%,47.500%{stroke:#D6D4CB;fill:#F0EEE6} 53.125%{stroke:#D97757;fill:#F0EEE6} 54.375%{stroke:#D6D4CB;fill:#F0EEE6} 55.625%{stroke:#D6D4CB;fill:#F0EEE6} 60.000%{stroke:#D97757;fill:#F0EEE6} 63.750%{stroke:#D97757;fill:#F0EEE6} 91.250%{stroke:#D97757;fill:#F0EEE6} 96.250%{stroke:#D6D4CB;fill:#F0EEE6} 100%{stroke:#D6D4CB;fill:#F0EEE6} }
+    @keyframes genTitle { 0%,47.500%{fill:#D6D4CB} 53.125%{fill:#D97757} 54.375%{fill:#D6D4CB} 55.625%{fill:#D6D4CB} 60.000%{fill:#D97757} 91.250%{fill:#D97757} 96.250%{fill:#D6D4CB} 100%{fill:#D6D4CB} }
+    @keyframes genContent { 0%,60.000%{opacity:0} 65.000%{opacity:1} 91.250%{opacity:1} 95.000%{opacity:0} 100%{opacity:0} }
+    @keyframes act0 { 0%{fill:#DEDCD1;stroke:#87867F} 7.500%{fill:#DEDCD1;stroke:#87867F} 10.000%{fill:#C2C0B6;stroke:#9C9A92} 91.250%{fill:#C2C0B6;stroke:#9C9A92} 96.250%{fill:#DEDCD1;stroke:#87867F} 100%{fill:#DEDCD1;stroke:#87867F} }
+    @keyframes act1 { 0%{fill:#DEDCD1;stroke:#87867F} 16.250%{fill:#DEDCD1;stroke:#87867F} 18.750%{fill:#C2C0B6;stroke:#9C9A92} 91.250%{fill:#C2C0B6;stroke:#9C9A92} 96.250%{fill:#DEDCD1;stroke:#87867F} 100%{fill:#DEDCD1;stroke:#87867F} }
+    @keyframes act2 { 0%{fill:#DEDCD1;stroke:#87867F} 25.000%{fill:#DEDCD1;stroke:#87867F} 27.500%{fill:#C2C0B6;stroke:#9C9A92} 91.250%{fill:#C2C0B6;stroke:#9C9A92} 96.250%{fill:#DEDCD1;stroke:#87867F} 100%{fill:#DEDCD1;stroke:#87867F} }
+    @keyframes act3 { 0%{fill:#DEDCD1;stroke:#87867F} 33.750%{fill:#DEDCD1;stroke:#87867F} 36.250%{fill:#C2C0B6;stroke:#9C9A92} 91.250%{fill:#C2C0B6;stroke:#9C9A92} 96.250%{fill:#DEDCD1;stroke:#87867F} 100%{fill:#DEDCD1;stroke:#87867F} }
+    @keyframes act4 { 0%{fill:#DEDCD1;stroke:#87867F} 42.500%{fill:#DEDCD1;stroke:#87867F} 45.000%{fill:#C2C0B6;stroke:#9C9A92} 91.250%{fill:#C2C0B6;stroke:#9C9A92} 96.250%{fill:#DEDCD1;stroke:#87867F} 100%{fill:#DEDCD1;stroke:#87867F} }
+    @keyframes curMove { 0.000%{transform:translate(232px,554px);opacity:0} 2.500%{transform:translate(232px,554px);opacity:0} 3.750%{transform:translate(232px,554px);opacity:1} 10.000%{transform:translate(232px,554px);opacity:1} 12.500%{transform:translate(549px,373px);opacity:1} 18.750%{transform:translate(549px,373px);opacity:1} 21.250%{transform:translate(866px,554px);opacity:1} 27.500%{transform:translate(866px,554px);opacity:1} 30.000%{transform:translate(866px,735px);opacity:1} 36.250%{transform:translate(866px,735px);opacity:1} 38.750%{transform:translate(1183px,735px);opacity:1} 43.750%{transform:translate(1183px,735px);opacity:1} 46.250%{transform:translate(1183px,735px);opacity:0} 100.000%{transform:translate(232px,554px);opacity:0} }
+    #genframe{animation:genFrame 16s linear infinite;}
+    #gentitle{animation:genTitle 16s linear infinite;}
+    #gencontent{animation:genContent 16s linear infinite;}
+    #arrowClipRect{animation:arrowReveal 16s linear infinite;}
+    #arrowlabel{animation:labelFade 16s linear infinite;}
+    #cursor{animation:curMove 16s linear infinite;}
+    #sel0{animation:act0 16s linear infinite;}
+    #sel1{animation:act1 16s linear infinite;}
+    #sel2{animation:act2 16s linear infinite;}
+    #sel3{animation:act3 16s linear infinite;}
+    #sel4{animation:act4 16s linear infinite;}
+  </style>
+  <linearGradient id="arrowGrad" gradientUnits="userSpaceOnUse" x1="1367" y1="0" x2="1543" y2="0"><stop offset="0" stop-color="#D6D4CB"/><stop offset="1" stop-color="#D97757"/></linearGradient>
+  <clipPath id="arrowClip"><rect id="arrowClipRect" x="1359" y="576" width="0" height="56"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="2077" height="1094" fill="#FAF9F5"/>
+  <g id="library">
+    <text class="t big" x="714" y="119" font-size="52" text-anchor="middle" fill="#5E5D59">Adapter library</text>
+    <rect class="frame-dash" x="60" y="175" width="1307" height="859" rx="32" ry="32"/>
+    <text class="t light" x="238" y="247" font-size="30" text-anchor="middle" fill="#5E5D59">Regulation</text>
+    <text class="t light" x="555" y="247" font-size="30" text-anchor="middle" fill="#5E5D59">Construction</text>
+    <text class="t light" x="872" y="247" font-size="30" text-anchor="middle" fill="#5E5D59">Project type</text>
+    <text class="t light" x="1189" y="247" font-size="30" text-anchor="middle" fill="#5E5D59">Performance</text>
+    <rect class="tile" x="102" y="313" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="238" y="377" font-size="30" text-anchor="middle" fill="#5E5D59">BayBO</text>
+    <text class="t cap" x="238" y="411" font-size="22" text-anchor="middle" fill="#7A766A">Bayern</text>
+    <rect id="sel0" class="tile" x="102" y="494" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="238" y="558" font-size="30" text-anchor="middle" fill="#5E5D59">BauO Bln</text>
+    <text class="t cap" x="238" y="592" font-size="22" text-anchor="middle" fill="#7A766A">Berlin</text>
+    <rect class="tile" x="102" y="675" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="238" y="739" font-size="30" text-anchor="middle" fill="#5E5D59">HBauO</text>
+    <text class="t cap" x="238" y="773" font-size="22" text-anchor="middle" fill="#7A766A">Hamburg</text>
+    <rect class="tile" x="102" y="856" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="238" y="934" font-size="30" text-anchor="middle" fill="#5E5D59">…</text>
+    <rect id="sel1" class="tile" x="419" y="313" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="555" y="377" font-size="30" text-anchor="middle" fill="#5E5D59">Holzmodulbau</text>
+    <text class="t cap" x="555" y="411" font-size="22" text-anchor="middle" fill="#7A766A">Modular timber</text>
+    <rect class="tile" x="419" y="494" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="555" y="558" font-size="30" text-anchor="middle" fill="#5E5D59">CLT</text>
+    <text class="t cap" x="555" y="592" font-size="22" text-anchor="middle" fill="#7A766A">Cross-laminated</text>
+    <rect class="tile" x="419" y="675" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="555" y="739" font-size="30" text-anchor="middle" fill="#5E5D59">Hybrid</text>
+    <text class="t cap" x="555" y="773" font-size="22" text-anchor="middle" fill="#7A766A">Timber–concrete</text>
+    <rect class="tile" x="419" y="856" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="555" y="934" font-size="30" text-anchor="middle" fill="#5E5D59">…</text>
+    <rect class="tile" x="736" y="313" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="872" y="377" font-size="30" text-anchor="middle" fill="#5E5D59">Neubau</text>
+    <text class="t cap" x="872" y="411" font-size="22" text-anchor="middle" fill="#7A766A">New build</text>
+    <rect id="sel2" class="tile" x="736" y="494" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="872" y="558" font-size="30" text-anchor="middle" fill="#5E5D59">Aufstockung</text>
+    <text class="t cap" x="872" y="592" font-size="22" text-anchor="middle" fill="#7A766A">Rooftop addition</text>
+    <rect id="sel3" class="tile" x="736" y="675" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="872" y="739" font-size="30" text-anchor="middle" fill="#5E5D59">Social housing</text>
+    <text class="t cap" x="872" y="773" font-size="22" text-anchor="middle" fill="#7A766A">gef. Wohnungsbau</text>
+    <rect class="tile" x="736" y="856" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="872" y="934" font-size="30" text-anchor="middle" fill="#5E5D59">…</text>
+    <rect class="tile" x="1053" y="313" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="1189" y="377" font-size="30" text-anchor="middle" fill="#5E5D59">Structure</text>
+    <text class="t cap" x="1189" y="411" font-size="22" text-anchor="middle" fill="#7A766A">Load-bearing</text>
+    <rect class="tile" x="1053" y="494" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="1189" y="558" font-size="30" text-anchor="middle" fill="#5E5D59">Daylight</text>
+    <text class="t cap" x="1189" y="592" font-size="22" text-anchor="middle" fill="#7A766A">Daylight access</text>
+    <rect id="sel4" class="tile" x="1053" y="675" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="1189" y="739" font-size="30" text-anchor="middle" fill="#5E5D59">Compactness</text>
+    <text class="t cap" x="1189" y="773" font-size="22" text-anchor="middle" fill="#7A766A">A/V ratio</text>
+    <rect class="tile" x="1053" y="856" width="272" height="136" rx="32" ry="32"/>
+    <text class="t name" x="1189" y="934" font-size="30" text-anchor="middle" fill="#5E5D59">…</text>
+  </g>
+  <g id="compile">
+    <text id="arrowlabel" class="t light" x="1455" y="582" font-size="22" text-anchor="middle" fill="#7A766A">Compile</text>
+    <g id="arrowdraw" clip-path="url(#arrowClip)">
+      <path class="arrow-shaft" d="M 1367 604 L 1543 604"/>
+      <path class="arrow-head" d="M 1521 586 L 1543 604 L 1521 622"/>
+    </g>
+  </g>
+  <g id="generator">
+    <text id="gentitle" class="t big" x="1793" y="119" font-size="52" text-anchor="middle" fill="#D97757">Tailored generator</text>
+    <rect id="genframe" class="frame-solid" x="1569" y="175" width="448" height="859" rx="32" ry="32"/>
+    <g id="gencontent">
+      <text class="t name" x="1793" y="302" font-size="30" text-anchor="middle" fill="#D97757">BauO Bln</text>
+      <text class="t cap" x="1793" y="336" font-size="22" text-anchor="middle" fill="#7A766A">Berlin</text>
+      <line class="rule" x1="1625" y1="380" x2="1961" y2="380"/>
+      <text class="t name" x="1793" y="451" font-size="30" text-anchor="middle" fill="#D97757">Holzmodulbau</text>
+      <text class="t cap" x="1793" y="485" font-size="22" text-anchor="middle" fill="#7A766A">Modular timber</text>
+      <line class="rule" x1="1625" y1="530" x2="1961" y2="530"/>
+      <text class="t name" x="1793" y="600" font-size="30" text-anchor="middle" fill="#D97757">Aufstockung</text>
+      <text class="t cap" x="1793" y="634" font-size="22" text-anchor="middle" fill="#7A766A">Rooftop addition</text>
+      <line class="rule" x1="1625" y1="679" x2="1961" y2="679"/>
+      <text class="t name" x="1793" y="750" font-size="30" text-anchor="middle" fill="#D97757">Social housing</text>
+      <text class="t cap" x="1793" y="784" font-size="22" text-anchor="middle" fill="#7A766A">gef. Wohnungsbau</text>
+      <line class="rule" x1="1625" y1="829" x2="1961" y2="829"/>
+      <text class="t name" x="1793" y="899" font-size="30" text-anchor="middle" fill="#D97757">Compactness</text>
+      <text class="t cap" x="1793" y="933" font-size="22" text-anchor="middle" fill="#7A766A">A/V ratio</text>
+    </g>
+  </g>
+  <g id="cursor" style="opacity:0; transform:translate(232px,554px);">
+    <g transform="scale(2.3)">
+      <path d="M0 0 L0 17 L4.2 13 L7 19 L9.4 17.9 L6.7 12 L12 12 Z" fill="#2A2A29" stroke="#FFFFFF" stroke-width="1.3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,17 @@
 # Anthropic Engineering — Scheme Reference
 
+> **Context & provenance.** This is specifically an **SVG-scheme authoring styleguide** — how to
+> build editorial scheme/diagram SVGs in the Anthropic register. It is **not** a general project
+> styleguide. Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`).
+>
+> **Paths below refer to that source repo, not this one.** References to `monet/…` (the
+> Gemini / Nano-Banana image pipeline), `_assets/_shared/…`, `monet/prompts/…`,
+> `references/styles/…`, and the named worked-example files (`scheme_lora_annotated.svg`,
+> `pictogram_*.png`, `rebuild_scheme_assets.py`, …) live in the presentation repo and are **not
+> present here** — they're kept verbatim as a technique reference. Only the relative links within
+> this `scheme/` folder (e.g. `svg-from-png-workflow.md`) resolve in this repo.
+
 > **Converting a Gemini PNG scheme to an editable / animatable SVG?** Read **[`svg-from-png-workflow.md`](svg-from-png-workflow.md)** first — it's the calibration loop (PIL measurement → SVG authoring → headless Chrome render → re-measure), the locked style tokens (palette, typography, geometry), the animation-hook pattern, and a quick-start checklist. Worked example: `scheme_lora_annotated_v7.png` → `_assets/_shared/scheme_lora_annotated.svg`.
 
 > **Authoritative SVG palette (May 2026 refresh):** the colour values in the "Shared style fingerprint" table below describe what the **Anthropic reference images** use — they're observed values from the source PNGs and a useful baseline. **The project's own SVG schemes use a refined, consolidated palette** documented in `svg-from-png-workflow.md` § 4. Summary: page `#FAF9F5`, card fill `#F0EEE6`, chrome (card outline + arrows) `#9C9A92` at stroke-width 6, text `#5E5D59` (title medium 600 + body regular 400, same colour). Always defer to the workflow doc for project SVGs.

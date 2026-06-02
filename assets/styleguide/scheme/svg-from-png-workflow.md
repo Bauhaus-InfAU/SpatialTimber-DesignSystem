@@ -1,5 +1,18 @@
 # PNG → SVG scheme workflow
 
+> **Context & provenance.** The core of the **SVG-scheme authoring styleguide** (not a general
+> project styleguide) — the calibration loop and style tokens for building editorial scheme SVGs.
+> Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`).
+>
+> **Paths in this document refer to that source repo, not this one.** `monet/…` (the
+> Gemini / Nano-Banana pipeline), `monet/results/…`, `monet/starters/…`, `_assets/_shared/…`, and
+> every named worked-example asset and script (`scheme_lora_annotated.svg`, `pictogram_*.png`,
+> `rebuild_scheme_assets.py`, `_gen_full.py`, `_make_gif.py`, …) live in the presentation repo and
+> are **not present here**. They are kept verbatim because the *technique* (PIL measurement → SVG
+> authoring → headless-Chrome render → re-measure; the § 4 style tokens; the § 5 animation patterns)
+> transfers directly to authoring scheme SVGs in this repo, even though the specific files don't.
+
 > **Read this first** if you've been asked to turn one of the Gemini-generated scheme PNGs (`../../monet/results/scheme_*.png`) into an editable, animatable SVG, or to author a new scheme as SVG from scratch in the Anthropic editorial register.
 
 This file documents the calibration loop used in May 2026 to convert `scheme_lora_annotated_v7.png` into `_assets/_shared/scheme_lora_annotated.svg`. Use the same approach for any subsequent PNG → SVG conversion in this deck (`scheme_typology_annotated_v7.png` is the next target; the same loop applies).

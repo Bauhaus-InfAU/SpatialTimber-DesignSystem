@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  scheme_adapters_training_v6_anim.svg - shorter build (35 s loop). Warm training flash
+  (fill #EBC9B7 + outline #D97757) on EVERY adapter during its activation pulses; each
+  settles back to the normal trained look afterwards.
+  v4: arrows 20% shorter (125 -> 100), trainer boxes pulled toward the Layout
+  Generator strip, top headline moved close to the Swiss Data panel, reduced
+  canvas height. Strip/veils/solid overlays/pictograms unchanged (anchored on
+  the strip 380..665). Verify in a real browser (headless = t=0 only).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1920 1410" width="1920" height="1410" role="img" aria-labelledby="title desc">
+  <title id="title">SpatialTimber adapter training - animated build-up (v4)</title>
+  <desc id="desc">Animated training sequence with a top headline of what the model is learning, 2x repeated activation per adapter, and a 6x pulse on the structural-efficiency adapter.</desc>
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+      .tab-title   { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 600; fill: #141413; }
+      .box-title   { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 400; fill: #5E5D59; }
+      .box-body    { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 400; fill: #5E5D59; }
+      .card-body   { fill: #DEDCD2; }
+      .base-fill   { fill: #C2C0B6; }
+      .tab-divider { stroke: #9C9A92; stroke-width: 1.5; stroke-linecap: butt; }
+      .dashed-outline { fill: none; stroke: #D1CFC5; stroke-width: 6; stroke-dasharray: 14 10; stroke-linecap: butt; stroke-linejoin: round; }
+      .solid-outline  { fill: none; stroke: #9C9A92; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .picto-outline { fill: none; stroke: #000000; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+      .veil        { fill: #FAF9F5; stroke: none; }
+      .flash-fill    { fill: #EBC9B7; stroke: none; }   /* warm flash fill while an adapter is being trained */
+      .flash-outline { fill: none; stroke: #D97757; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .box         { fill: #F0EEE6; stroke: #C2C0B7; stroke-width: 6; stroke-linejoin: round; }
+      .row-divider { stroke: #C2C0B7; stroke-width: 1.5; stroke-linecap: butt; }
+      .arrow-shaft { stroke: #C2C0B7; stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow-head  { stroke: #C2C0B7; stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .draw        { stroke-dasharray: 130; stroke-dashoffset: 130; }
+      .badge-box   { fill: #FAF9F5; stroke: none; }
+      .badge-text  { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 600; fill: #5E5D59; }
+      .legend      { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 400; fill: #5E5D59; }
+      .quote       { font-family: 'Söhne','Sohne','Inter','Helvetica Neue',Arial,sans-serif; font-weight: 400; fill: #5E5D59; font-size: 58px; }
+      .qb          { font-weight: 700; fill: #141413; }
+
+      @keyframes kStrip { 0%{opacity:0} 3.429%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes kSwiss { 0%{opacity:0} 3.429%{opacity:0} 6.286%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes kEval { 0%{opacity:0} 17.714%{opacity:0} 20.571%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes kFe { 0%{opacity:0} 53.143%{opacity:0} 56.0%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes kSurr { 0%{opacity:0} 58.857%{opacity:0} 61.714%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawFe { 0%{stroke-dashoffset:130;opacity:0} 56.571%{stroke-dashoffset:130;opacity:1} 58.0%{stroke-dashoffset:0;opacity:1} 96%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+      @keyframes headFe { 0%{opacity:0} 58.0%{opacity:0} 58.571%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawApt { 0%{stroke-dashoffset:130;opacity:0} 7.429%{stroke-dashoffset:130;opacity:1} 8.857%{stroke-dashoffset:0;opacity:1} 11.143%{stroke-dashoffset:0;opacity:1} 12.143%{stroke-dashoffset:0;opacity:0} 12.286%{stroke-dashoffset:130;opacity:0} 12.571%{stroke-dashoffset:130;opacity:1} 14.0%{stroke-dashoffset:0;opacity:1} 96%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+      @keyframes headApt { 0%{opacity:0} 8.857%{opacity:0} 9.429%{opacity:1} 11.143%{opacity:1} 12.143%{opacity:0} 14.0%{opacity:0} 14.571%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes vApt { 0%{opacity:0} 3.429%{opacity:0.6} 9.0%{opacity:0.6} 10.0%{opacity:0} 11.143%{opacity:0} 12.143%{opacity:0.6} 14.143%{opacity:0.6} 15.143%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes sApt { 0%{opacity:0} 9.0%{opacity:0} 10.0%{opacity:1} 11.143%{opacity:1} 12.143%{opacity:0} 14.143%{opacity:0} 15.143%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawArchq { 0%{stroke-dashoffset:130;opacity:0} 21.143%{stroke-dashoffset:130;opacity:1} 22.571%{stroke-dashoffset:0;opacity:1} 24.857%{stroke-dashoffset:0;opacity:1} 25.857%{stroke-dashoffset:0;opacity:0} 26.0%{stroke-dashoffset:130;opacity:0} 26.286%{stroke-dashoffset:130;opacity:1} 27.714%{stroke-dashoffset:0;opacity:1} 96%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+      @keyframes headArchq { 0%{opacity:0} 22.571%{opacity:0} 23.143%{opacity:1} 24.857%{opacity:1} 25.857%{opacity:0} 27.714%{opacity:0} 28.286%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes vArchq { 0%{opacity:0} 3.429%{opacity:0.6} 22.714%{opacity:0.6} 23.714%{opacity:0} 24.857%{opacity:0} 25.857%{opacity:0.6} 27.857%{opacity:0.6} 28.857%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes sArchq { 0%{opacity:0} 22.714%{opacity:0} 23.714%{opacity:1} 24.857%{opacity:1} 25.857%{opacity:0} 27.857%{opacity:0} 28.857%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawFloor { 0%{stroke-dashoffset:130;opacity:0} 32.0%{stroke-dashoffset:130;opacity:1} 33.429%{stroke-dashoffset:0;opacity:1} 35.714%{stroke-dashoffset:0;opacity:1} 36.714%{stroke-dashoffset:0;opacity:0} 36.857%{stroke-dashoffset:130;opacity:0} 37.143%{stroke-dashoffset:130;opacity:1} 38.571%{stroke-dashoffset:0;opacity:1} 96%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+      @keyframes headFloor { 0%{opacity:0} 33.429%{opacity:0} 34.0%{opacity:1} 35.714%{opacity:1} 36.714%{opacity:0} 38.571%{opacity:0} 39.143%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes vFloor { 0%{opacity:0} 3.429%{opacity:0.6} 33.571%{opacity:0.6} 34.571%{opacity:0} 35.714%{opacity:0} 36.714%{opacity:0.6} 38.714%{opacity:0.6} 39.714%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes sFloor { 0%{opacity:0} 33.571%{opacity:0} 34.571%{opacity:1} 35.714%{opacity:1} 36.714%{opacity:0} 38.714%{opacity:0} 39.714%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawBldg { 0%{stroke-dashoffset:130;opacity:0} 42.857%{stroke-dashoffset:130;opacity:1} 44.286%{stroke-dashoffset:0;opacity:1} 46.571%{stroke-dashoffset:0;opacity:1} 47.571%{stroke-dashoffset:0;opacity:0} 47.714%{stroke-dashoffset:130;opacity:0} 48.0%{stroke-dashoffset:130;opacity:1} 49.429%{stroke-dashoffset:0;opacity:1} 96%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+      @keyframes headBldg { 0%{opacity:0} 44.286%{opacity:0} 44.857%{opacity:1} 46.571%{opacity:1} 47.571%{opacity:0} 49.429%{opacity:0} 50.0%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes vBldg { 0%{opacity:0} 3.429%{opacity:0.6} 44.429%{opacity:0.6} 45.429%{opacity:0} 46.571%{opacity:0} 47.571%{opacity:0.6} 49.571%{opacity:0.6} 50.571%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes sBldg { 0%{opacity:0} 44.429%{opacity:0} 45.429%{opacity:1} 46.571%{opacity:1} 47.571%{opacity:0} 49.571%{opacity:0} 50.571%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+      @keyframes drawStruct { 0%{stroke-dashoffset:130;opacity:0} 62.286%{stroke-dashoffset:130;opacity:1} 63.714%{stroke-dashoffset:0;opacity:1} 66.0%{stroke-dashoffset:0;opacity:1} 67.0%{stroke-dashoffset:0;opacity:0} 67.143%{stroke-dashoffset:130;opacity:0} 67.429%{stroke-dashoffset:130;opacity:1} 68.857%{stroke-dashoffset:0;opacity:1} 71.143%{stroke-dashoffset:0;opacity:1} 72.143%{stroke-dashoffset:0;opacity:0} 72.286%{stroke-dashoffset:130;opacity:0} 72.571%{stroke-dashoffset:130;opacity:1} 74.0%{stroke-dashoffset:0;opacity:1} 76.286%{stroke-dashoffset:0;opacity:1} 77.286%{stroke-dashoffset:0;opacity:0} 77.429%{stroke-dashoffset:130;opacity:0} 77.714%{stroke-dashoffset:130;opacity:1} 79.143%{stroke-dashoffset:0;opacity:1} 81.429%{stroke-dashoffset:0;opacity:1} 82.429%{stroke-dashoffset:0;opacity:0} 82.571%{stroke-dashoffset:130;opacity:0} 82.857%{stroke-dashoffset:130;opacity:1} 84.286%{stroke-dashoffset:0;opacity:1} 86.571%{stroke-dashoffset:0;opacity:1} 87.571%{stroke-dashoffset:0;opacity:0} 87.714%{stroke-dashoffset:130;opacity:0} 88.0%{stroke-dashoffset:130;opacity:1} 89.429%{stroke-dashoffset:0;opacity:1} 91.714%{stroke-dashoffset:0;opacity:1} 92.714%{stroke-dashoffset:0;opacity:0} 92.857%{stroke-dashoffset:130;opacity:0} 96%{stroke-dashoffset:130;opacity:0} 100%{stroke-dashoffset:130;opacity:0} }
+      @keyframes headStruct { 0%{opacity:0} 63.714%{opacity:0} 64.286%{opacity:1} 66.0%{opacity:1} 67.0%{opacity:0} 68.857%{opacity:0} 69.429%{opacity:1} 71.143%{opacity:1} 72.143%{opacity:0} 74.0%{opacity:0} 74.571%{opacity:1} 76.286%{opacity:1} 77.286%{opacity:0} 79.143%{opacity:0} 79.714%{opacity:1} 81.429%{opacity:1} 82.429%{opacity:0} 84.286%{opacity:0} 84.857%{opacity:1} 86.571%{opacity:1} 87.571%{opacity:0} 89.429%{opacity:0} 90.0%{opacity:1} 91.714%{opacity:1} 92.714%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes vStruct { 0%{opacity:0} 3.429%{opacity:0.6} 63.857%{opacity:0.6} 64.857%{opacity:0} 66.0%{opacity:0} 67.0%{opacity:0.6} 69.0%{opacity:0.6} 70.0%{opacity:0} 71.143%{opacity:0} 72.143%{opacity:0.6} 74.143%{opacity:0.6} 75.143%{opacity:0} 76.286%{opacity:0} 77.286%{opacity:0.6} 79.286%{opacity:0.6} 80.286%{opacity:0} 81.429%{opacity:0} 82.429%{opacity:0.6} 84.429%{opacity:0.6} 85.429%{opacity:0} 86.571%{opacity:0} 87.571%{opacity:0.6} 89.571%{opacity:0.6} 90.571%{opacity:0} 91.714%{opacity:0} 92.714%{opacity:0.6} 96%{opacity:0.6} 100%{opacity:0} }
+      @keyframes sStruct { 0%{opacity:0} 63.857%{opacity:0} 64.857%{opacity:1} 66.0%{opacity:1} 67.0%{opacity:0} 69.0%{opacity:0} 70.0%{opacity:1} 71.143%{opacity:1} 72.143%{opacity:0} 74.143%{opacity:0} 75.143%{opacity:1} 76.286%{opacity:1} 77.286%{opacity:0} 79.286%{opacity:0} 80.286%{opacity:1} 81.429%{opacity:1} 82.429%{opacity:0} 84.429%{opacity:0} 85.429%{opacity:1} 86.571%{opacity:1} 87.571%{opacity:0} 89.571%{opacity:0} 90.571%{opacity:1} 91.714%{opacity:1} 92.714%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes flashApt { 0%{opacity:0} 9.0%{opacity:0} 10.0%{opacity:1} 11.143%{opacity:1} 12.143%{opacity:0} 14.143%{opacity:0} 15.143%{opacity:1} 16.286%{opacity:1} 17.286%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes flashArchq { 0%{opacity:0} 22.714%{opacity:0} 23.714%{opacity:1} 24.857%{opacity:1} 25.857%{opacity:0} 27.857%{opacity:0} 28.857%{opacity:1} 30.0%{opacity:1} 31.0%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes flashFloor { 0%{opacity:0} 33.571%{opacity:0} 34.571%{opacity:1} 35.714%{opacity:1} 36.714%{opacity:0} 38.714%{opacity:0} 39.714%{opacity:1} 40.857%{opacity:1} 41.857%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes flashBldg { 0%{opacity:0} 44.429%{opacity:0} 45.429%{opacity:1} 46.571%{opacity:1} 47.571%{opacity:0} 49.571%{opacity:0} 50.571%{opacity:1} 51.714%{opacity:1} 52.714%{opacity:0} 96%{opacity:0} 100%{opacity:0} }
+      @keyframes qApt { 0%{opacity:0} 7.429%{opacity:0} 8.857%{opacity:1} 20.0%{opacity:1} 21.143%{opacity:0} 100%{opacity:0} }
+      @keyframes qArchq { 0%{opacity:0} 21.143%{opacity:0} 22.571%{opacity:1} 30.857%{opacity:1} 32.0%{opacity:0} 100%{opacity:0} }
+      @keyframes qFloor { 0%{opacity:0} 32.0%{opacity:0} 33.429%{opacity:1} 41.714%{opacity:1} 42.857%{opacity:0} 100%{opacity:0} }
+      @keyframes qBldg { 0%{opacity:0} 42.857%{opacity:0} 44.286%{opacity:1} 61.143%{opacity:1} 62.286%{opacity:0} 100%{opacity:0} }
+      @keyframes qStruct { 0%{opacity:0} 62.286%{opacity:0} 63.714%{opacity:1} 96%{opacity:1} 100%{opacity:0} }
+
+      #g-content { animation: kStrip 35s linear infinite; }
+      #g-dashed { animation: kStrip 35s linear infinite; }
+      #solid-base { animation: kStrip 35s linear infinite; }
+      #g-swiss { animation: kSwiss 35s linear infinite; }
+      #g-eval { animation: kEval 35s linear infinite; }
+      #g-fe { animation: kFe 35s linear infinite; }
+      #g-surrogate { animation: kSurr 35s linear infinite; }
+      #sh-fe { animation: drawFe 35s linear infinite; }
+      #hd-fe { animation: headFe 35s linear infinite; }
+      #sh-apt { animation: drawApt 35s linear infinite; }
+      #hd-apt { animation: headApt 35s linear infinite; }
+      #veil-apt { animation: vApt 35s linear infinite; }
+      #solid-apt { animation: sApt 35s linear infinite; }
+      #sh-eval { animation: drawArchq 35s linear infinite; }
+      #hd-eval { animation: headArchq 35s linear infinite; }
+      #veil-archq { animation: vArchq 35s linear infinite; }
+      #solid-archq { animation: sArchq 35s linear infinite; }
+      #sh-floor { animation: drawFloor 35s linear infinite; }
+      #hd-floor { animation: headFloor 35s linear infinite; }
+      #veil-floor { animation: vFloor 35s linear infinite; }
+      #solid-floor { animation: sFloor 35s linear infinite; }
+      #sh-building { animation: drawBldg 35s linear infinite; }
+      #hd-building { animation: headBldg 35s linear infinite; }
+      #veil-building { animation: vBldg 35s linear infinite; }
+      #solid-building { animation: sBldg 35s linear infinite; }
+      #sh-surr { animation: drawStruct 35s linear infinite; }
+      #hd-surr { animation: headStruct 35s linear infinite; }
+      #veil-structeff { animation: vStruct 35s linear infinite; }
+      #solid-structeff { animation: sStruct 35s linear infinite; }
+      #flash-fill-apt { animation: flashApt 35s linear infinite; }
+      #flash-out-apt { animation: flashApt 35s linear infinite; }
+      #flash-fill-archq { animation: flashArchq 35s linear infinite; }
+      #flash-out-archq { animation: flashArchq 35s linear infinite; }
+      #flash-fill-floor { animation: flashFloor 35s linear infinite; }
+      #flash-out-floor { animation: flashFloor 35s linear infinite; }
+      #flash-fill-building { animation: flashBldg 35s linear infinite; }
+      #flash-out-building { animation: flashBldg 35s linear infinite; }
+      #flash-fill-struct { animation: sStruct 35s linear infinite; }
+      #flash-out-struct { animation: sStruct 35s linear infinite; }
+      #q-apt { animation: qApt 35s linear infinite; }
+      #q-archq { animation: qArchq 35s linear infinite; }
+      #q-floor { animation: qFloor 35s linear infinite; }
+      #q-building { animation: qBldg 35s linear infinite; }
+      #q-struct { animation: qStruct 35s linear infinite; }    </style>
+  </defs>
+
+  <rect width="1920" height="1410" fill="#FAF9F5"/>
+
+  <!-- Top headline quote (display coords), close above the Swiss Data panel. -->
+  <g id="q-apt"><text class="quote" x="960" y="133" text-anchor="middle">Learning to generate an <tspan class="qb">apartment</tspan> layout</text></g>
+  <g id="q-archq"><text class="quote" x="960" y="133" text-anchor="middle">Learning to generate a <tspan class="qb">good apartment</tspan> layout</text></g>
+  <g id="q-floor"><text class="quote" x="960" y="133" text-anchor="middle">Learning to generate a <tspan class="qb">good floor</tspan> layout</text></g>
+  <g id="q-building"><text class="quote" x="960" y="133" text-anchor="middle">Learning to generate a <tspan class="qb">good building</tspan> layout</text></g>
+  <g id="q-struct">
+    <text class="quote" x="960" y="65" text-anchor="middle">Learning to generate a structurally <tspan class="qb">efficient</tspan>,</text>
+    <text class="quote" x="960" y="133" text-anchor="middle">architecturally <tspan class="qb">good building</tspan> layout</text>
+  </g>
+
+  <!-- Main scheme, pushed down just enough to clear the headline. -->
+  <g transform="translate(0,20) scale(1.2)">
+
+  <text class="legend" x="50" y="1095" text-anchor="start" font-size="23.33">* IL = Imitation learning</text>
+  <text class="legend" x="50" y="1132" text-anchor="start" font-size="23.33">* RL = Reinforcement learning</text>
+
+  <g id="g-content">
+    <path class="card-body" d="M 293.3 380 L 1528 380 A 32 32 0 0 1 1560 412 L 1560 633 A 32 32 0 0 1 1528 665 L 293.3 665 L 315.3 595 L 271.3 520 L 315.3 445 Z"/>
+    <!-- warm flash fills (under picto/label), one per adapter; visible only while training -->
+    <path id="flash-fill-apt" class="flash-fill" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665 L 546.7 665 L 568.7 595 L 524.7 520 L 568.7 445 L 546.7 380 Z"/>
+    <path id="flash-fill-archq" class="flash-fill" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665 L 800 665 L 822 595 L 778 520 L 822 445 L 800 380 Z"/>
+    <path id="flash-fill-floor" class="flash-fill" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665 L 1053.3 665 L 1075.3 595 L 1031.3 520 L 1075.3 445 L 1053.3 380 Z"/>
+    <path id="flash-fill-building" class="flash-fill" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665 L 1306.7 665 L 1328.7 595 L 1284.7 520 L 1328.7 445 L 1306.7 380 Z"/>
+    <path id="flash-fill-struct" class="flash-fill" d="M 1306.7 380 L 1528 380 A 32 32 0 0 1 1560 412 L 1560 633 A 32 32 0 0 1 1528 665 L 1306.7 665 L 1328.7 595 L 1284.7 520 L 1328.7 445 Z"/>
+    <path class="base-fill" d="M 40 412 A 32 32 0 0 1 72 380 L 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665 L 72 665 A 32 32 0 0 1 40 633 Z"/>
+    <line class="tab-divider" x1="40" y1="470" x2="1560" y2="470"/>
+    <text class="tab-title" x="70" y="352" font-size="33.33">Layout Generator</text>
+    <image href="pictogram_head_brain_transparent.png" xlink:href="pictogram_head_brain_transparent.png" x="79.5" y="479.5" width="175" height="175" preserveAspectRatio="xMidYMid meet"/>
+    <g transform="translate(234.64,480.72) scale(0.367417)">
+      <image href="pictogram_typology_apartment_interior.png" xlink:href="pictogram_typology_apartment_interior.png" x="433" y="155" width="143" height="160" preserveAspectRatio="xMidYMid meet"/>
+      <polygon class="picto-outline" points="518.2,158.0 563.2,192.7 563.2,225.6 553.5,233.5 572.3,248.7 572.3,282.8 527.3,314.4 517.6,314.4 436.7,249.9 436.7,214.6 517.6,158.7"/>
+    </g>
+    <image href="pictogram_architectural_qualities_transparent.png" xlink:href="pictogram_architectural_qualities_transparent.png" x="585.5" y="479.5" width="175" height="175" preserveAspectRatio="xMidYMid meet"/>
+    <g transform="translate(535.23,75.33) scale(0.775250)">
+      <image href="pictogram_typology_floor_interior.png" xlink:href="pictogram_typology_floor_interior.png" x="428" y="570" width="155" height="130" preserveAspectRatio="xMidYMid meet"/>
+      <polygon class="picto-outline" points="541.9,570.6 548.3,574.4 581.1,602.6 581.1,622.6 469.7,699.1 429.9,667.4 429.6,647.1 431.0,645.3 541.6,570.9"/>
+    </g>
+    <g transform="translate(794.93,-214.43) scale(0.762500)">
+      <image href="pictogram_typology_building_interior.png" xlink:href="pictogram_typology_building_interior.png" x="427" y="950" width="156" height="170" preserveAspectRatio="xMidYMid meet"/>
+      <polygon class="picto-outline" points="544.6,956.7 556.7,966.8 577.4,987.8 578.0,1043.8 469.9,1115.2 467.1,1114.1 432.3,1083.3 432.0,1029.8 544.4,957.0"/>
+    </g>
+    <image href="pictogram_engineer_transparent.png" xlink:href="pictogram_engineer_transparent.png" x="1345.5" y="479.5" width="175" height="175" preserveAspectRatio="xMidYMid meet"/>
+    <text class="tab-title" x="167"  y="420" text-anchor="middle" font-size="22.5">Base</text><text class="tab-title" x="167"  y="451" text-anchor="middle" font-size="22.5">Model</text>
+    <text class="tab-title" x="420"  y="420" text-anchor="middle" font-size="22.5">Apartment</text><text class="tab-title" x="420"  y="451" text-anchor="middle" font-size="22.5">Adapter</text>
+    <text class="tab-title" x="673"  y="420" text-anchor="middle" font-size="22.5">Arch. Quality</text><text class="tab-title" x="673"  y="451" text-anchor="middle" font-size="22.5">Adapter</text>
+    <text class="tab-title" x="927"  y="420" text-anchor="middle" font-size="22.5">Floor</text><text class="tab-title" x="927"  y="451" text-anchor="middle" font-size="22.5">Adapter</text>
+    <text class="tab-title" x="1180" y="420" text-anchor="middle" font-size="22.5">Building</text><text class="tab-title" x="1180" y="451" text-anchor="middle" font-size="22.5">Adapter</text>
+    <text class="tab-title" x="1433" y="420" text-anchor="middle" font-size="22.5">Struct. Effic.</text><text class="tab-title" x="1433" y="451" text-anchor="middle" font-size="22.5">Adapter</text>
+  </g>
+
+  <path id="veil-apt"       class="veil" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665 L 546.7 665 L 568.7 595 L 524.7 520 L 568.7 445 L 546.7 380 Z"/>
+  <path id="veil-archq"     class="veil" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665 L 800 665 L 822 595 L 778 520 L 822 445 L 800 380 Z"/>
+  <path id="veil-floor"     class="veil" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665 L 1053.3 665 L 1075.3 595 L 1031.3 520 L 1075.3 445 L 1053.3 380 Z"/>
+  <path id="veil-building"  class="veil" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665 L 1306.7 665 L 1328.7 595 L 1284.7 520 L 1328.7 445 L 1306.7 380 Z"/>
+  <path id="veil-structeff" class="veil" d="M 1306.7 380 L 1528 380 A 32 32 0 0 1 1560 412 L 1560 633 A 32 32 0 0 1 1528 665 L 1306.7 665 L 1328.7 595 L 1284.7 520 L 1328.7 445 Z"/>
+
+  <g id="g-dashed">
+    <rect class="dashed-outline" x="40" y="380" width="1520" height="285" rx="32" ry="32"/>
+    <path class="dashed-outline" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665"/>
+    <path class="dashed-outline" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665"/>
+    <path class="dashed-outline" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665"/>
+    <path class="dashed-outline" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665"/>
+    <path class="dashed-outline" d="M 1306.7 380 L 1328.7 445 L 1284.7 520 L 1328.7 595 L 1306.7 665"/>
+  </g>
+
+  <g id="solid-base">
+    <path class="solid-outline" d="M 293.3 380 L 72 380 A 32 32 0 0 0 40 412 L 40 633 A 32 32 0 0 0 72 665 L 293.3 665"/>
+    <path class="solid-outline" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665"/>
+  </g>
+  <g id="solid-apt">
+    <path class="solid-outline" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665"/>
+    <path class="solid-outline" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665"/>
+    <path class="solid-outline" d="M 293.3 380 L 546.7 380"/><path class="solid-outline" d="M 293.3 665 L 546.7 665"/>
+  </g>
+  <g id="solid-archq">
+    <path class="solid-outline" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665"/>
+    <path class="solid-outline" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665"/>
+    <path class="solid-outline" d="M 546.7 380 L 800 380"/><path class="solid-outline" d="M 546.7 665 L 800 665"/>
+  </g>
+  <g id="solid-floor">
+    <path class="solid-outline" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665"/>
+    <path class="solid-outline" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665"/>
+    <path class="solid-outline" d="M 800 380 L 1053.3 380"/><path class="solid-outline" d="M 800 665 L 1053.3 665"/>
+  </g>
+  <g id="solid-building">
+    <path class="solid-outline" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665"/>
+    <path class="solid-outline" d="M 1306.7 380 L 1328.7 445 L 1284.7 520 L 1328.7 595 L 1306.7 665"/>
+    <path class="solid-outline" d="M 1053.3 380 L 1306.7 380"/><path class="solid-outline" d="M 1053.3 665 L 1306.7 665"/>
+  </g>
+  <g id="solid-structeff">
+    <path class="solid-outline" d="M 1306.7 380 L 1328.7 445 L 1284.7 520 L 1328.7 595 L 1306.7 665"/>
+    <path class="solid-outline" d="M 1306.7 380 L 1528 380 A 32 32 0 0 1 1560 412 L 1560 633 A 32 32 0 0 1 1528 665 L 1306.7 665"/>
+  </g>
+
+  <!-- terracotta flash outlines (on top of the solid/dashed outline), one per adapter -->
+  <g id="flash-out-apt">
+    <path class="flash-outline" d="M 293.3 380 L 315.3 445 L 271.3 520 L 315.3 595 L 293.3 665"/>
+    <path class="flash-outline" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665"/>
+    <path class="flash-outline" d="M 293.3 380 L 546.7 380"/><path class="flash-outline" d="M 293.3 665 L 546.7 665"/>
+  </g>
+  <g id="flash-out-archq">
+    <path class="flash-outline" d="M 546.7 380 L 568.7 445 L 524.7 520 L 568.7 595 L 546.7 665"/>
+    <path class="flash-outline" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665"/>
+    <path class="flash-outline" d="M 546.7 380 L 800 380"/><path class="flash-outline" d="M 546.7 665 L 800 665"/>
+  </g>
+  <g id="flash-out-floor">
+    <path class="flash-outline" d="M 800 380 L 822 445 L 778 520 L 822 595 L 800 665"/>
+    <path class="flash-outline" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665"/>
+    <path class="flash-outline" d="M 800 380 L 1053.3 380"/><path class="flash-outline" d="M 800 665 L 1053.3 665"/>
+  </g>
+  <g id="flash-out-building">
+    <path class="flash-outline" d="M 1053.3 380 L 1075.3 445 L 1031.3 520 L 1075.3 595 L 1053.3 665"/>
+    <path class="flash-outline" d="M 1306.7 380 L 1328.7 445 L 1284.7 520 L 1328.7 595 L 1306.7 665"/>
+    <path class="flash-outline" d="M 1053.3 380 L 1306.7 380"/><path class="flash-outline" d="M 1053.3 665 L 1306.7 665"/>
+  </g>
+  <g id="flash-out-struct">
+    <path class="flash-outline" d="M 1306.7 380 L 1328.7 445 L 1284.7 520 L 1328.7 595 L 1306.7 665"/>
+    <path class="flash-outline" d="M 1306.7 380 L 1528 380 A 32 32 0 0 1 1560 412 L 1560 633 A 32 32 0 0 1 1528 665 L 1306.7 665"/>
+  </g>
+
+  <g id="g-swiss"><rect class="box" x="293.3" y="155" width="1013.4" height="100" rx="32" ry="32"/><text class="box-title" x="800" y="216" text-anchor="middle" font-size="25">Swiss Data</text></g>
+  <g id="g-eval">
+    <rect class="box" x="571.5" y="790" width="203" height="250" rx="32" ry="32"/>
+    <line class="row-divider" x1="571.5" y1="852.5" x2="774.5" y2="852.5"/><line class="row-divider" x1="571.5" y1="915" x2="774.5" y2="915"/><line class="row-divider" x1="571.5" y1="977.5" x2="774.5" y2="977.5"/>
+    <text class="box-body" x="673" y="831" text-anchor="middle" font-size="21.67">Accessibility</text><text class="box-body" x="673" y="893" text-anchor="middle" font-size="21.67">Daylight</text><text class="box-body" x="673" y="956" text-anchor="middle" font-size="21.67">Efficiency</text><text class="box-body" x="673" y="1018" text-anchor="middle" font-size="21.67">Furnishability</text>
+  </g>
+  <g id="g-surrogate"><rect class="box" x="1331.5" y="790" width="203" height="110" rx="32" ry="32"/><text class="box-title" x="1433" y="837" text-anchor="middle" font-size="23.33">Struct. Utility</text><text class="box-title" x="1433" y="873" text-anchor="middle" font-size="23.33">Surrogate</text></g>
+  <g id="g-fe"><rect class="box" x="1331.5" y="1025" width="203" height="110" rx="32" ry="32"/><text class="box-body" x="1433" y="1072" text-anchor="middle" font-size="22.5">Struct. Utility</text><text class="box-body" x="1433" y="1108" text-anchor="middle" font-size="22.5">FE Analysis</text></g>
+
+  <g id="g-arr-apt"><path id="sh-apt" class="arrow-shaft draw" d="M 420 255 L 420 355"/><g id="hd-apt"><path class="arrow-head" d="M 405 337 L 420 355 L 435 337"/><rect class="badge-box" x="392" y="286" width="56" height="38" rx="10"/><text class="badge-text" x="420" y="312" text-anchor="middle" font-size="20">IL</text></g></g>
+  <g id="g-arr-floor"><path id="sh-floor" class="arrow-shaft draw" d="M 927 255 L 927 355"/><g id="hd-floor"><path class="arrow-head" d="M 912 337 L 927 355 L 942 337"/><rect class="badge-box" x="899" y="286" width="56" height="38" rx="10"/><text class="badge-text" x="927" y="312" text-anchor="middle" font-size="20">IL</text></g></g>
+  <g id="g-arr-building"><path id="sh-building" class="arrow-shaft draw" d="M 1180 255 L 1180 355"/><g id="hd-building"><path class="arrow-head" d="M 1165 337 L 1180 355 L 1195 337"/><rect class="badge-box" x="1152" y="286" width="56" height="38" rx="10"/><text class="badge-text" x="1180" y="312" text-anchor="middle" font-size="20">IL</text></g></g>
+  <g id="g-arr-eval"><path id="sh-eval" class="arrow-shaft draw" d="M 673 790 L 673 690"/><g id="hd-eval"><path class="arrow-head" d="M 658 708 L 673 690 L 688 708"/><rect class="badge-box" x="645" y="721" width="56" height="38" rx="10"/><text class="badge-text" x="673" y="747" text-anchor="middle" font-size="20">RL</text></g></g>
+  <g id="g-arr-fe"><path id="sh-fe" class="arrow-shaft draw" d="M 1433 1025 L 1433 925"/><g id="hd-fe"><path class="arrow-head" d="M 1418 943 L 1433 925 L 1448 943"/><rect class="badge-box" x="1405" y="956" width="56" height="38" rx="10"/><text class="badge-text" x="1433" y="982" text-anchor="middle" font-size="20">IL</text></g></g>
+  <g id="g-arr-surr"><path id="sh-surr" class="arrow-shaft draw" d="M 1433 790 L 1433 690"/><g id="hd-surr"><path class="arrow-head" d="M 1418 708 L 1433 690 L 1448 708"/><rect class="badge-box" x="1405" y="721" width="56" height="38" rx="10"/><text class="badge-text" x="1433" y="747" text-anchor="middle" font-size="20">RL</text></g></g>
+
+  </g>
+</svg>
