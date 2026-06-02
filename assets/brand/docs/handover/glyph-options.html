@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SpatialTimber — Module Glyph Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141413;--clay:#D97757;--paper:#FAF9F5;--card:#F0EEE6;--oat:#E3DACC;--gray:#6f6c63;
+    --line:rgba(20,20,19,0.13);
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 56px;}
+
+  header.masthead{padding:80px 0 36px;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);display:inline-flex;align-items:center;gap:11px;}
+  .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--clay);display:inline-block;}
+  h1.title{font-size:44px;font-weight:700;font-style:italic;letter-spacing:-0.025em;line-height:1.05;margin:24px 0 0;max-width:20ch;}
+  .lede{margin:20px 0 0;font-size:17px;line-height:1.6;color:var(--gray);max-width:66ch;}
+
+  section{padding:48px 0;border-top:1px solid var(--line);}
+  .sec-head{margin-bottom:28px;}
+  h2.sec-h{font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:8px 0 0;}
+  .sec-note{font-size:15px;color:var(--gray);max-width:60ch;margin-top:8px;}
+
+  /* in-context lockup */
+  .context{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 28px;margin-bottom:26px;}
+  .context .mk svg{width:42px;height:42px;display:block;}
+  .context .wm{font-size:21px;letter-spacing:-0.022em;white-space:nowrap;}
+  .context .wm .s-spatial{font-weight:700;}.context .wm .s-timber{font-weight:500;}
+  .context .divider{width:1px;height:32px;background:var(--line);}
+  .context .module{display:flex;align-items:center;gap:12px;}
+  .context .module .m-name{font-size:19px;font-weight:600;letter-spacing:-0.015em;}
+  .context .ctx-label{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);}
+
+  .glyph-tile{width:44px;height:44px;border:1px solid var(--line);border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--paper);}
+  .glyph-tile svg{width:26px;height:26px;display:block;}
+
+  .opts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .opt{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 18px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+  .opt:hover{border-color:var(--clay);}
+  .opt.sel{border-color:var(--clay);box-shadow:0 0 0 1px var(--clay) inset;}
+  .opt .big{width:64px;height:64px;border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--paper);}
+  .opt .big svg{width:40px;height:40px;display:block;}
+  .opt .num{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:10px;color:var(--clay);letter-spacing:.1em;}
+  .opt .nm{font-size:13.5px;font-weight:600;letter-spacing:-0.01em;}
+  .opt .ds{font-size:11.5px;color:var(--gray);line-height:1.4;}
+
+  .ask{padding:30px 0 90px;}
+  .ask .box{background:var(--oat);border-radius:16px;padding:26px 32px;font-size:15px;color:var(--ink);max-width:74ch;line-height:1.6;}
+  .ask .box b{font-weight:600;}
+
+  @media(max-width:980px){.opts{grid-template-columns:repeat(3,1fr);}.wrap{padding:0 28px;}}
+  @media(max-width:560px){.opts{grid-template-columns:repeat(2,1fr);}h1.title{font-size:34px;}.context{flex-wrap:wrap;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <span class="eyebrow">SpatialTimber · Module Glyphs</span>
+    <h1 class="title">Options for Furnisher & Structural Analysis.</h1>
+    <p class="lede">Same line-icon system as the rest of the family — 24&nbsp;px grid, single ink weight, one clay accent. Each is shown at tile scale; the first card in each row is previewed in a full lockup so you can read it in context. Tell me which to adopt.</p>
+  </header>
+
+  <!-- FURNISHER -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">A — Furnisher</div>
+      <h2 class="sec-h">Room fit-out & furnishing.</h2>
+      <p class="sec-note">Plan-view furniture reads naturally beside a layout tool; the sofa and chair options lean more iconographic.</p>
+    </div>
+    <div class="context">
+      <span class="mk" data-mark="accent"></span>
+      <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+      <span class="divider"></span>
+      <span class="module"><span class="glyph-tile" data-glyph="f1"></span><span class="m-name">Furnisher</span></span>
+      <span class="ctx-label">option 1 · in context</span>
+    </div>
+    <div class="opts" data-group="furnisher">
+      <div class="opt sel" data-glyph-opt="f1"><span class="num">F1</span><span class="big" data-glyph="f1"></span><span class="nm">Room + unit</span><span class="ds">Plan, one piece placed</span></div>
+      <div class="opt" data-glyph-opt="f2"><span class="num">F2</span><span class="big" data-glyph="f2"></span><span class="nm">Bed plan</span><span class="ds">Top-down, with pillow</span></div>
+      <div class="opt" data-glyph-opt="f3"><span class="num">F3</span><span class="big" data-glyph="f3"></span><span class="nm">Sofa</span><span class="ds">Elevation icon</span></div>
+      <div class="opt" data-glyph-opt="f4"><span class="num">F4</span><span class="big" data-glyph="f4"></span><span class="nm">Furnished room</span><span class="ds">Two pieces, one keyed</span></div>
+      <div class="opt" data-glyph-opt="f5"><span class="num">F5</span><span class="big" data-glyph="f5"></span><span class="nm">Chair</span><span class="ds">Top-view seat + back</span></div>
+    </div>
+  </section>
+
+  <!-- STRUCTURAL -->
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">B — Structural Analysis</div>
+      <h2 class="sec-h">FEM / structural evaluation.</h2>
+      <p class="sec-note">From literal load paths to the FEM mesh and deflection — pick the one that best signals “evaluation,” not just “a beam.”</p>
+    </div>
+    <div class="context">
+      <span class="mk" data-mark="accent"></span>
+      <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+      <span class="divider"></span>
+      <span class="module"><span class="glyph-tile" data-glyph="s1"></span><span class="m-name">Structural Analysis</span></span>
+      <span class="ctx-label">option 1 · in context</span>
+    </div>
+    <div class="opts" data-group="structural">
+      <div class="opt sel" data-glyph-opt="s1"><span class="num">S1</span><span class="big" data-glyph="s1"></span><span class="nm">Truss</span><span class="ds">Node carries load</span></div>
+      <div class="opt" data-glyph-opt="s2"><span class="num">S2</span><span class="big" data-glyph="s2"></span><span class="nm">Beam + load</span><span class="ds">Span on two supports</span></div>
+      <div class="opt" data-glyph-opt="s3"><span class="num">S3</span><span class="big" data-glyph="s3"></span><span class="nm">Deflection</span><span class="ds">Bending under load</span></div>
+      <div class="opt" data-glyph-opt="s4"><span class="num">S4</span><span class="big" data-glyph="s4"></span><span class="nm">Wall-beam</span><span class="ds">I-section profile</span></div>
+      <div class="opt" data-glyph-opt="s5"><span class="num">S5</span><span class="big" data-glyph="s5"></span><span class="nm">FEM mesh</span><span class="ds">Triangulated, one node</span></div>
+    </div>
+  </section>
+
+  <div class="ask">
+    <div class="box">
+      <b>Which pair?</b> Reply e.g. “Furnisher F3, Structural S5.” Click any tile to see it swap into the in-context lockup above its row. Once you choose, I'll drop them into the master identity. (Assistent glyph stays as approved unless you want options there too.)
+    </div>
+  </div>
+</div>
+
+<script>
+/* corrected master mark (option C) — for the in-context preview */
+function markSVG(variant){
+  variant=variant||'accent';
+  const outerW=3.8,innerW=1.0,stroke='#141413';
+  const ink={t:'#FBFAF6',l:'#D9D4C8',r:'#ECE8DD'}, clay={t:'#D97757',l:'#B85A3C',r:'#CC6A49'};
+  function slab(cy,f){
+    const a=25,b=12,t=6,cx=50;
+    const T=[cx,cy-b],R=[cx+a,cy],B=[cx,cy+b],L=[cx-a,cy],R2=[cx+a,cy+t],B2=[cx,cy+b+t],L2=[cx-a,cy+t];
+    const j=p=>p[0]+' '+p[1], pts=arr=>arr.map(p=>p[0]+','+p[1]).join(' ');
+    return `<polygon points="${pts([T,R,B,L])}" fill="${f.t}"/><polygon points="${pts([L,B,B2,L2])}" fill="${f.l}"/><polygon points="${pts([B,R,R2,B2])}" fill="${f.r}"/>`
+      +`<path d="M ${j(L)} L ${j(B)} M ${j(R)} L ${j(B)} M ${j(B)} L ${j(B2)}" fill="none" stroke="${stroke}" stroke-width="${innerW}" stroke-linecap="round" stroke-linejoin="round"/>`
+      +`<path d="M ${j(T)} L ${j(R)} L ${j(R2)} L ${j(B2)} L ${j(L2)} L ${j(L)} Z" fill="none" stroke="${stroke}" stroke-width="${outerW}" stroke-linejoin="round" stroke-linecap="round"/>`;
+  }
+  let b=''; [61,47,33].forEach((cy,i)=>b+=slab(cy,i===2?clay:ink));
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>SpatialTimber</title>${b}</svg>`;
+}
+
+const CLAY='#D97757', PAPER='#FBFAF6';
+function G(inner){return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#141413" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">${inner}</svg>`;}
+
+const GLYPHS={
+  /* ---- Furnisher ---- */
+  f1:G(`<rect x="4" y="4" width="16" height="16" rx="1.5"/>
+        <rect x="6.5" y="13" width="11" height="4" rx="1" fill="${CLAY}" stroke="none"/>
+        <rect x="8.5" y="7" width="7" height="3.6" rx="1"/>`),
+  f2:G(`<rect x="4" y="4" width="16" height="16" rx="1.5"/>
+        <rect x="6.5" y="6.5" width="8" height="11" rx="1.2" fill="${CLAY}" stroke="none"/>
+        <rect x="7.8" y="7.6" width="5.4" height="2.6" rx="0.8" fill="${PAPER}" stroke="none"/>`),
+  f3:G(`<rect x="4.5" y="7.5" width="15" height="4.6" rx="1.6"/>
+        <rect x="3.4" y="11.2" width="17.2" height="5.6" rx="1.6" fill="${CLAY}" stroke="none"/>
+        <line x1="6.2" y1="16.8" x2="6.2" y2="19"/><line x1="17.8" y1="16.8" x2="17.8" y2="19"/>`),
+  f4:G(`<rect x="4" y="4" width="16" height="16" rx="1.5"/>
+        <rect x="6" y="6.4" width="6.6" height="5" rx="1" fill="${CLAY}" stroke="none"/>
+        <rect x="13" y="12.8" width="5" height="5" rx="1"/>`),
+  f5:G(`<path d="M6 9 Q12 4.5 18 9"/>
+        <rect x="7" y="8.5" width="10" height="9.5" rx="1.6" fill="${CLAY}" stroke="none"/>
+        <line x1="6.4" y1="9" x2="6.4" y2="14"/><line x1="17.6" y1="9" x2="17.6" y2="14"/>`),
+
+  /* ---- Structural ---- */
+  s1:G(`<polyline points="4,18 12,6 20,18"/><line x1="4" y1="18" x2="20" y2="18"/>
+        <line x1="12" y1="6" x2="12" y2="18"/>
+        <circle cx="12" cy="6" r="2.1" fill="${CLAY}" stroke="none"/>`),
+  s2:G(`<line x1="3.5" y1="11" x2="20.5" y2="11"/>
+        <path d="M7 11 L5 15.5 L9 15.5 Z"/><path d="M17 11 L15 15.5 L19 15.5 Z"/>
+        <line x1="12" y1="3" x2="12" y2="9.4" stroke="${CLAY}"/>
+        <path d="M9.7 7.1 L12 9.7 L14.3 7.1" stroke="${CLAY}"/>`),
+  s3:G(`<path d="M3.5 8 L20.5 8" stroke-dasharray="2 2" opacity="0.45"/>
+        <path d="M4 8 Q12 17 20 8" stroke="${CLAY}"/>
+        <path d="M4 8 L2 12 L6 12 Z"/><path d="M20 8 L18 12 L22 12 Z"/>`),
+  s4:G(`<line x1="6" y1="5.5" x2="18" y2="5.5"/><line x1="6" y1="18.5" x2="18" y2="18.5"/>
+        <rect x="10.7" y="5.5" width="2.6" height="13" fill="${CLAY}" stroke="none"/>`),
+  s5:G(`<rect x="4" y="4" width="16" height="16" rx="1"/>
+        <line x1="4" y1="4" x2="20" y2="20"/><line x1="12" y1="4" x2="4" y2="12"/><line x1="20" y1="12" x2="12" y2="20"/>
+        <circle cx="12" cy="12" r="2" fill="${CLAY}" stroke="none"/>`)
+};
+
+document.querySelectorAll('[data-mark]').forEach(el=>{ el.innerHTML=markSVG(el.getAttribute('data-mark')); });
+function paint(){ document.querySelectorAll('[data-glyph]').forEach(el=>{ el.innerHTML=GLYPHS[el.getAttribute('data-glyph')]||''; }); }
+paint();
+
+/* click a tile -> select + swap into the in-context lockup */
+document.querySelectorAll('[data-glyph-opt]').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    const key=opt.getAttribute('data-glyph-opt');
+    const group=opt.closest('[data-group]');
+    group.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+    opt.classList.add('sel');
+    const section=group.closest('section');
+    const ctxTile=section.querySelector('.context .glyph-tile');
+    ctxTile.setAttribute('data-glyph',key);
+    ctxTile.innerHTML=GLYPHS[key];
+    section.querySelector('.ctx-label').textContent='option '+key.toUpperCase().slice(1)+' · in context';
+  });
+});
+</script>
+</body>
+</html>

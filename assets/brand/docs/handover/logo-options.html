@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SpatialTimber — Logomark Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141413;--clay:#D97757;--clay-dark:#9E4A30;
+    --paper:#FAF9F5;--card:#F0EEE6;--oat:#E3DACC;--gray:#6f6c63;
+    --line:rgba(20,20,19,0.13);
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 56px;}
+
+  header.masthead{padding:80px 0 44px;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);display:inline-flex;align-items:center;gap:11px;}
+  .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--clay);display:inline-block;}
+  h1.title{font-size:46px;font-weight:700;font-style:italic;letter-spacing:-0.025em;line-height:1.05;margin:24px 0 0;max-width:18ch;}
+  .lede{margin:20px 0 0;font-size:17px;line-height:1.6;color:var(--gray);max-width:64ch;}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:18px 0 30px;border-top:1px solid var(--line);}
+  .opt{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;}
+  .opt .stage{padding:46px 30px 34px;display:flex;align-items:center;justify-content:center;min-height:200px;}
+  .opt .stage svg{width:150px;height:150px;display:block;}
+  .opt .foot{border-top:1px solid var(--line);padding:18px 24px 22px;display:flex;flex-direction:column;gap:12px;}
+  .opt .tag{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:9px;}
+  .opt .tag b{color:var(--clay);font-weight:500;}
+  .opt .nm{font-size:18px;font-weight:600;letter-spacing:-0.015em;}
+  .opt .desc{font-size:13.5px;color:var(--gray);line-height:1.55;}
+  .scales{display:flex;align-items:center;gap:18px;margin-top:4px;}
+  .scales .mini{display:flex;align-items:center;gap:8px;color:var(--gray);font-family:var(--mono);font-size:10px;}
+  .scales .mini svg{display:block;}
+  .scales .mono-chip{margin-left:auto;display:flex;align-items:center;gap:7px;}
+  .scales .mono-chip svg{width:30px;height:30px;display:block;}
+  .copybtn{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);background:rgba(250,249,245,0.75);border:1px solid var(--line);border-radius:7px;padding:5px 9px;cursor:pointer;opacity:0;transition:opacity .16s,color .16s;backdrop-filter:blur(3px);}
+  .opt:hover .copybtn{opacity:1;}
+  .copybtn:hover{color:var(--clay);}
+  .opt.pick{border-color:var(--clay);box-shadow:0 0 0 1px var(--clay) inset;}
+
+  .ask{padding:34px 0 90px;}
+  .ask .box{background:var(--oat);border-radius:16px;padding:30px 36px;font-size:15px;color:var(--ink);max-width:70ch;line-height:1.6;}
+  .ask .box b{font-weight:600;}
+
+  #toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:11px 18px;border-radius:9px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr);}.wrap{padding:0 28px;}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr;}h1.title{font-size:36px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <span class="eyebrow">SpatialTimber · Logomark</span>
+    <h1 class="title">Six directions for the mark.</h1>
+    <p class="lede">All built from the same brief — timber, stacking, structure, the 625&nbsp;mm module — in one ink colour with clay as the single accent. Each survives at 16&nbsp;px and in pure ink. Tell me which one to develop into the full system, or which two to push further.</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- 1 current -->
+    <div class="opt" data-logo data-mark="stackFloat">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>01</b> current</div>
+        <div class="nm">Stacked slabs — exploded</div>
+        <div class="desc">Three axonometric storeys with air between them; reads as layers being assembled.</div>
+        <div class="scales" data-scales="stackFloat"></div>
+      </div>
+    </div>
+
+    <!-- 2 solid block -->
+    <div class="opt" data-logo data-mark="stackSolid">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>02</b></div>
+        <div class="nm">Stacked block — solid</div>
+        <div class="desc">One building mass with storey lines; the new top storey takes the clay. More grounded, more architectural.</div>
+        <div class="scales" data-scales="stackSolid"></div>
+      </div>
+    </div>
+
+    <!-- 3 elevation bars -->
+    <div class="opt" data-logo data-mark="bars">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>03</b></div>
+        <div class="nm">Elevation bars — flat</div>
+        <div class="desc">A face-on section: three floor plates, the added one on top in clay. The simplest, most favicon-proof read.</div>
+        <div class="scales" data-scales="bars"></div>
+      </div>
+    </div>
+
+    <!-- 4 grid module -->
+    <div class="opt" data-logo data-mark="grid">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>04</b></div>
+        <div class="nm">Grid module — 625</div>
+        <div class="desc">The structural grid itself, with one cell placed. Speaks to the computational layout tool more than the building.</div>
+        <div class="scales" data-scales="grid"></div>
+      </div>
+    </div>
+
+    <!-- 5 wall-beam portal -->
+    <div class="opt" data-logo data-mark="portal">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>05</b></div>
+        <div class="nm">Wall-beam — portal</div>
+        <div class="desc">The signature engineering idea: a load-carrying beam on two walls. Clay beam = the part that does the work.</div>
+        <div class="scales" data-scales="portal"></div>
+      </div>
+    </div>
+
+    <!-- 6 end grain -->
+    <div class="opt" data-logo data-mark="grain">
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+      <div class="stage"></div>
+      <div class="foot">
+        <div class="tag"><b>06</b></div>
+        <div class="nm">End-grain — section</div>
+        <div class="desc">A timber cross-section as nested rings — warmest and most material. Less literal about stacking.</div>
+        <div class="scales" data-scales="grain"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ask">
+    <div class="box">
+      <b>Which way?</b> Reply with a number — e.g. “go with 03” or “push 02 and 05.” I'll build the chosen mark into the full lockup system, wordmark, sub-projects and variants. The wordmark and palette stay exactly as approved.
+    </div>
+  </div>
+</div>
+
+<div id="toast">copied</div>
+
+<script>
+const INK='#141413', CLAY='#D97757', CLAYD='#9E4A30';
+function pal(mono){
+  return mono
+    ? {acc:'#141413',accL:'rgba(20,20,19,0.74)',accR:'rgba(20,20,19,0.52)',accS:'#141413',f1:'#FBFAF6',f2:'#FBFAF6',paper:'#FBFAF6',ink:'#141413'}
+    : {acc:'#D97757',accL:'#B85A3C',accR:'#CA6749',accS:'#9E4A30',f1:'rgba(20,20,19,0.11)',f2:'rgba(20,20,19,0.045)',paper:'#FBFAF6',ink:'#141413'};
+}
+const SVG=(b)=>`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SpatialTimber logomark"><title>SpatialTimber</title>${b}</svg>`;
+
+/* 01 — exploded iso slabs */
+function stackFloat(mono){
+  const p=pal(mono),cx=50,a=26,b=13,t=6,cys=[62,47,32];
+  const plate=(cy,s)=>{
+    const top=`${cx},${cy-b} ${cx+a},${cy} ${cx},${cy+b} ${cx-a},${cy}`;
+    const left=`${cx-a},${cy} ${cx},${cy+b} ${cx},${cy+b+t} ${cx-a},${cy+t}`;
+    const right=`${cx},${cy+b} ${cx+a},${cy} ${cx+a},${cy+t} ${cx},${cy+b+t}`;
+    return `<polygon points="${left}" fill="${s.l}" stroke="${s.st}" stroke-width="${s.w}" stroke-linejoin="round"/><polygon points="${right}" fill="${s.r}" stroke="${s.st}" stroke-width="${s.w}" stroke-linejoin="round"/><polygon points="${top}" fill="${s.t}" stroke="${s.st}" stroke-width="${s.w}" stroke-linejoin="round"/>`;
+  };
+  const inkS={t:p.paper,l:p.f1,r:p.f2,st:p.ink,w:1.7};
+  const acc={t:p.acc,l:p.accL,r:p.accR,st:mono?p.ink:p.accS,w:mono?1.7:1.1};
+  let body=''; cys.forEach((cy,i)=>body+=plate(cy,i===2?acc:inkS));
+  return SVG(body);
+}
+
+/* 02 — solid block w/ storey lines, clay top storey */
+function stackSolid(mono){
+  const p=pal(mono),cx=50,a=26,b=13,top=32,H=42,sH=14;
+  const T=`${cx},${top-b} ${cx+a},${top} ${cx},${top+b} ${cx-a},${top}`;
+  // lower mass (below top storey band)
+  const bandBot=top+sH; // depth of clay band along verticals
+  const lowL=`${cx-a},${top+sH} ${cx},${top+b+sH} ${cx},${top+b+H} ${cx-a},${top+H}`;
+  const lowR=`${cx},${top+b+sH} ${cx+a},${top+sH} ${cx+a},${top+H} ${cx},${top+b+H}`;
+  // clay band (top storey)
+  const bL=`${cx-a},${top} ${cx},${top+b} ${cx},${top+b+sH} ${cx-a},${top+sH}`;
+  const bR=`${cx},${top+b} ${cx+a},${top} ${cx+a},${top+sH} ${cx},${top+b+sH}`;
+  // storey divider on lower mass
+  const d2=top+sH+ (H-sH)/2;
+  const divL=`M ${cx-a} ${d2} L ${cx} ${d2+b}`, divR=`M ${cx} ${d2+b} L ${cx+a} ${d2}`;
+  const st=p.ink, w=1.7;
+  const acc={t:p.acc,l:p.accL,r:p.accR};
+  let body='';
+  body+=`<polygon points="${lowL}" fill="${p.f1}" stroke="${st}" stroke-width="${w}" stroke-linejoin="round"/>`;
+  body+=`<polygon points="${lowR}" fill="${p.f2}" stroke="${st}" stroke-width="${w}" stroke-linejoin="round"/>`;
+  body+=`<path d="${divL}" stroke="${st}" stroke-width="1.2" fill="none"/><path d="${divR}" stroke="${st}" stroke-width="1.2" fill="none"/>`;
+  body+=`<polygon points="${bL}" fill="${acc.l}" stroke="${mono?st:p.accS}" stroke-width="${mono?w:1.1}" stroke-linejoin="round"/>`;
+  body+=`<polygon points="${bR}" fill="${acc.r}" stroke="${mono?st:p.accS}" stroke-width="${mono?w:1.1}" stroke-linejoin="round"/>`;
+  body+=`<polygon points="${T}" fill="${acc.t}" stroke="${mono?st:p.accS}" stroke-width="${mono?w:1.1}" stroke-linejoin="round"/>`;
+  return SVG(body);
+}
+
+/* 03 — flat elevation bars */
+function bars(mono){
+  const p=pal(mono),x=28,w=44,h=13,r=2.5;
+  const ys=[61,45,29];
+  const fills=[p.f2,p.f1,p.acc];
+  let body='';
+  ys.forEach((y,i)=>{
+    const isTop=i===2;
+    body+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fills[i]}" stroke="${isTop&&!mono?p.accS:p.ink}" stroke-width="1.7"/>`;
+  });
+  return SVG(body);
+}
+
+/* 04 — grid module 3x3, one clay cell */
+function grid(mono){
+  const p=pal(mono),x=26,s=48,c=16;
+  let body=`<rect x="${x}" y="${x}" width="${s}" height="${s}" rx="2" fill="${p.paper}" stroke="${p.ink}" stroke-width="1.8"/>`;
+  // clay cell (top-center)
+  body+=`<rect x="${x+c}" y="${x}" width="${c}" height="${c}" fill="${p.acc}" stroke="none"/>`;
+  // grid lines
+  const g1=x+c, g2=x+2*c;
+  body+=`<g stroke="${p.ink}" stroke-width="1.5">`;
+  body+=`<line x1="${g1}" y1="${x}" x2="${g1}" y2="${x+s}"/><line x1="${g2}" y1="${x}" x2="${g2}" y2="${x+s}"/>`;
+  body+=`<line x1="${x}" y1="${g1}" x2="${x+s}" y2="${g1}"/><line x1="${x}" y1="${g2}" x2="${x+s}" y2="${g2}"/></g>`;
+  body+=`<rect x="${x}" y="${x}" width="${s}" height="${s}" rx="2" fill="none" stroke="${p.ink}" stroke-width="1.8"/>`;
+  return SVG(body);
+}
+
+/* 05 — wall-beam portal frame */
+function portal(mono){
+  const p=pal(mono);
+  let body='';
+  // beam (clay)
+  body+=`<rect x="20" y="27" width="60" height="13" rx="2.5" fill="${p.acc}" stroke="${mono?p.ink:p.accS}" stroke-width="${mono?1.7:1.1}"/>`;
+  // posts
+  body+=`<rect x="26" y="40" width="12" height="33" rx="2" fill="${p.f1}" stroke="${p.ink}" stroke-width="1.7"/>`;
+  body+=`<rect x="62" y="40" width="12" height="33" rx="2" fill="${p.f2}" stroke="${p.ink}" stroke-width="1.7"/>`;
+  // ground
+  body+=`<line x1="22" y1="74" x2="78" y2="74" stroke="${p.ink}" stroke-width="1.7" stroke-linecap="round"/>`;
+  return SVG(body);
+}
+
+/* 06 — end-grain nested diamonds */
+function grain(mono){
+  const p=pal(mono);
+  const dia=(r)=>`${50},${50-r} ${50+r},${50} ${50},${50+r} ${50-r},${50}`;
+  let body='';
+  body+=`<polygon points="${dia(31)}" fill="${p.paper}" stroke="${p.ink}" stroke-width="1.8" stroke-linejoin="round"/>`;
+  body+=`<polygon points="${dia(20)}" fill="${p.paper}" stroke="${p.ink}" stroke-width="1.8" stroke-linejoin="round"/>`;
+  body+=`<polygon points="${dia(10)}" fill="${p.acc}" stroke="${mono?p.ink:p.accS}" stroke-width="${mono?1.8:1.1}" stroke-linejoin="round"/>`;
+  return SVG(body);
+}
+
+const BUILDERS={stackFloat,stackSolid,bars,grid,portal,grain};
+
+document.querySelectorAll('[data-mark]').forEach(el=>{
+  const f=BUILDERS[el.getAttribute('data-mark')];
+  el.querySelector('.stage').innerHTML=f(false);
+});
+document.querySelectorAll('[data-scales]').forEach(el=>{
+  const f=BUILDERS[el.getAttribute('data-scales')];
+  const s32=f(false), s16=f(false), mono=f(true);
+  el.innerHTML =
+    `<span class="mini"><span class="s32">${s32}</span>32</span>`+
+    `<span class="mini"><span class="s16">${s16}</span>16</span>`+
+    `<span class="mono-chip">${mono}<span style="font-family:var(--mono);font-size:10px;color:var(--gray);">ink</span></span>`;
+  const a=el.querySelector('.s32 svg'); a.setAttribute('width',32);a.setAttribute('height',32);
+  const b=el.querySelector('.s16 svg'); b.setAttribute('width',16);b.setAttribute('height',16);
+});
+
+function copySVG(btn){
+  const svg=btn.closest('[data-logo]').querySelector('.stage svg');
+  if(!svg)return;
+  navigator.clipboard.writeText(svg.outerHTML).then(()=>toast('SVG copied')).catch(()=>toast('copy failed'));
+}
+let tt;function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),1600);}
+</script>
+</body>
+</html>

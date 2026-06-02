@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<template id="__bundler_thumbnail" data-bg-color="#FAF9F5">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(600,400) scale(11) translate(-50,-50)">
+      <polygon points="50,49 75,61 50,73 25,61" fill="#FBFAF6"/>
+      <polygon points="25,61 50,73 50,79 25,67" fill="#D9D4C8"/>
+      <polygon points="50,73 75,61 75,67 50,79" fill="#ECE8DD"/>
+      <path d="M 50 49 L 75 61 L 75 67 L 50 79 L 25 67 L 25 61 Z" fill="none" stroke="#141413" stroke-width="3.8" stroke-linejoin="round"/>
+      <polygon points="50,35 75,47 50,59 25,47" fill="#FBFAF6"/>
+      <polygon points="25,47 50,59 50,65 25,53" fill="#D9D4C8"/>
+      <polygon points="50,59 75,47 75,53 50,65" fill="#ECE8DD"/>
+      <path d="M 50 35 L 75 47 L 75 53 L 50 65 L 25 53 L 25 47 Z" fill="none" stroke="#141413" stroke-width="3.8" stroke-linejoin="round"/>
+      <polygon points="50,21 75,33 50,45 25,33" fill="#D97757"/>
+      <polygon points="25,33 50,45 50,51 25,39" fill="#B85A3C"/>
+      <polygon points="50,45 75,33 75,39 50,51" fill="#CC6A49"/>
+      <path d="M 50 21 L 75 33 L 75 39 L 50 51 L 25 39 L 25 33 Z" fill="none" stroke="#141413" stroke-width="3.8" stroke-linejoin="round"/>
+    </g>
+  </svg>
+</template>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SpatialTimber — Brand Identity & Logo System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141413;
+    --clay:#D97757;
+    --clay-dark:#9E4A30;
+    --paper:#FAF9F5;
+    --card:#F0EEE6;
+    --oat:#E3DACC;
+    --peach:#EBC9B7;
+    --olive:#788C5D;
+    --sky:#6A9BCC;
+    --gray:#6f6c63;
+    --line:rgba(20,20,19,0.13);
+    --line-soft:rgba(20,20,19,0.08);
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 56px;}
+
+  /* ---------- masthead ---------- */
+  header.masthead{padding:84px 0 56px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--gray);
+    display:inline-flex;
+    align-items:center;
+    gap:11px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:9px;height:9px;border-radius:50%;
+    background:var(--clay);
+    display:inline-block;
+  }
+  h1.title{
+    font-size:54px;
+    font-weight:700;
+    font-style:italic;
+    letter-spacing:-0.025em;
+    line-height:1.04;
+    margin:26px 0 0;
+    max-width:16ch;
+  }
+  .lede{
+    margin:22px 0 0;
+    font-size:18px;
+    line-height:1.6;
+    color:var(--gray);
+    max-width:62ch;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    margin-top:34px;
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--gray);
+  }
+
+  /* ---------- section scaffold ---------- */
+  section{padding:60px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:40px;flex-wrap:wrap;}
+  .sec-title{font-size:13px;}
+  .sec-note{font-size:15px;color:var(--gray);max-width:54ch;}
+  h2.sec-h{
+    font-size:30px;font-weight:600;letter-spacing:-0.02em;margin:8px 0 0;
+  }
+
+  /* ---------- mark / logo cards ---------- */
+  .logo-card{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+  }
+  .logo-card.dark{background:var(--ink);border-color:rgba(232,228,216,0.16);}
+  .copybtn{
+    position:absolute;top:12px;right:12px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gray);background:rgba(250,249,245,0.7);
+    border:1px solid var(--line);border-radius:7px;
+    padding:5px 9px;cursor:pointer;opacity:0;transition:opacity .16s,color .16s;
+    backdrop-filter:blur(3px);
+  }
+  .logo-card.dark .copybtn{background:rgba(20,20,19,0.55);border-color:rgba(232,228,216,0.18);color:#b9b4a8;}
+  .logo-card:hover .copybtn{opacity:1;}
+  .copybtn:hover{color:var(--clay);}
+
+  /* hero master */
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch;}
+  .hero-mark{display:flex;align-items:center;justify-content:center;padding:48px;}
+  .hero-mark svg{width:240px;height:240px;display:block;}
+
+  /* top clay plate float — hero only */
+  .hero-mark .st-topplate{
+    transform-box:view-box;
+    transform-origin:center;
+    animation:plate-float 2.6s ease-in-out infinite;
+    will-change:transform;
+  }
+  @keyframes plate-float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-mark .st-topplate{animation:none;}
+  }
+  .hero-side{padding:40px 42px;display:flex;flex-direction:column;justify-content:center;gap:18px;}
+  .concept-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);}
+  .concept-h{font-size:22px;font-weight:600;letter-spacing:-0.01em;}
+  .concept-p{font-size:14.5px;color:var(--gray);line-height:1.6;}
+  .concept-p b{color:var(--ink);font-weight:600;}
+
+  /* wordmark unit */
+  .wm{display:inline-flex;align-items:center;gap:0;font-family:var(--sans);letter-spacing:-0.022em;line-height:1;white-space:nowrap;}
+  .wm .s-spatial{font-weight:700;}
+  .wm .s-timber{font-weight:500;}
+
+  /* lockups */
+  .lockup{display:flex;align-items:center;gap:18px;}
+  .lockup .mk{display:block;flex:none;}
+  .lockup .mk svg{display:block;width:100%;height:100%;}
+  .lockup .wm{font-size:30px;}
+
+  /* master lockups row */
+  .master-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .lk-cell{padding:46px 44px;display:flex;align-items:center;min-height:180px;}
+  .lk-cell.stacked{justify-content:center;}
+  .lockup.vert{flex-direction:column;gap:16px;text-align:center;}
+
+  /* wordmark explorations */
+  .wm-explore{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .wm-ex{padding:34px 36px;display:flex;flex-direction:column;gap:16px;justify-content:center;min-height:150px;}
+  .wm-ex .label{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);display:flex;gap:9px;align-items:center;}
+  .wm-ex .label .tag{color:var(--clay);}
+  .wm-ex.canon{border-color:var(--clay);box-shadow:0 0 0 1px var(--clay) inset;}
+  .canon-flag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);}
+  .wm-big{font-size:38px;}
+
+  /* sub-project family */
+  .family{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);}
+  .fam-row{display:flex;align-items:center;gap:20px;padding:30px 40px;border-bottom:1px solid var(--line);}
+  .fam-row:last-child{border-bottom:none;}
+  .fam-row.template{background:repeating-linear-gradient(135deg,transparent,transparent 9px,rgba(20,20,19,0.022) 9px,rgba(20,20,19,0.022) 18px);}
+  .fam-lockup{display:flex;align-items:center;gap:16px;flex:1;min-width:0;}
+  .fam-lockup .mk{flex:none;}
+  .fam-lockup .mk svg{display:block;width:46px;height:46px;}
+  .divider{width:1px;height:34px;background:var(--line);flex:none;}
+  .module{display:flex;align-items:center;gap:13px;min-width:0;}
+  .glyph-tile{
+    width:42px;height:42px;border:1px solid var(--line);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;flex:none;background:var(--paper);
+  }
+  .glyph-tile svg{width:24px;height:24px;display:block;}
+  .glyph-tile.dotted{border-style:dashed;}
+  .module .m-name{font-size:21px;font-weight:600;letter-spacing:-0.015em;}
+  .module .m-name.ghost{color:var(--gray);font-weight:500;}
+  .module .m-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-bottom:3px;}
+  .fam-wm{font-size:23px;}
+  .fam-num{font-family:var(--mono);font-size:11px;color:var(--gray);letter-spacing:.1em;flex:none;width:26px;}
+
+  /* construction rule */
+  .rule-wrap{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+  .formula{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:13px;color:var(--gray);
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:9px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0;
+  }
+  .chip .mini-mk svg{width:20px;height:20px;display:block;}
+  .chip.opt{border-style:dashed;color:var(--gray);}
+  .plus{font-family:var(--mono);font-size:16px;color:var(--clay);}
+
+  /* variants */
+  .var-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .var-cell{padding:36px 40px;display:flex;flex-direction:column;gap:22px;justify-content:center;}
+  .var-label{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);}
+  .logo-card.dark .var-label{color:#b9b4a8;}
+  .favicon-row{display:flex;align-items:flex-end;gap:26px;}
+  .fav{display:flex;flex-direction:column;align-items:center;gap:9px;}
+  .fav .px{font-family:var(--mono);font-size:10px;color:var(--gray);}
+  .fav svg{display:block;}
+  .var-lockup .wm{font-size:26px;}
+  .var-lockup.rev .wm{color:var(--paper);}
+  .var-lockup{display:flex;align-items:center;gap:16px;}
+  .var-lockup .mk svg{width:60px;height:60px;display:block;}
+
+  /* palette + type */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .sw{border-radius:12px;border:1px solid var(--line);overflow:hidden;background:var(--card);}
+  .sw .chipclr{height:84px;}
+  .sw .info{padding:13px 14px;}
+  .sw .nm{font-size:13px;font-weight:600;}
+  .sw .hx{font-family:var(--mono);font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.04em;}
+  .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .type-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 34px;}
+  .type-card .tk{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--clay);}
+  .type-card .spec{font-family:var(--mono);font-size:11.5px;color:var(--gray);margin-top:4px;}
+  .type-sample{font-size:40px;font-weight:600;letter-spacing:-0.02em;margin-top:18px;}
+  .type-sample.mono{font-family:var(--mono);font-size:22px;font-weight:400;letter-spacing:0;}
+  .type-scale{margin-top:16px;font-size:14px;color:var(--gray);line-height:1.7;}
+
+  footer{padding:54px 0 90px;border-top:1px solid var(--line);}
+  footer .fnote{font-size:13.5px;color:var(--gray);max-width:64ch;line-height:1.65;}
+  footer .fmeta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-top:22px;}
+
+  /* toast */
+  #toast{
+    position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);
+    background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+    padding:11px 18px;border-radius:9px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:50;
+  }
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  @media(max-width:880px){
+    .wrap{padding:0 28px;}
+    .hero-grid,.master-row,.wm-explore,.var-grid,.type-grid{grid-template-columns:1fr;}
+    .swatches{grid-template-columns:repeat(2,1fr);}
+    h1.title{font-size:40px;}
+    .hero-mark svg{width:180px;height:180px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <header class="masthead" data-screen-label="Masthead">
+    <span class="eyebrow">SpatialTimber · Brand Identity</span>
+    <h1 class="title">A logo system that stacks.</h1>
+    <p class="lede">One master mark, an extensible family of sub-project lockups, and the rule for building the next one. Precise, structural, timber-warm — built to live beside the project deck and app.</p>
+    <div class="meta-row">
+      <span>Bauhaus-Universität Weimar</span>
+      <span>TU Dresden</span>
+      <span>Zukunft Bau · BMWSB</span>
+    </div>
+  </header>
+
+  <!-- ===================== THE IDEA / MASTER MARK ===================== -->
+  <section data-screen-label="The mark">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">01 — The mark</div>
+        <h2 class="sec-h">Stacked timber storeys, in axonometric.</h2>
+      </div>
+      <p class="sec-note">The signature idea — adding a new timber storey on top of an existing building — drawn literally as stacked structural slabs. The topmost storey, the one being added, carries the clay accent.</p>
+    </div>
+
+    <div class="hero-grid">
+      <div class="logo-card hero-cardwrap" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="hero-mark" data-mark="accent"></div>
+      </div>
+      <div class="logo-card">
+        <div class="hero-side">
+          <div class="concept-k">One idea, executed precisely</div>
+          <div class="concept-h">Aufstockung, abstracted to its structure</div>
+          <p class="concept-p">Three slabs read as <b>storeys</b>; the axonometric view makes it <b>spatial</b>; the snug stack with one new layer on top is <b>Aufstockung</b>. It reduces to a single silhouette at 16&nbsp;px and works in one ink colour — clay is optional.</p>
+          <p class="concept-p">The footprint sits on the project's <b>625&nbsp;mm structural module</b>: equal width slabs, equal storey rhythm, no decoration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MASTER LOGO ===================== -->
+  <section data-screen-label="Master logo">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">02 — Master logo</div>
+        <h2 class="sec-h">Mark + wordmark.</h2>
+      </div>
+      <p class="sec-note">Horizontal lockup for headers and toolbars; stacked lockup for square spaces and covers. Clear space around the mark equals one slab height.</p>
+    </div>
+
+    <div class="master-row">
+      <div class="logo-card" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="lk-cell">
+          <div class="lockup">
+            <span class="mk" style="width:74px;height:74px;" data-mark="accent"></span>
+            <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-card" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="lk-cell stacked">
+          <div class="lockup vert">
+            <span class="mk" style="width:84px;height:84px;" data-mark="accent"></span>
+            <span class="wm" style="font-size:26px;"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORDMARK EXPLORATIONS ===================== -->
+  <section data-screen-label="Wordmark">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">03 — Wordmark</div>
+        <h2 class="sec-h">Set in Inter, weight on Spatial.</h2>
+      </div>
+      <p class="sec-note">All one word — the capital&nbsp;T is the only case signal, so it reads as a single product name. The weight now sits on <b style="color:var(--ink);font-weight:600;">Spatial</b> — the project's core idea — with <b style="color:var(--ink);font-weight:600;">Timber</b> stepping back to medium. The weight-shift treatment is canonical; it carries the emphasis without colour.</p>
+    </div>
+
+    <div class="wm-explore">
+      <div class="wm-ex canon logo-card">
+        <div class="label"><span class="tag">A</span> Weight shift · <span class="canon-flag">canonical</span></div>
+        <span class="wm wm-big"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+      </div>
+      <div class="wm-ex logo-card">
+        <div class="label"><span class="tag">B</span> Higher contrast · 700 / 400</div>
+        <span class="wm wm-big"><span style="font-weight:700;">Spatial</span><span style="font-weight:400;">Timber</span></span>
+      </div>
+      <div class="wm-ex logo-card">
+        <div class="label"><span class="tag">C</span> Italic — echoes deck headlines</div>
+        <span class="wm wm-big" style="font-style:italic;font-weight:700;">SpatialTimber</span>
+      </div>
+      <div class="wm-ex logo-card">
+        <div class="label"><span class="tag">D</span> Clay accent on “Spatial”</div>
+        <span class="wm wm-big"><span class="s-spatial" style="color:var(--clay);">Spatial</span><span class="s-timber">Timber</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SUB-PROJECT SYSTEM ===================== -->
+  <section data-screen-label="Sub-project system">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">04 — Sub-project family</div>
+        <h2 class="sec-h">One scheme, swappable module.</h2>
+      </div>
+      <p class="sec-note">Every tool reads as the same family at a glance: the shared mark + wordmark, a hairline divider, then the module — a small glyph and its name. The bottom row is a blank template; adding a fifth or sixth tool is a fill-in-the-blank.</p>
+    </div>
+
+    <div class="family" data-logo>
+      <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+
+      <div class="fam-row">
+        <span class="fam-num">01</span>
+        <div class="fam-lockup">
+          <span class="mk" data-mark="accent"></span>
+          <span class="wm fam-wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+        </div>
+        <span class="divider"></span>
+        <div class="module">
+          <span class="glyph-tile" data-glyph="assistant"></span>
+          <div>
+            <div class="m-kicker">Layout · Generation</div>
+            <div class="m-name">Aufstockung Assistent</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fam-row">
+        <span class="fam-num">02</span>
+        <div class="fam-lockup">
+          <span class="mk" data-mark="accent"></span>
+          <span class="wm fam-wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+        </div>
+        <span class="divider"></span>
+        <div class="module">
+          <span class="glyph-tile" data-glyph="furnisher"></span>
+          <div>
+            <div class="m-kicker">Fit-out · Furnishing</div>
+            <div class="m-name">Furnisher</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fam-row">
+        <span class="fam-num">03</span>
+        <div class="fam-lockup">
+          <span class="mk" data-mark="accent"></span>
+          <span class="wm fam-wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+        </div>
+        <span class="divider"></span>
+        <div class="module">
+          <span class="glyph-tile" data-glyph="structural"></span>
+          <div>
+            <div class="m-kicker">FEM · Evaluation</div>
+            <div class="m-name">Structural Analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fam-row template">
+        <span class="fam-num">0n</span>
+        <div class="fam-lockup">
+          <span class="mk" data-mark="accent"></span>
+          <span class="wm fam-wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+        </div>
+        <span class="divider"></span>
+        <div class="module">
+          <span class="glyph-tile dotted" data-glyph="blank"></span>
+          <div>
+            <div class="m-kicker">New module</div>
+            <div class="m-name ghost">Module Name</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- construction rule -->
+    <div class="rule-wrap">
+      <div class="formula">
+        <span class="chip"><span class="mini-mk" data-mark="accent"></span> Shared mark</span>
+        <span class="plus">+</span>
+        <span class="chip">SpatialTimber wordmark</span>
+        <span class="plus">+</span>
+        <span class="chip">│ divider</span>
+        <span class="plus">+</span>
+        <span class="chip">module glyph</span>
+        <span class="plus">+</span>
+        <span class="chip">Module Name</span>
+        <span class="plus">=</span>
+        <span class="chip" style="border-color:var(--clay);color:var(--clay);">a new sub-project lockup</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VARIANTS ===================== -->
+  <section data-screen-label="Variants">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">05 — Variants</div>
+        <h2 class="sec-h">Every context, one mark.</h2>
+      </div>
+      <p class="sec-note">The mark holds from a 16&nbsp;px favicon to a reversed cover. Clay is an accent, never load-bearing — pull it and the logo still works.</p>
+    </div>
+
+    <div class="var-grid">
+      <!-- favicon scales -->
+      <div class="logo-card" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="var-cell">
+          <div class="var-label">Logomark · favicon / app corner</div>
+          <div class="favicon-row">
+            <div class="fav"><span data-mark="accent" data-size="48"></span><span class="px">48</span></div>
+            <div class="fav"><span data-mark="accent" data-size="32"></span><span class="px">32</span></div>
+            <div class="fav"><span data-mark="accent" data-size="24"></span><span class="px">24</span></div>
+            <div class="fav"><span data-mark="accent" data-size="16"></span><span class="px">16</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- monochrome -->
+      <div class="logo-card" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="var-cell">
+          <div class="var-label">Monochrome ink · one colour</div>
+          <div class="var-lockup">
+            <span class="mk" data-mark="mono"></span>
+            <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- clay accent (default) -->
+      <div class="logo-card" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="var-cell">
+          <div class="var-label">Clay accent · default</div>
+          <div class="var-lockup">
+            <span class="mk" data-mark="accent"></span>
+            <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- reversed on ink -->
+      <div class="logo-card dark" data-logo>
+        <button class="copybtn" onclick="copySVG(this)">copy svg</button>
+        <div class="var-cell">
+          <div class="var-label">Reversed · on ink</div>
+          <div class="var-lockup rev">
+            <span class="mk" data-mark="reversed"></span>
+            <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PALETTE ===================== -->
+  <section data-screen-label="Palette">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">06 — Palette</div>
+        <h2 class="sec-h">Warm, restrained.</h2>
+      </div>
+      <p class="sec-note">Ink and paper do the work; clay is the single accent. The supporting tones appear only when a sub-project needs to colour-code its data.</p>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chipclr" style="background:#141413;"></div><div class="info"><div class="nm">Ink</div><div class="hx">#141413</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#D97757;"></div><div class="info"><div class="nm">Clay — accent</div><div class="hx">#D97757</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#E3DACC;"></div><div class="info"><div class="nm">Oat</div><div class="hx">#E3DACC</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#F0EEE6;border-bottom:1px solid var(--line);"></div><div class="info"><div class="nm">Card</div><div class="hx">#F0EEE6</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#EBC9B7;"></div><div class="info"><div class="nm">Peach</div><div class="hx">#EBC9B7</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#788C5D;"></div><div class="info"><div class="nm">Olive</div><div class="hx">#788C5D</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#6A9BCC;"></div><div class="info"><div class="nm">Sky</div><div class="hx">#6A9BCC</div></div></div>
+      <div class="sw"><div class="chipclr" style="background:#6f6c63;"></div><div class="info"><div class="nm">Warm gray</div><div class="hx">#6f6c63</div></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== TYPE ===================== -->
+  <section data-screen-label="Type">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow sec-title">07 — Type</div>
+        <h2 class="sec-h">Inter + JetBrains Mono.</h2>
+      </div>
+      <p class="sec-note">Inter stands in for Söhne and carries the wordmark and all UI. Mono is reserved for technical labels, footnotes, and measurements — the same register as the deck.</p>
+    </div>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="tk">Primary · Inter</div>
+        <div class="spec">Wordmark 700/500 · Display 600 · Body 400</div>
+        <div class="type-sample"><span style="font-weight:700;">Spatial</span><span style="font-weight:500;">Timber</span></div>
+        <div class="type-scale">Aa Bb Cc — 0123456789<br/>Tracking −0.022em on the wordmark.</div>
+      </div>
+      <div class="type-card">
+        <div class="tk">Technical · JetBrains Mono</div>
+        <div class="spec">Labels 400/500 · uppercase · +0.13em</div>
+        <div class="type-sample mono">625&nbsp;mm GRID</div>
+        <div class="type-scale" style="font-family:var(--mono);font-size:12px;">REINFORCEMENT · LEARN FROM FEEDBACK<br/>01&nbsp;/&nbsp;27 — FEM EVALUATION</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer data-screen-label="Footer">
+    <p class="fnote">Every mark on this page is inline vector SVG — hover any card and use <b style="color:var(--ink);">copy svg</b> to lift it straight into your code or design tool. The wordmark is live Inter text; set it at −0.022em tracking to match. Clear space = one slab height on all sides.</p>
+    <div class="fmeta">SpatialTimber — Brand Identity Proposal · v1 · 01.06.2026</div>
+  </footer>
+
+</div>
+
+<div id="toast">copied</div>
+
+<script>
+/* ----------------------------------------------------------
+   MARK BUILDER — isometric stacked timber storeys
+   3 snug, OVERLAPPING slabs in 2:1 axonometric; top slab = the
+   added storey. Opaque faces (clean occlusion) + option C weight
+   (bold per-slab contour 3.8, thin inner edges 1.0).
+---------------------------------------------------------- */
+function markSVG(variant){
+  variant = variant || 'accent';
+  const outerW = 3.8, innerW = 1.0;
+
+  let ink, clay, stroke;
+  if(variant==='mono'){
+    ink   = {t:'#FBFAF6', l:'#D9D4C8', r:'#ECE8DD'};
+    clay  = {t:'#141413', l:'#3A3935', r:'#56544E'};
+    stroke= '#141413';
+  } else if(variant==='reversed'){
+    ink   = {t:'#1A1A18', l:'#2B2924', r:'#201F1C'};
+    clay  = {t:'#D97757', l:'#B85A3C', r:'#CC6A49'};
+    stroke= '#ECE8DD';
+  } else { /* accent */
+    ink   = {t:'#FBFAF6', l:'#D9D4C8', r:'#ECE8DD'};
+    clay  = {t:'#D97757', l:'#B85A3C', r:'#CC6A49'};
+    stroke= '#141413';
+  }
+
+  function slab(cy, f, cls){
+    const a=25,b=12,t=6,cx=50;
+    const T=[cx,cy-b],R=[cx+a,cy],B=[cx,cy+b],L=[cx-a,cy];
+    const R2=[cx+a,cy+t],B2=[cx,cy+b+t],L2=[cx-a,cy+t];
+    const j=p=>p[0]+' '+p[1];
+    const pts=arr=>arr.map(p=>p[0]+','+p[1]).join(' ');
+    const top=pts([T,R,B,L]), left=pts([L,B,B2,L2]), right=pts([B,R,R2,B2]);
+    const innerY=`M ${j(L)} L ${j(B)} M ${j(R)} L ${j(B)} M ${j(B)} L ${j(B2)}`;
+    const hex=`M ${j(T)} L ${j(R)} L ${j(R2)} L ${j(B2)} L ${j(L2)} L ${j(L)} Z`;
+    const inner = `<polygon points="${top}" fill="${f.t}"/>`
+         + `<polygon points="${left}" fill="${f.l}"/>`
+         + `<polygon points="${right}" fill="${f.r}"/>`
+         + `<path d="${innerY}" fill="none" stroke="${stroke}" stroke-width="${innerW}" stroke-linecap="round" stroke-linejoin="round"/>`
+         + `<path d="${hex}" fill="none" stroke="${stroke}" stroke-width="${outerW}" stroke-linejoin="round" stroke-linecap="round"/>`;
+    return cls ? `<g class="${cls}">${inner}</g>` : inner;
+  }
+
+  const cys=[61,47,33];           // bottom -> top (snug overlap)
+  let body=''; cys.forEach((cy,i)=> body += slab(cy, i===2 ? clay : ink, i===2 ? 'st-topplate' : ''));
+
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SpatialTimber logomark">`
+       + `<title>SpatialTimber</title>${body}</svg>`;
+}
+
+/* ----------------------------------------------------------
+   MODULE GLYPHS — simple line icons, ink + clay node
+---------------------------------------------------------- */
+function glyphSVG(kind){
+  const ink='#141413', clay='#D97757';
+  let inner='', join='round', cap='round';
+  if(kind==='assistant'){            // A3 — plan door swing (solid arc)
+    inner = '<path d="M18.5 6H5.5V18H11"/>'
+          + '<path d="M17.5 18H18.8"/>'
+          + '<path d="M11 18V11" stroke="'+clay+'"/>'
+          + '<path d="M11 11A7 7 0 0 1 18 18" stroke="'+clay+'"/>';
+  } else if(kind==='furnisher'){     // F5 — floor lamp, side elevation (sharp edges)
+    join='miter'; cap='square';
+    inner = '<path d="M9.5 19H14.5"/><path d="M12 19V8.4"/>'
+          + '<path d="M8.5 8.4H15.5L13.8 4.5H10.2Z" fill="'+clay+'" stroke="none"/>';
+  } else if(kind==='structural'){    // S2 — column grid (2×2), beam line keyed
+    inner = '<path d="M5 6H19"/><path d="M5 12H19"/><path d="M5 18H19"/><path d="M5 6V18"/><path d="M12 6V18"/><path d="M19 6V18"/>'
+          + '<path d="M12 6V18" stroke="'+clay+'" stroke-width="2.8"/>';
+  } else { /* blank */
+    inner = '<rect x="4" y="4" width="16" height="16" rx="1.5" stroke-dasharray="2.4 2.4"/>'
+          + '<line x1="12" y1="9" x2="12" y2="15"/><line x1="9" y1="12" x2="15" y2="12"/>';
+  }
+  const open='<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="'+ink+'" stroke-width="1.7" stroke-linejoin="'+join+'" stroke-linecap="'+cap+'">';
+  return open+inner+'</svg>';
+}
+
+/* ----------------------------------------------------------
+   INJECT
+---------------------------------------------------------- */
+document.querySelectorAll('[data-mark]').forEach(el=>{
+  el.innerHTML = markSVG(el.getAttribute('data-mark'));
+  const s = el.getAttribute('data-size');
+  if(s){ const svg=el.querySelector('svg'); svg.setAttribute('width',s); svg.setAttribute('height',s); }
+});
+document.querySelectorAll('[data-glyph]').forEach(el=>{
+  el.innerHTML = glyphSVG(el.getAttribute('data-glyph'));
+});
+
+/* ----------------------------------------------------------
+   COPY SVG
+---------------------------------------------------------- */
+function copySVG(btn){
+  const card = btn.closest('[data-logo]');
+  const svg = card.querySelector('svg');
+  if(!svg) return;
+  const txt = svg.outerHTML;
+  navigator.clipboard.writeText(txt).then(()=>toast('SVG copied — '+txt.length+' chars'))
+    .catch(()=>toast('copy failed'));
+}
+let toastT;
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('show'),1700);
+}
+</script>
+</body>
+</html>

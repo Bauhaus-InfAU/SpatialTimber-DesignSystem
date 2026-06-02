@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SpatialTimber — Aufstockung Assistent glyph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#141413;--clay:#D97757;--paper:#FAF9F5;--card:#F0EEE6;--oat:#E3DACC;--gray:#6f6c63;
+    --line:rgba(20,20,19,0.13);
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 56px;}
+
+  header.masthead{padding:78px 0 34px;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);display:inline-flex;align-items:center;gap:11px;}
+  .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--clay);display:inline-block;}
+  h1.title{font-size:42px;font-weight:700;font-style:italic;letter-spacing:-0.025em;line-height:1.06;margin:22px 0 0;max-width:24ch;}
+  .lede{margin:20px 0 0;font-size:17px;line-height:1.6;color:var(--gray);max-width:72ch;}
+  .lede b{color:var(--ink);font-weight:600;}
+  .note-strip{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);}
+  .note-strip span{display:inline-flex;align-items:center;gap:8px;}
+  .note-strip span::before{content:"";width:6px;height:6px;background:var(--clay);border-radius:50%;}
+
+  section{padding:44px 0 60px;border-top:1px solid var(--line);}
+
+  .context{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 28px;margin-bottom:30px;}
+  .context .mk svg{width:42px;height:42px;display:block;}
+  .context .wm{font-size:21px;letter-spacing:-0.022em;white-space:nowrap;}
+  .context .wm .s-spatial{font-weight:700;}.context .wm .s-timber{font-weight:500;}
+  .context .divider{width:1px;height:32px;background:var(--line);}
+  .context .module{display:flex;align-items:center;gap:12px;}
+  .context .module .m-name{font-size:19px;font-weight:600;letter-spacing:-0.015em;}
+  .context .ctx-label{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);}
+  .glyph-tile{width:44px;height:44px;border:1px solid var(--line);border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--paper);}
+  .glyph-tile svg{width:26px;height:26px;display:block;}
+
+  .compare{display:flex;align-items:center;gap:14px;margin-bottom:30px;font-size:14px;color:var(--gray);}
+  .compare .old{display:flex;align-items:center;gap:10px;background:var(--oat);border-radius:10px;padding:9px 14px;}
+  .compare .old svg{width:24px;height:24px;}
+  .compare .arrow{font-family:var(--mono);color:var(--clay);}
+
+  .opts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .opt{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+  .opt:hover{border-color:var(--clay);}
+  .opt.sel{border-color:var(--clay);box-shadow:0 0 0 1px var(--clay) inset;}
+  .opt .big{width:66px;height:66px;border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--paper);}
+  .opt .big svg{width:42px;height:42px;display:block;}
+  .opt .num{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:10px;color:var(--clay);letter-spacing:.1em;}
+  .opt .nm{font-size:13.5px;font-weight:600;letter-spacing:-0.01em;}
+  .opt .ds{font-size:11.5px;color:var(--gray);line-height:1.4;}
+
+  .ask{padding:6px 0 90px;}
+  .ask .box{background:var(--oat);border-radius:16px;padding:24px 30px;font-size:15px;color:var(--ink);max-width:76ch;line-height:1.6;}
+  .ask .box b{font-weight:600;}
+
+  @media(max-width:920px){.opts{grid-template-columns:repeat(3,1fr);}.wrap{padding:0 28px;}}
+  @media(max-width:560px){.opts{grid-template-columns:repeat(2,1fr);}h1.title{font-size:31px;}.context{flex-wrap:wrap;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead" data-screen-label="Masthead">
+    <span class="eyebrow">Aufstockung Assistent · neues Glyph</span>
+    <h1 class="title">A storey added on top — not just a floor plan.</h1>
+    <p class="lede">The current door-swing glyph reads as a <b>layout / plan</b> assistant. <b>Aufstockung</b> is about adding a <b>new timber storey on top of an existing building</b> — so each proposal shows exactly that, in the same flat line-drawing style: ink stroke, one <b>clay-keyed added storey</b>, side elevation, no axonometry. Click any tile to preview it in the lockup.</p>
+    <div class="note-strip">
+      <span>Side elevation, flat</span>
+      <span>Clay = the new storey</span>
+      <span>Same line system</span>
+      <span>Reads at 24&nbsp;px</span>
+    </div>
+  </header>
+
+  <section data-screen-label="Aufstockung">
+    <div class="context">
+      <span class="mk" data-mark="accent"></span>
+      <span class="wm"><span class="s-spatial">Spatial</span><span class="s-timber">Timber</span></span>
+      <span class="divider"></span>
+      <span class="module"><span class="glyph-tile" data-glyph="au1"></span><span class="m-name">Aufstockung Assistent</span></span>
+      <span class="ctx-label">option AU1 · in context</span>
+    </div>
+
+    <div class="compare">
+      <span class="old"><span data-glyph="old"></span> current — reads as “layout / plan”</span>
+      <span class="arrow">→ replace with an Aufstockung-specific glyph:</span>
+    </div>
+
+    <div class="opts" data-group="auf">
+      <div class="opt sel" data-glyph-opt="au1"><span class="num">AU1</span><span class="big" data-glyph="au1"></span><span class="nm">Added storey</span><span class="ds">Building + clay top floor</span></div>
+      <div class="opt" data-glyph-opt="au2"><span class="num">AU2</span><span class="big" data-glyph="au2"></span><span class="nm">Lifted slab</span><span class="ds">New storey set down</span></div>
+      <div class="opt" data-glyph-opt="au3"><span class="num">AU3</span><span class="big" data-glyph="au3"></span><span class="nm">Grow upward</span><span class="ds">Clay up-arrow on roof</span></div>
+      <div class="opt" data-glyph-opt="au4"><span class="num">AU4</span><span class="big" data-glyph="au4"></span><span class="nm">Add on roof</span><span class="ds">Clay “+” above building</span></div>
+      <div class="opt" data-glyph-opt="au5"><span class="num">AU5</span><span class="big" data-glyph="au5"></span><span class="nm">To be added</span><span class="ds">Dashed new storey</span></div>
+    </div>
+  </section>
+
+  <div class="ask">
+    <div class="box">
+      <b>Which one?</b> Reply e.g. “AU1”. I’ll drop it into the master brand-identity proposal and the design-system assets (and keep the door-swing glyph available in case you want it for a future <b>Layout</b> module).
+    </div>
+  </div>
+</div>
+
+<script>
+/* master mark (axonometric) — context preview only */
+function markSVG(){
+  const outerW=3.8,innerW=1.0,stroke='#141413';
+  const ink={t:'#FBFAF6',l:'#D9D4C8',r:'#ECE8DD'}, clay={t:'#D97757',l:'#B85A3C',r:'#CC6A49'};
+  function slab(cy,f){const a=25,b=12,t=6,cx=50;
+    const T=[cx,cy-b],R=[cx+a,cy],B=[cx,cy+b],L=[cx-a,cy],R2=[cx+a,cy+t],B2=[cx,cy+b+t],L2=[cx-a,cy+t];
+    const j=p=>p[0]+' '+p[1], pts=a=>a.map(p=>p[0]+','+p[1]).join(' ');
+    return `<polygon points="${pts([T,R,B,L])}" fill="${f.t}"/><polygon points="${pts([L,B,B2,L2])}" fill="${f.l}"/><polygon points="${pts([B,R,R2,B2])}" fill="${f.r}"/>`
+      +`<path d="M ${j(L)} L ${j(B)} M ${j(R)} L ${j(B)} M ${j(B)} L ${j(B2)}" fill="none" stroke="${stroke}" stroke-width="${innerW}" stroke-linecap="round" stroke-linejoin="round"/>`
+      +`<path d="M ${j(T)} L ${j(R)} L ${j(R2)} L ${j(B2)} L ${j(L2)} L ${j(L)} Z" fill="none" stroke="${stroke}" stroke-width="${outerW}" stroke-linejoin="round" stroke-linecap="round"/>`;}
+  let b=''; [61,47,33].forEach((cy,i)=>b+=slab(cy,i===2?clay:ink));
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${b}</svg>`;
+}
+
+const C='#D97757';
+function G(inner,join,cap){
+  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#141413" stroke-width="1.7" stroke-linejoin="${join||'miter'}" stroke-linecap="${cap||'square'}">${inner}</svg>`;
+}
+
+const GLYPHS={
+  /* current glyph, for the "before" chip */
+  old:G(`<path d="M18.5 6H5.5V18H11"/><path d="M17.5 18H18.8"/>
+         <path d="M11 18V11" stroke="${C}"/><path d="M11 11A7 7 0 0 1 18 18" stroke="${C}"/>`,'round','round'),
+
+  /* AU1 — existing 2-storey building + solid clay storey on top */
+  au1:G(`<path d="M5 10H19V20H5Z"/><path d="M5 15H19"/>
+         <path d="M5 5H19V10H5Z" fill="${C}" stroke="none"/>`),
+
+  /* AU2 — stacked flat slabs, new clay slab set down with a gap */
+  au2:G(`<path d="M6 16.6H18V19.4H6Z"/><path d="M6 12.6H18V15.4H6Z"/>
+         <path d="M6 6.2H18V9H6Z" fill="${C}" stroke="none"/>
+         <path d="M10.4 11.6L12 10L13.6 11.6" stroke="${C}" stroke-linecap="round" stroke-linejoin="round"/>`),
+
+  /* AU3 — building + clay up-arrow growing from the roof */
+  au3:G(`<path d="M5 10.5H19V20H5Z"/><path d="M5 15.3H19"/>
+         <path d="M12 9V3.4" stroke="${C}" stroke-linecap="round"/>
+         <path d="M9.4 5.8L12 3.2L14.6 5.8" stroke="${C}" stroke-linecap="round" stroke-linejoin="round"/>`),
+
+  /* AU4 — multi-storey building + clay plus on the roof */
+  au4:G(`<path d="M5 9H19V20H5Z"/><path d="M5 12.8H19"/><path d="M5 16.4H19"/>
+         <path d="M12 2.2V6.4" stroke="${C}" stroke-linecap="round"/>
+         <path d="M9.9 4.3H14.1" stroke="${C}" stroke-linecap="round"/>`),
+
+  /* AU5 — existing building + dashed clay "to be added" storey */
+  au5:G(`<path d="M5 11H19V20H5Z"/><path d="M5 15.5H19"/>
+         <path d="M5 6H19V11H5Z" stroke="${C}" stroke-dasharray="2 1.7"/>
+         <path d="M12 7.2V9.8" stroke="${C}" stroke-linecap="round"/><path d="M10.7 8.5H13.3" stroke="${C}" stroke-linecap="round"/>`)
+};
+
+document.querySelectorAll('[data-mark]').forEach(el=>{ el.innerHTML=markSVG(); });
+function paint(){ document.querySelectorAll('[data-glyph]').forEach(el=>{ el.innerHTML=GLYPHS[el.getAttribute('data-glyph')]||''; }); }
+paint();
+
+document.querySelectorAll('[data-glyph-opt]').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    const key=opt.getAttribute('data-glyph-opt');
+    document.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+    opt.classList.add('sel');
+    const tile=document.querySelector('.context .glyph-tile');
+    tile.setAttribute('data-glyph',key); tile.innerHTML=GLYPHS[key];
+    document.querySelector('.ctx-label').textContent='option '+key.toUpperCase()+' · in context';
+  });
+});
+</script>
+</body>
+</html>

@@ -14,12 +14,32 @@ it belongs here; if it's specific to one repo, it belongs there.
 ## Where things live
 
 ```
-assets/logos/         # project / partner / funder logos (svg + png)
-assets/templates/     # slide, poster, and figure design templates
-assets/styleguide/    # the project's visual-language reference (see below)
-assets/presentation/  # reusable assets from the Zukunft Bau 2026 deck (manual drop folder)
-src/                  # reusable helper code shared across repos
+assets/README.md          # the overarching design-system index — START HERE (routes the below)
+assets/brand/             # SpatialTimber's OWN brand identity: marks, tokens, glyphs, generator
+assets/templates/website/ # web/app template — the Aufstockung Assistent / Solver UI
+assets/templates/deck/    # slide-deck template (Zukunft Bau 2026); media lives in presentation/
+assets/presentation/      # reusable Zukunft Bau 2026 deck media (the deck template's asset source)
+assets/styleguide/        # the project's visual-language reference (illustration registers)
+assets/logos/             # third-party funder logos (Zukunft Bau, BMWSB) — svg + png
+src/                      # reusable helper code shared across repos
 ```
+
+The `assets/` tree is an **overarching design system** — a federation of sub-systems, each owning
+a purpose (identity / web / slides / media / illustration / funder logos). The router is
+[`assets/README.md`](assets/README.md): read it to pick the right sub-system for a task.
+
+`assets/brand/` is the **root of the system** — logomark, wordmark, sub-project lockups, module
+glyphs, colour + type tokens, and a zero-dependency asset generator
+(`assets/brand/assets/spatialtimber-assets.mjs`). Open
+[`assets/brand/brand-guide.html`](assets/brand/brand-guide.html) to *see* it. The web and deck
+templates draw their tokens from here. The whole system is wired as the `spatialtimber-design`
+Claude Code skill, so any clone of this repo can ask Claude to export the logo, fetch tokens, or
+build a branded web page or slide. The brand tokens below are the authoritative subset;
+`assets/brand/colors_and_type.css` is the full token set.
+
+**Locked decisions (2026-06-02):** typeface is **Inter** (Söhne optional future swap if licensed);
+the **wider palette stays** (supporting peach/olive/sky for data colour-coding). A UI-kit
+(buttons/fields/app-shell) is a planned future addition on top of the web template.
 
 `assets/styleguide/` is the developed visual-language reference, copied from the Zukunft Bau 2026
 presentation repo. It documents **three illustration registers** (axonometric / flat-contour

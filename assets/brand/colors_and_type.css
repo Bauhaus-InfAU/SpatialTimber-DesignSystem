@@ -1,0 +1,87 @@
+/* ==================================================================
+   SpatialTimber — design tokens
+   Warm, restrained, structural. Ink + paper do the work; clay is the
+   single accent. Type is Inter (sans) + JetBrains Mono (technical).
+   Load fonts:
+     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+   ================================================================== */
+
+:root{
+  /* --- core palette --- */
+  --st-ink:        #141413;   /* primary — warm near-black, never pure #000 */
+  --st-clay:       #D97757;   /* THE accent — use sparingly */
+  --st-clay-dark:  #9E4A30;   /* clay pressed / deep accent */
+  --st-paper:      #FAF9F5;   /* page background */
+  --st-card:       #F0EEE6;   /* raised surface / card */
+  --st-oat:        #E3DACC;   /* warm fill / quiet block */
+  --st-gray:       #6f6c63;   /* secondary text */
+
+  /* --- supporting (only for sub-project data coding) --- */
+  --st-peach:      #EBC9B7;
+  --st-olive:      #788C5D;
+  --st-sky:        #6A9BCC;
+
+  /* --- hairlines --- */
+  --st-line:       rgba(20,20,19,0.13);
+  --st-line-soft:  rgba(20,20,19,0.08);
+
+  /* --- type families --- */
+  --st-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --st-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Inter is the locked production typeface (decision 2026-06-02). Söhne (the original
+     spec) is an optional future swap only if a licence is acquired. */
+
+  /* --- type scale (px) --- */
+  --st-fs-display: 44px;   /* page titles (often italic 700) */
+  --st-fs-h2:      25px;   /* section heads */
+  --st-fs-h3:      19px;
+  --st-fs-body:    16px;
+  --st-fs-small:   13px;
+  --st-fs-label:   11px;   /* mono labels, uppercase */
+
+  /* --- weights --- */
+  --st-w-body:     400;
+  --st-w-medium:   500;   /* "Timber" in wordmark */
+  --st-w-display:  600;
+  --st-w-bold:     700;   /* "Spatial" in wordmark */
+
+  /* --- wordmark tracking --- */
+  --st-track-wordmark: -0.022em;
+  --st-track-display:  -0.025em;
+  --st-track-label:     0.13em;  /* mono labels */
+
+  /* --- radii --- */
+  --st-r-sm:  8px;
+  --st-r-md:  12px;
+  --st-r-lg:  16px;
+
+  /* --- spacing: built on the project's 625 mm structural module --- */
+  --st-space-1:  4px;
+  --st-space-2:  8px;
+  --st-space-3:  16px;
+  --st-space-4:  24px;
+  --st-space-5:  40px;
+  --st-space-6:  56px;
+  --st-space-7:  84px;
+}
+
+/* ------------------------------------------------------------------
+   Semantic helpers — opt-in classes
+   ------------------------------------------------------------------ */
+.st-page{ background:var(--st-paper); color:var(--st-ink); font-family:var(--st-sans); line-height:1.5; }
+
+.st-display{ font-size:var(--st-fs-display); font-weight:var(--st-w-bold); font-style:italic; letter-spacing:var(--st-track-display); line-height:1.05; }
+.st-h2{ font-size:var(--st-fs-h2); font-weight:var(--st-w-display); letter-spacing:-0.02em; }
+.st-body{ font-size:var(--st-fs-body); font-weight:var(--st-w-body); }
+.st-small{ font-size:var(--st-fs-small); color:var(--st-gray); }
+
+/* mono technical label — uppercase, tracked, often clay-dotted */
+.st-label{ font-family:var(--st-mono); font-size:var(--st-fs-label); letter-spacing:var(--st-track-label); text-transform:uppercase; color:var(--st-gray); }
+
+/* the wordmark — weight leads on "Spatial" */
+.st-wordmark{ font-family:var(--st-sans); letter-spacing:var(--st-track-wordmark); }
+.st-wordmark .spatial{ font-weight:var(--st-w-bold); }
+.st-wordmark .timber{ font-weight:var(--st-w-medium); }
+
+/* card surface */
+.st-card{ background:var(--st-card); border:1px solid var(--st-line); border-radius:var(--st-r-md); }
