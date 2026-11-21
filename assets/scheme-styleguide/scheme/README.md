@@ -2,7 +2,7 @@
 
 > **Context & provenance.** This is specifically an **SVG-scheme authoring styleguide** — how to
 > build editorial scheme/diagram SVGs in the Anthropic register. It is **not** a general project
-> styleguide. Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> styleguide. Copied into SpatialTimber-DesignSystem on 2026-06-02 from the presentation repo
 > (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`).
 >
 > **Paths below refer to that source repo, not this one.** References to `monet/…` (the

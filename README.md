@@ -1,4 +1,4 @@
-# SpatialTimber-Utils
+# SpatialTimber-DesignSystem
 
 Shared utilities and assets for the **SpatialTimber** research project — the design system,
 funder logos, presentation media, and reusable helper code used across the project's repositories.
@@ -38,7 +38,7 @@ SpatialTimber repos depend on, so they don't get copied (and drift) from one rep
 ## Folder structure
 
 ```
-SpatialTimber-Utils/
+SpatialTimber-DesignSystem/
 ├── design-system/     # ★ THE design system (start here) — brand spec, tokens, asset
 │   └── project/       #   generator, the Aufstockung Assistent UI kit, sample slides
 ├── assets/                # secondary: project media (brand/web/slides → design-system/)
@@ -72,7 +72,7 @@ organization:
 | [SpatialTimber-FEM_Surrogate](https://github.com/Bauhaus-InfAU/SpatialTimber-FEM_Surrogate) | ML surrogate models approximating FEM structural analysis |
 | [SpatialTimber-Furnisher](https://github.com/Bauhaus-InfAU/SpatialTimber-Furnisher) | Automated furnishing / furniture placement |
 | [SpatialTimber-Demonstrator](https://github.com/Bauhaus-InfAU/SpatialTimber-Demonstrator) | Integrated demonstrator application |
-| **SpatialTimber-Utils** | Shared utilities and assets (this repo) |
+| **SpatialTimber-DesignSystem** | Shared utilities and assets (this repo) |
 
 For the full project overview, see the project README in
 `SpatialTimber - Documents/README.md` and the

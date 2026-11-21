@@ -2,7 +2,7 @@
 
 > **Context & provenance.** The core of the **SVG-scheme authoring styleguide** (not a general
 > project styleguide) — the calibration loop and style tokens for building editorial scheme SVGs.
-> Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> Copied into SpatialTimber-DesignSystem on 2026-06-02 from the presentation repo
 > (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`).
 >
 > **Paths in this document refer to that source repo, not this one.** `monet/…` (the

@@ -1,4 +1,4 @@
-# SpatialTimber-Utils — Project Context
+# SpatialTimber-DesignSystem — Project Context
 
 ## What this is
 

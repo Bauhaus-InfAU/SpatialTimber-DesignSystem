@@ -1,7 +1,7 @@
 # Monet style block — Anthropic editorial scheme
 
 > **Context & provenance.** Part of the **SVG-scheme authoring styleguide** (not a general project
-> styleguide). Copied into SpatialTimber-Utils on 2026-06-02 from the presentation repo
+> styleguide). Copied into SpatialTimber-DesignSystem on 2026-06-02 from the presentation repo
 > (`…/03_ZukunftBau Projektetage 2026/styleguide/scheme/`). Paths to `monet/prompts/…`,
 > `status_quo_axo_anthropic.md`, `references/styles/…`, and the `*_anthropic.md` prompt files refer
 > to that **source** repo and are **not present here** — they're kept verbatim as reference. For

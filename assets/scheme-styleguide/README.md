@@ -1,6 +1,6 @@
 # SpatialTimber Styleguide — Zukunft Bau Projekttage 2026
 
-> **Provenance.** Copied into SpatialTimber-Utils as the shared, canonical styleguide for the
+> **Provenance.** Copied into SpatialTimber-DesignSystem as the shared, canonical styleguide for the
 > project (2026-06-02). It originated in the presentation repo
 > (`SpatialTimber - Documents/04_Publications and Presentations/03_ZukunftBau Projektetage 2026/styleguide`).
 > Relative links below to `../monet/`, `../_assets/`, `../README.md`, and
