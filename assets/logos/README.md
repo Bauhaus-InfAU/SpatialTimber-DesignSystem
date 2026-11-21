@@ -22,6 +22,10 @@ SVGs, so they composite cleanly on any color.
 Prefer the **SVG** versions wherever possible (crisp at any scale). Both wordmarks are **black**, so
 on dark/ink surfaces they need a reversed/white treatment (not provided here).
 
+**Third-party software / tool logos** (Rhino, Grasshopper, Revit, Archicad, Allplan) — used in
+tool-chain and interoperability figures — live in [`software/`](software/), see its
+[`README.md`](software/README.md).
+
 **Edit notes:**
 
 - `bmwsb_logo.svg` had a baked-in `<rect ... fill="white">` background — removed so the vector (and
